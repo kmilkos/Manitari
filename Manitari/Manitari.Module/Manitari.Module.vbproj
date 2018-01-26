@@ -274,6 +274,7 @@
     <Compile Include="BusinessObjects\Production.vb" />
     <Compile Include="BusinessObjects\Skill.vb" />
     <Compile Include="BusinessObjects\TaskV3.vb" />
+    <Compile Include="BusinessObjects\Warehouse.vb" />
     <Compile Include="BusinessObjects\Watering.vb" />
     <Compile Include="DatabaseUpdate\Updater.vb" />
     <Compile Include="Module.Designer.vb">
