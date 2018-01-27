@@ -9,6 +9,7 @@ Imports System.Linq
 Imports DevExpress.Data.Filtering
 Imports DevExpress.ExpressApp.Model
 Imports System.Drawing
+Imports DevExpress.ExpressApp.DC
 
 <DefaultClassOptions>
 <XafDisplayName("Πελάτες")>

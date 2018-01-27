@@ -15,7 +15,6 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <XafDisplayName("Απογραφή - Υπολίστα")>
-<NavigationItem("Αποθήκες")>
 <DefaultProperty("Display")>
 <Persistent("InventoryListItem")>
 Public Class inventorylistitem ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).

@@ -1,5 +1,492 @@
-﻿<Application Logo="ExpressAppLogo">
-	<Options Skin="Office 2016 Colorful" UIType="TabbedMDI" FormStyle="Ribbon">
-	  <RibbonOptions RibbonControlStyle="Office2013" />
-	</Options>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <NavigationItems RootGroupsStyle="OutlookAnimated" StartupNavigationItem="Production_ListView">
+    <Items>
+      <Item Id="Παραγωγή" Index="0" />
+      <Item Id="Λειτουργία" Index="1" />
+      <Item Id="Αποθήκες" Index="2" />
+      <Item Id="Προσωπικό" Index="3">
+        <Items>
+          <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Πωλήσεις" Index="4" />
+      <Item Id="Reports" Caption="Αναφορές" Index="5">
+        <Items>
+          <Item Id="KpiDefinition_ListView" ViewId="KpiDefinition_ListView" Caption="KPI  Definition" ObjectKey="" IsNewNode="True" />
+          <Item Id="KpiScorecard_ListView" ViewId="KpiScorecard_ListView" Caption="KPI Scorecard" ObjectKey="" IsNewNode="True" />
+          <Item Id="Workflow Definition" ViewId="XpoWorkflowDefinition_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="XpoStateMachine_ListView" ViewId="XpoStateMachine_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Index="6">
+        <Items>
+          <Item Id="Employee_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Removed="True">
+        <Items>
+          <Item Id="KpiDefinition_ListView" Caption="KPI  Definition" Removed="True" />
+          <Item Id="KpiScorecard_ListView" Caption="KPI Scorecard" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="State Machine" Removed="True">
+        <Items>
+          <Item Id="XpoStateMachine_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Workflow" Removed="True">
+        <Items>
+          <Item Id="Workflow Definition" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options Skin="Office 2016 Colorful" UIType="TabbedMDI" FormStyle="Ribbon" EnableHtmlFormatting="True" MdiDefaultNewWindowTarget="Default">
+    <Dashboards EnableCreation="True" />
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Attend_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Attend" RelativeSize="100">
+              <LayoutGroup Id="Attend_col1" RelativeSize="50">
+                <LayoutItem Id="TheDate" Index="0" RelativeSize="5.6939501779359434" />
+                <LayoutItem Id="Employee" Index="1" RelativeSize="94.306049822064054" />
+                <LayoutItem Id="StartTime" RelativeSize="90.0355871886121" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Attend_col2" RelativeSize="50">
+                <LayoutItem Id="StartTime" ViewItem="StartTime" Index="0" RelativeSize="5.6939501779359434" IsNewNode="True" />
+                <LayoutItem Id="EndTime" RelativeSize="4.2704626334519569" Index="1" />
+                <LayoutItem Id="TotalHours" RelativeSize="90.0355871886121" Index="2" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Category_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="6.2913907284768209">
+            <LayoutGroup Id="Category" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Caption" RelativeSize="50" />
+              <LayoutItem Id="Department" RelativeSize="50" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="93.708609271523173">
+            <LayoutGroup Id="Tasks" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Tasks" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="DailyLogs" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Compost_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="9.7682119205298">
+            <LayoutGroup Id="Compost" Caption="Compost" RelativeSize="100">
+              <LayoutGroup Id="Autobbac80c1-79c9-4059-90e4-39d7db5dcd2c" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="54.237288135593218" IsNewNode="True">
+                <LayoutItem Id="TheDate" ViewItem="TheDate" Index="0" RelativeSize="27.054794520547944" IsNewNode="True" />
+                <LayoutItem Id="CompostCode" ViewItem="CompostCode" Index="1" RelativeSize="72.945205479452056" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="IsCompostEmptied" Index="1" RelativeSize="45.762711864406782" />
+              <LayoutItem Id="CompostCode" Removed="True" />
+              <LayoutItem Id="TheDate" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="90.231788079470192">
+            <LayoutGroup Id="CompostYards" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="CompostYards" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Productions" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Productions" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Waterings" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Waterings" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CompostYard_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="20.695364238410598">
+            <LayoutGroup Id="CompostYard" RelativeSize="100">
+              <LayoutGroup Id="CompostYard_col1" RelativeSize="50">
+                <LayoutItem Id="CompostDate" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="Compost" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="FarmAction" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="CompostYard_col2" RelativeSize="50">
+                <LayoutItem Id="CompostAction" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="CompostSource" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="CompostTarget" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="79.30463576158941">
+            <LayoutItem Id="CompostComments" CaptionLocation="Top" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DailyLog_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="10.264900662251655">
+            <LayoutGroup Id="DailyLog" RelativeSize="100" Direction="Horizontal">
+              <LayoutGroup Id="Autoa6bc0a4d-eba3-4465-8f6b-9bcaa2d669e4" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="TheDate" ViewItem="TheDate" Index="0" RelativeSize="51.612903225806448" IsNewNode="True" />
+                <LayoutItem Id="Subject" ViewItem="Subject" Index="1" RelativeSize="48.387096774193552" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto1b8b6f1e-33af-4216-8e72-a7001e3992e5" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="Operation" ViewItem="Operation" Index="0" RelativeSize="51.612903225806448" IsNewNode="True" />
+                <LayoutItem Id="Location" ViewItem="Location" Index="1" RelativeSize="48.387096774193552" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Subject" Index="1" RelativeSize="27.906976744186046" Removed="True" />
+              <LayoutItem Id="Location" Index="2" RelativeSize="34.883720930232556" Removed="True" />
+              <LayoutItem Id="Operation" Removed="True" />
+              <LayoutItem Id="TheDate" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="89.735099337748338" Direction="Horizontal" Caption="Σημειώσεις">
+            <LayoutItem Id="Notes" RelativeSize="24.657534246575342" CaptionLocation="Top" />
+            <LayoutGroup Id="Employees_Group" ShowCaption="True" Caption="Εργαζόμενοι" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="75.342465753424662" IsNewNode="True">
+              <LayoutItem Id="Employees" ViewItem="Employees" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Employees_Group" TextAlignMode="AlignWithChildren" Direction="Vertical" RelativeSize="40.894039735099341" Removed="True">
+            <LayoutItem Id="Employees" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Department_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="6.2913907284768209">
+            <LayoutGroup Id="Department" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Title" RelativeSize="50" />
+              <LayoutItem Id="Office" RelativeSize="50" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="93.708609271523173">
+            <LayoutGroup Id="Positions" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Positions" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Employees" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Employees" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Employee_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="32.615894039735096" Caption="SimpleEditors">
+            <LayoutItem Id="FullName" ViewItem="FullName" Index="0" RelativeSize="16.243654822335024" IsNewNode="True" />
+            <LayoutGroup Id="Autoa288faeb-0330-4566-9ac0-e2a2042cf904" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="83.756345177664969" IsNewNode="True">
+              <LayoutGroup Id="Person" ShowCaption="True" Index="0" RelativeSize="37.214611872146122" IsNewNode="True">
+                <LayoutGroup Id="Person_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="FirstName" ViewItem="FirstName" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                  <LayoutItem Id="LastName" ViewItem="LastName" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="Birthday" ViewItem="Birthday" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="Email" ViewItem="Email" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="Address1" ViewItem="Address1" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Employee" ShowCaption="True" Index="1" RelativeSize="62.785388127853878" IsNewNode="True">
+                <LayoutGroup Id="Employee_col1" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Autoa3fa7967-947c-4ced-b035-baa390e6d640" ShowCaption="False" Caption="" Index="0" RelativeSize="56.497175141242941" IsNewNode="True">
+                    <LayoutItem Id="Nickname" ViewItem="Nickname" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                    <LayoutItem Id="Manager" ViewItem="Manager" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                    <LayoutItem Id="Department" ViewItem="Department" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                    <LayoutItem Id="DateHired" ViewItem="DateHired" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                    <LayoutItem Id="DateFired" ViewItem="DateFired" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Photo" ViewItem="Photo" CaptionLocation="Top" Index="1" RelativeSize="43.502824858757059" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Party" Index="2" RelativeSize="30.215827338129497" Caption="Party" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="Address1" RelativeSize="35.714285714285715" Index="0" Removed="True" />
+              <LayoutItem Id="Address2" RelativeSize="50" Index="0" Removed="True" />
+              <LayoutItem Id="DisplayName" RelativeSize="100" Index="0" Removed="True" />
+              <LayoutItem Id="Photo" RelativeSize="48" CaptionLocation="Top" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Employee" Removed="True" />
+            <LayoutGroup Id="Person" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="67.3841059602649" Direction="Horizontal" Caption="Σημειώσεις">
+            <LayoutItem Id="Notes" RelativeSize="28.310502283105023" CaptionLocation="Top" />
+            <TabbedGroup Id="Tabs" Index="1" RelativeSize="71.689497716894977" IsNewNode="True">
+              <LayoutGroup Id="Positions" ShowCaption="True" Caption="Θέσεις Εργασίας" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Positions" TextAlignMode="AutoSize" ViewItem="Positions" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Skills" TextAlignMode="AutoSize" ViewItem="Skills" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" ViewItem="DailyLogs" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" ViewItem="PhoneNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="34.271523178807946" Removed="True">
+            <LayoutGroup Id="DailyLogs" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhoneNumbers" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Positions" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Positions" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Skills" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Skills" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="inventory_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="6.2913907284768209">
+            <LayoutGroup Id="inventory" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="TheDate" RelativeSize="50" />
+              <LayoutItem Id="Display" RelativeSize="50" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="inventorylistitems_Group" TextAlignMode="AlignWithChildren" Direction="Vertical" RelativeSize="93.708609271523173">
+            <LayoutItem Id="inventorylistitems" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Order_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.218543046357617">
+            <LayoutGroup Id="Order" RelativeSize="100">
+              <LayoutGroup Id="Order_col1" RelativeSize="50">
+                <LayoutItem Id="TheDate" RelativeSize="50" />
+                <LayoutItem Id="Customer" RelativeSize="50" />
+                <LayoutItem Id="PaperID" RelativeSize="36.363636363636367" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Order_col2" Caption="Order_col2" RelativeSize="50">
+                <LayoutItem Id="Payment" RelativeSize="50" />
+                <LayoutItem Id="PaperID" ViewItem="PaperID" Index="1" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="OrdersTotal" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="OrderDetails_Group" Direction="Vertical" RelativeSize="82.78145695364239" Caption="Order Details">
+            <LayoutItem Id="OrderDetails" RelativeSize="93.043478260869563" />
+            <LayoutGroup Id="Autoac740784-00d8-40d0-b186-0aaba8758dbf" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="6.9565217391304346" IsNewNode="True">
+              <LayoutItem Id="Item1" Index="0" RelativeSize="74.647887323943664" IsNewNode="True" />
+              <LayoutItem Id="OrdersTotal" ViewItem="OrdersTotal" Index="1" RelativeSize="25.35211267605634" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="OrderDetail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="OrderDetail" RelativeSize="100">
+              <LayoutGroup Id="OrderDetail_col1" Caption="OrderDetail_col1" RelativeSize="50">
+                <LayoutItem Id="Mushroom" RelativeSize="5.6939501779359434" />
+                <LayoutGroup Id="Autodc828d2e-27c2-4bd0-84a9-271f4432e27b" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="4.2704626334519569" IsNewNode="True">
+                  <LayoutItem Id="Quantity" ViewItem="Quantity" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="Priceperkilo" ViewItem="Priceperkilo" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autof126f7e6-e37b-408a-8251-8a5369d34de4" ShowCaption="False" Caption="" Index="2" RelativeSize="90.0355871886121" IsNewNode="True">
+                  <LayoutItem Id="Discount" ViewItem="Discount" Index="0" RelativeSize="4.7430830039525693" IsNewNode="True" />
+                  <LayoutGroup Id="Auto29e3ff87-040f-47aa-9005-c8fcecf7d7ee" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="95.256916996047437" IsNewNode="True">
+                    <LayoutItem Id="Item1" Index="0" RelativeSize="61.737089201877936" IsNewNode="True" />
+                    <LayoutItem Id="Linetotal" ViewItem="Linetotal" Index="1" RelativeSize="38.262910798122064" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="Priceperkilo" Removed="True" />
+                <LayoutItem Id="Quantity" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="OrderDetail_col2" RelativeSize="50" Caption="OrderDetail_col2" Direction="Horizontal">
+                <LayoutItem Id="Linetotal" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="Discount" RelativeSize="5.6939501779359434" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Production_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Production" RelativeSize="100">
+              <LayoutGroup Id="Production_col1" RelativeSize="44.600938967136152">
+                <LayoutItem Id="TheDate" RelativeSize="5.6939501779359434" />
+                <LayoutItem Id="ProductionAction" RelativeSize="4.2704626334519569" Index="1" />
+                <LayoutItem Id="FarmAction" RelativeSize="4.2704626334519569" Index="2" />
+                <LayoutItem Id="ProductionRoomNumber" RelativeSize="4.2704626334519569" Index="3" />
+                <LayoutItem Id="Height" RelativeSize="8.053691275167786" Index="4" Removed="True" />
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="4" RelativeSize="81.494661921708186" Caption="Κομπόστα" IsNewNode="True">
+                  <LayoutItem Id="Compost" ViewItem="Compost" Index="0" RelativeSize="7.5471698113207548" IsNewNode="True" />
+                  <LayoutItem Id="CompostAction" ViewItem="CompostAction" Index="1" RelativeSize="5.6603773584905657" IsNewNode="True" />
+                  <LayoutItem Id="CompostSource" ViewItem="CompostSource" Index="2" RelativeSize="5.6603773584905657" IsNewNode="True" />
+                  <LayoutItem Id="CompostTarget" ViewItem="CompostTarget" Index="3" RelativeSize="81.132075471698116" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Quality" RelativeSize="8.75912408759124" Index="4" Removed="True" />
+                <LayoutItem Id="CompostAction" RelativeSize="11.538461538461538" Removed="True" />
+                <LayoutItem Id="CompostSource" RelativeSize="12.8" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Production_col2" RelativeSize="55.399061032863848" Caption="Production_col2">
+                <LayoutItem Id="Compost" RelativeSize="11.678832116788321" Index="0" Removed="True" />
+                <LayoutItem Id="Quality" ViewItem="Quality" Index="0" RelativeSize="5.6939501779359434" IsNewNode="True" />
+                <LayoutItem Id="SeedWhite" RelativeSize="10.738255033557048" Index="0" Removed="True" />
+                <LayoutGroup Id="Autoc3bf76db-86c0-447f-9f53-872d136d7402" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="12.811387900355872" IsNewNode="True">
+                  <LayoutGroup Id="Autoe0d4beb2-55aa-4175-a2c9-b5d726f8a7d4" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="SeedWhite" ViewItem="SeedWhite" Index="0" RelativeSize="33.333333333333336" IsNewNode="True" />
+                    <LayoutItem Id="SeedPortobello" ViewItem="SeedPortobello" Index="1" RelativeSize="33.333333333333336" IsNewNode="True" />
+                    <LayoutItem Id="Height" ViewItem="Height" Index="2" RelativeSize="33.333333333333336" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto6f027507-39a0-4312-ac13-b3e7ac673f49" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="SquareMeterWhite" ViewItem="SquareMeterWhite" Index="0" RelativeSize="33.333333333333336" IsNewNode="True" />
+                    <LayoutItem Id="SquareMeterPortobello" ViewItem="SquareMeterPortobello" Index="1" RelativeSize="33.333333333333336" IsNewNode="True" />
+                    <LayoutItem Id="CubicMeters" ViewItem="CubicMeters" Index="2" RelativeSize="33.333333333333336" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="SeedPortobello" RelativeSize="8.053691275167786" Index="1" Removed="True" />
+                <LayoutItem Id="SquareMeterWhite" RelativeSize="8.053691275167786" Index="1" Removed="True" />
+                <LayoutItem Id="CubicMeters" RelativeSize="8.053691275167786" Index="2" Removed="True" />
+                <LayoutItem Id="SquareMeterPortobello" RelativeSize="8.053691275167786" Index="2" Removed="True" />
+                <LayoutItem Id="Truckster" RelativeSize="4.2704626334519569" Index="2" />
+                <LayoutItem Id="Notes" ViewItem="Notes" CaptionLocation="Top" Index="3" RelativeSize="77.22419928825623" IsNewNode="True" />
+                <LayoutItem Id="CompostTarget" RelativeSize="12.8" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="51.986754966887418" Caption="Notes" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Notes" CaptionLocation="Top" RelativeSize="100" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Task_CalendarView" ClassName="Manitari.Module.Task" Caption="Ημερολόγιο Εκκρεμότητες" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Description" PropertyName="Description" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Subject" PropertyName="Subject" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="StartOn" PropertyName="StartOn" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="EndOn" PropertyName="EndOn" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="AllDay" PropertyName="AllDay" Width="50" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Location" PropertyName="Location" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Label" PropertyName="Label" Width="50" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="Status" Width="50" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="Type" PropertyName="Type" Width="50" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="ResourceId" PropertyName="ResourceId" Width="70" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="AppointmentId" PropertyName="AppointmentId" Width="70" Index="9" IsNewNode="True" />
+        <ColumnInfo Id="DateCompleted" PropertyName="DateCompleted" Width="70" Index="10" IsNewNode="True" />
+        <ColumnInfo Id="TaskStatus" PropertyName="TaskStatus" Width="70" Index="11" IsNewNode="True" />
+        <ColumnInfo Id="Category" PropertyName="Category" Width="70" Index="12" IsNewNode="True" />
+        <ColumnInfo Id="Priority" PropertyName="Priority" Width="70" Index="13" IsNewNode="True" />
+      </Columns>
+      <Variants IsNewNode="True">
+        <Variant Id="ShowCalendar" ViewID="Task_CalendarView" Caption="Ημερολόγιο" IsNewNode="True" />
+        <Variant Id="ShowList" ViewID="Task_ListView" Caption="Λίστα" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <DetailView Id="Task_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="24.668874172185429">
+            <LayoutGroup Id="Task" RelativeSize="100">
+              <LayoutGroup Id="Task_col1" RelativeSize="50">
+                <LayoutItem Id="Subject" RelativeSize="28.571428571428573" />
+                <LayoutGroup Id="Auto94686799-f078-4fd6-a2c6-85986a6836e3" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="21.428571428571427" IsNewNode="True">
+                  <LayoutItem Id="StartOn" ViewItem="StartOn" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="EndOn" ViewItem="EndOn" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="AllDay" RelativeSize="18.75" Index="2" />
+                <LayoutItem Id="Location" RelativeSize="31.25" Index="3" />
+                <LayoutItem Id="Label" RelativeSize="13.043478260869565" Index="4" Removed="True" />
+                <LayoutItem Id="Status" RelativeSize="45.108695652173914" Index="4" Removed="True" />
+                <LayoutItem Id="EndOn" RelativeSize="13.043478260869565" Removed="True" />
+                <LayoutItem Id="StartOn" RelativeSize="13.043478260869565" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Task_col2" RelativeSize="50">
+                <LayoutItem Id="AppointmentId" RelativeSize="23.529411764705884" Index="0" Removed="True" />
+                <LayoutItem Id="Category" RelativeSize="28.571428571428573" Index="0" />
+                <LayoutItem Id="ResourceId" RelativeSize="20" Index="0" Removed="True" />
+                <LayoutItem Id="Priority" RelativeSize="21.428571428571427" Index="1" />
+                <LayoutItem Id="TaskStatus" RelativeSize="21.428571428571427" Index="2" />
+                <LayoutItem Id="DateCompleted" RelativeSize="28.571428571428573" Index="3" />
+                <LayoutItem Id="Type" RelativeSize="17.391304347826086" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="75.331125827814574">
+            <LayoutItem Id="Description" CaptionLocation="Top" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Task_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor">
+      <Variants>
+        <Variant Id="ShowCalendar" ViewID="Task_CalendarView" Caption="Ημερολόγιο" IsNewNode="True" />
+        <Variant Id="ShowList" ViewID="Task_ListView" Caption="Λίστα" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <DetailView Id="Watering_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Watering" RelativeSize="100">
+              <LayoutGroup Id="Watering_col1" RelativeSize="50">
+                <LayoutItem Id="TheDate" RelativeSize="5.6939501779359434" />
+                <LayoutItem Id="Compost" RelativeSize="4.2704626334519569" />
+                <LayoutGroup Id="Autob4b576b8-8c49-456d-9adf-1e29c474fa6a" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="90.0355871886121" IsNewNode="True">
+                  <LayoutItem Id="Room" ViewItem="Room" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="StartTime" ViewItem="StartTime" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Quantity" Removed="True" />
+                <LayoutItem Id="Room" RelativeSize="4.2704626334519569" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Watering_col2" RelativeSize="50">
+                <LayoutItem Id="Quantity" ViewItem="Quantity" Index="0" RelativeSize="5.6939501779359434" IsNewNode="True" />
+                <LayoutItem Id="WaterAmmount" Index="1" RelativeSize="4.2704626334519569" />
+                <LayoutItem Id="Notes" Index="2" RelativeSize="4.2704626334519569" />
+                <LayoutItem Id="StartTime" Index="2" RelativeSize="4.2704626334519569" Removed="True" />
+                <LayoutGroup Id="Auto04c169d2-fbb0-4dc6-acc5-5bbd82c9d9ed" ShowCaption="False" Caption="" Direction="Horizontal" Index="3" RelativeSize="85.765124555160142" IsNewNode="True">
+                  <LayoutItem Id="Item1" Index="0" RelativeSize="59.859154929577464" IsNewNode="True" />
+                  <LayoutItem Id="LiterTotal" ViewItem="LiterTotal" Index="1" RelativeSize="40.140845070422536" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="LiterTotal" Index="3" RelativeSize="85.765124555160142" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
 </Application>

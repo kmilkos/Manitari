@@ -49,10 +49,10 @@ Public Class Category ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
-    <DevExpress.Xpo.AssociationAttribute("TaskV3s-Category")>
-    Public ReadOnly Property TaskV3s As XPCollection(Of TaskV3)
+    <DevExpress.Xpo.AssociationAttribute("Tasks-Category")>
+    Public ReadOnly Property Tasks As XPCollection(Of Task)
         Get
-            Return GetCollection(Of TaskV3)("TaskV3s")
+            Return GetCollection(Of Task)("Tasks")
         End Get
     End Property
 
