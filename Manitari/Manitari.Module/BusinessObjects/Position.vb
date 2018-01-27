@@ -2,13 +2,13 @@
 Imports System.ComponentModel
 Imports DevExpress.Persistent.Base
 Imports DevExpress.Persistent.BaseImpl
+Imports DevExpress.ExpressApp.DC
 
-'<ImageName("BO_Contact")> _
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
+<DefaultClassOptions>
+<XafDisplayName("Θέσεις Εργασίας")>
+<NavigationItem("Προσωπικό")>
 <DefaultProperty("Title")>
 <Persistent("Position")>
-<DefaultClassOptions()>
-<DevExpress.ExpressApp.DC.XafDisplayNameAttribute("Θέση Εργασίας")>
 Public Class Position ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
     Public Sub New(ByVal session As Session)

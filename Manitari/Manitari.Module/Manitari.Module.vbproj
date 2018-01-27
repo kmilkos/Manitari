@@ -259,7 +259,6 @@
     <Compile Include="BusinessObjects\CompostYard.vb" />
     <Compile Include="BusinessObjects\Customer.vb" />
     <Compile Include="BusinessObjects\DailyLog.vb" />
-    <Compile Include="BusinessObjects\DailyRoomActions.vb" />
     <Compile Include="BusinessObjects\Department.vb" />
     <Compile Include="BusinessObjects\Employee.vb" />
     <Compile Include="BusinessObjects\FarmAction.vb" />

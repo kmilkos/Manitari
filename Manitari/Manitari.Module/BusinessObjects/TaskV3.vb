@@ -17,11 +17,12 @@ Imports System.Xml
 Imports DevExpress.Xpo.Metadata
 Imports DevExpress.Persistent.Base.General
 
+<DefaultClassOptions>
+<XafDisplayName("Εκκρέμότητες")>
+<NavigationItem("Παραγωγή")>
 <ImageName("BO_Task")>
 <Persistent("TaskV3")>
-<XafDisplayName("Εργασίες v3")>
 <NavigationItem("Λειτουργία")>
-<DefaultClassOptions()>
 Public Class TaskV3
     Inherits BaseObject
     Implements IComparable, IEvent

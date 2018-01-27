@@ -10,12 +10,13 @@ Imports DevExpress.Data.Filtering
 Imports DevExpress.ExpressApp.Model
 Imports System.Drawing
 
+<DefaultClassOptions>
+<XafDisplayName("Πελάτες")>
 <ImageName("BO_Contact")>
 <DefaultProperty("FullName")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("Customer")>
 <NavigationItem("Πωλήσεις")>
-<DefaultClassOptions()>
 Public Class Customer ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
     Implements IPerson

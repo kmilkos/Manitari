@@ -5,14 +5,12 @@ Imports DevExpress.ExpressApp.ConditionalAppearance
 Imports DevExpress.ExpressApp.Editors
 Imports System.Globalization
 Imports DevExpress.Persistent.Validation
+Imports DevExpress.ExpressApp.DC
 
-
-'<ImageName("BO_Contact")> _
-'<DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")> _
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
+<DefaultClassOptions>
+<XafDisplayName("Παραγωγή")>
+<NavigationItem("Παραγωγή")>
 <Persistent("Production")>
-<NavigationItem("Άλλα")>
-<DefaultClassOptions()> _
 Public Class Production ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
 

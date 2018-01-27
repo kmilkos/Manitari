@@ -16,9 +16,10 @@ Imports DevExpress.Persistent.Base.General
 Imports DevExpress.Xpo.Metadata
 Imports System.Xml
 
+<DefaultClassOptions>
+<DC.XafDisplayName("Ημερήσιο Αρχείο")>
 <Persistent("DailyLog")>
 <NavigationItem("Παραγωγή")>
-<DefaultClassOptions()>
 Public Class DailyLog
     Inherits BaseObject
     Implements IEvent

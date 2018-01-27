@@ -6,12 +6,10 @@ Imports DevExpress.Persistent.BaseImpl
 Imports System.Drawing
 Imports DevExpress.ExpressApp.DC
 
-
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
+<DefaultClassOptions>
 <ImageName("BO_Contact")>
 <DefaultProperty("FullName")>
 <Persistent("Employee")>
-<DefaultClassOptions()>
 <XafDisplayName("Προσωπικό")>
 Public Class Employee ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits Person

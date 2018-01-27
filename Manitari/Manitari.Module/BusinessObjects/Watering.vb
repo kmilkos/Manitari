@@ -13,19 +13,18 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
-'<ImageName("BO_Contact")> _
-'<DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")> _
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
-'<Persistent("DatabaseTableName")> _
-<DefaultClassOptions()> _
-Public Class Watering ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+<DefaultClassOptions>
+<DC.XafDisplayName("Ποτίσματα")>
+<NavigationItem("Παραγωγή")>
+<Persistent("Watering")>
+Public Class Watering
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+
         _thedate = Now
     End Sub
 
