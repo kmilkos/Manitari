@@ -1,5 +1,113 @@
-﻿<Application Logo="ExpressAppLogo">
-	<Options Skin="Office 2016 Colorful" UIType="TabbedMDI" FormStyle="Ribbon">
-	  <RibbonOptions RibbonControlStyle="Office2013" />
-	</Options>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="Manitari.Module.Attend">
+      <OwnMembers>
+        <Member Name="EndTime" EditMask="(0?\d|1\d|2[0-3])\:[0-5]\d" DisplayFormat="(0?\d|1\d|2[0-3])\:[0-5]\d" />
+        <Member Name="StartTime" EditMask="(0?\d|1\d|2[0-3])\:[0-5]\d" DisplayFormat="(0?\d|1\d|2[0-3])\:[0-5]\d" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Παραγωγή" Index="0">
+        <Items>
+          <Item Id="Production_ListView" ViewId="Production_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="Compost_ListView" Index="1" />
+          <Item Id="Watering_ListView" ViewId="Watering_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Προσωπικό" Index="1" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="Attend_ListView" ViewId="Attend_ListView" ObjectKey="" Index="1" Caption="Ωρολόγιο" IsNewNode="True" />
+          <Item Id="Department_ListView" ViewId="Department_ListView" ObjectKey="" Index="2" IsNewNode="True" />
+          <Item Id="Position_ListView" ViewId="Position_ListView" ObjectKey="" Index="3" IsNewNode="True" />
+          <Item Id="Skill_ListView" ViewId="Skill_ListView" ObjectKey="" Index="4" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Λειτουργία" Index="2">
+        <Items>
+          <Item Id="Attend_ListView" Removed="True" />
+          <Item Id="Category_ListView" ViewId="Category_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DailyRoomActions_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Πωλήσεις" Index="4">
+        <Items>
+          <Item Id="Customer_ListView" Caption="Πελάτες" Index="0" />
+          <Item Id="Order_ListView" Caption="Παραγγελίες" Index="1" />
+          <Item Id="Payment_ListView" Caption="Πληρωμές" Index="2" />
+          <Item Id="Mushroom_ListView" Caption="Είδη Μανιταριών" Index="3" />
+        </Items>
+      </Item>
+      <Item Id="Αποθήκες" Index="5" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="inventory_ListView" ViewId="inventory_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="inventoryitem_ListView" ViewId="inventoryitem_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Caption="Αναφορές" Index="6">
+        <Items>
+          <Item Id="Analysis_ListView" Index="0" />
+          <Item Id="ReportsV2" Index="1" />
+          <Item Id="KpiDefinition_ListView" ViewId="KpiDefinition_ListView" ObjectKey="" Caption="KPI Definition" Index="2" IsNewNode="True" />
+          <Item Id="KpiScorecard_ListView" ViewId="KpiScorecard_ListView" ObjectKey="" Caption="KPI Scorecard" Index="3" IsNewNode="True" />
+          <Item Id="Dashboards" Index="4" />
+          <Item Id="Workflow Definition" ViewId="XpoWorkflowDefinition_ListView" ObjectKey="" Index="5" IsNewNode="True" />
+          <Item Id="XpoStateMachine_ListView" ViewId="XpoStateMachine_ListView" ObjectKey="" Index="6" IsNewNode="True" />
+          <Item Id="inventory_ListView" Removed="True" />
+          <Item Id="inventoryitem_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Caption="Χρήστες">
+        <Items>
+          <Item Id="Category_ListView" Removed="True" />
+          <Item Id="CompostYard_ListView" Removed="True" />
+          <Item Id="Department_ListView" Removed="True" />
+          <Item Id="Employee_ListView" Removed="True" />
+          <Item Id="Event_ListView" Removed="True" />
+          <Item Id="inventorylistitem_ListView" Removed="True" />
+          <Item Id="MyDetails" Caption="Τα Στοιχεία Μου" />
+          <Item Id="OrderDetail_ListView" Removed="True" />
+          <Item Id="PermissionPolicyRole_ListView" Caption="Ρόλοι" />
+          <Item Id="PermissionPolicyUser_ListView" Caption="Χρήστες" />
+          <Item Id="Position_ListView" Removed="True" />
+          <Item Id="Skill_ListView" Removed="True" />
+          <Item Id="Watering_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Caption="Αναφορές" Removed="True">
+        <Items>
+          <Item Id="KpiDefinition_ListView" Removed="True" />
+          <Item Id="KpiScorecard_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="State Machine" Removed="True">
+        <Items>
+          <Item Id="XpoStateMachine_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Workflow" Removed="True">
+        <Items>
+          <Item Id="Workflow Definition" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Άλλα" Removed="True">
+        <Items>
+          <Item Id="Production_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options Skin="Office 2016 Colorful" UIType="TabbedMDI" FormStyle="Ribbon">
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>

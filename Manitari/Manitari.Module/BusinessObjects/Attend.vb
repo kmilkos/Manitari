@@ -50,22 +50,22 @@ Public Class Attend ' Specify more UI options using a declarative approach (http
         End Set
     End Property
 
-    Private _startTime As DateTime
-    Property StartTime As DateTime
+    Private _startTime As TimeSpan
+    Property StartTime As TimeSpan
         Get
             Return _startTime
         End Get
-        Set(ByVal Value As DateTime)
-            SetPropertyValue(Nameof(StartTime), _startTime, Value)
+        Set(ByVal Value As TimeSpan)
+            SetPropertyValue(NameOf(StartTime), _startTime, Value)
         End Set
     End Property
 
-    Private _endtime As DateTime
-    Property EndTime As DateTime
+    Private _endtime As TimeSpan
+    Property EndTime As TimeSpan
         Get
             Return _endtime
         End Get
-        Set(ByVal Value As DateTime)
+        Set(ByVal Value As TimeSpan)
             SetPropertyValue(NameOf(EndTime), _endtime, Value)
         End Set
     End Property

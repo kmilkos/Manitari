@@ -17,6 +17,7 @@ Partial Public Class ManitariWindowsFormsApplication
 		DevExpress.Persistent.Base.PasswordCryptographer.EnableRfc2898 = True
         DevExpress.Persistent.Base.PasswordCryptographer.SupportLegacySha512 = False
         DevExpress.ExpressApp.ReportsV2.Win.WinReportServiceController.UseNewWizard = True
+
     End Sub
 	Private Sub InitializeDefaults()
         LinkNewObjectToParentImmediately = False

@@ -13,20 +13,17 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
-'<ImageName("BO_Contact")>
-'<DefaultProperty("FullName")>
-<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("OrderDetail")>
-<DefaultClassOptions()> _
-Public Class OrderDetail ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+<DefaultClassOptions()>
+Public Class OrderDetail
+    Inherits BaseObject
 
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+
     End Sub
 
     Private _order As Order
@@ -47,7 +44,7 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
             Return _mushroom
         End Get
         Set(ByVal Value As Mushroom)
-            SetPropertyValue(Nameof(Mushroom), _mushroom, Value)
+            SetPropertyValue(NameOf(Mushroom), _mushroom, Value)
         End Set
     End Property
 
@@ -62,7 +59,7 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
         End Set
     End Property
 
-    Private _priceperkilo As Single
+    Private _priceperkilo As Single 'Price Per Unit
     Property Priceperkilo As Single
         Get
             Return _priceperkilo
@@ -78,10 +75,9 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
             Return _discount
         End Get
         Set(ByVal Value As Single)
-            SetPropertyValue(Nameof(Discount), _discount, Value)
+            SetPropertyValue(NameOf(Discount), _discount, Value)
         End Set
     End Property
-
 
     <PersistentAlias("(Priceperkilo * Quantity)-Discount")>
     Public ReadOnly Property Linetotal() As Single

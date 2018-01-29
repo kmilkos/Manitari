@@ -27,9 +27,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        'CompostCode = String.Format("K00.{0}.000.{1}", GetISOWeekOfYear(Now.Date), Right(Now.Year, 2))
-        'CompostCode = "K00.00.000.00"
+
     End Sub
 
     Private _compostcode As String

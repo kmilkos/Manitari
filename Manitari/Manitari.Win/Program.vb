@@ -27,6 +27,8 @@ Public Class Program
         Dim _application As ManitariWindowsFormsApplication = New ManitariWindowsFormsApplication()
         ' Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
         '_application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png")
+        _application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen()
+
         SecurityAdapterHelper.Enable()
         If (Not ConfigurationManager.ConnectionStrings.Item("ConnectionString") Is Nothing) Then
             _application.ConnectionString = ConfigurationManager.ConnectionStrings.Item("ConnectionString").ConnectionString
