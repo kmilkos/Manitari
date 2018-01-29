@@ -259,7 +259,6 @@
     <Compile Include="BusinessObjects\CompostYard.vb" />
     <Compile Include="BusinessObjects\Customer.vb" />
     <Compile Include="BusinessObjects\DailyLog.vb" />
-    <Compile Include="BusinessObjects\DailyRoomActions.vb" />
     <Compile Include="BusinessObjects\Department.vb" />
     <Compile Include="BusinessObjects\Employee.vb" />
     <Compile Include="BusinessObjects\FarmAction.vb" />
@@ -274,6 +273,7 @@
     <Compile Include="BusinessObjects\Production.vb" />
     <Compile Include="BusinessObjects\Skill.vb" />
     <Compile Include="BusinessObjects\TaskV3.vb" />
+    <Compile Include="BusinessObjects\Warehouse.vb" />
     <Compile Include="BusinessObjects\Watering.vb" />
     <Compile Include="DatabaseUpdate\Updater.vb" />
     <Compile Include="Module.Designer.vb">
@@ -299,6 +299,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Module.resx">
+      <DependentUpon>Module.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

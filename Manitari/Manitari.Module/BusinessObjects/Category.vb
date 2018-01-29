@@ -13,11 +13,12 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
+<DefaultClassOptions>
+<XafDisplayName("Κατηγορία")>
+<NavigationItem("Λειτουργία")>
 <DefaultProperty("Caption")>
 <ImageName("BO_Contact")>
 <Persistent("Category")>
-<DefaultClassOptions()>
 Public Class Category ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
     Public Sub New(ByVal session As Session)
@@ -48,10 +49,10 @@ Public Class Category ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
-    <DevExpress.Xpo.AssociationAttribute("TaskV3s-Category")>
-    Public ReadOnly Property TaskV3s As XPCollection(Of TaskV3)
+    <DevExpress.Xpo.AssociationAttribute("Tasks-Category")>
+    Public ReadOnly Property Tasks As XPCollection(Of Task)
         Get
-            Return GetCollection(Of TaskV3)("TaskV3s")
+            Return GetCollection(Of Task)("Tasks")
         End Get
     End Property
 

@@ -13,18 +13,18 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
+<DefaultClassOptions>
+<XafDisplayName("Αντικείμενα Απογραφής")>
+<NavigationItem("Αποθήκες")>
 <DefaultProperty("ItemName")>
 <Persistent("InventoryItems")>
-<NavigationItem("Reports")>
-<DefaultClassOptions()>
-Public Class inventoryitem ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+Public Class inventoryitem
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
     Private _itemName As String

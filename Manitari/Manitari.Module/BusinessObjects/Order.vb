@@ -13,14 +13,15 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
+<DefaultClassOptions>
+<XafDisplayName("Παραγγελία")>
 <ImageName("BO_Contact")>
 <DefaultProperty("TheDate")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("Order")>
 <NavigationItem("Πωλήσεις")>
-<DefaultClassOptions()> _
-Public Class Order ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+Public Class Order
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
@@ -68,7 +69,7 @@ Public Class Order ' Specify more UI options using a declarative approach (https
             SetPropertyValue(NameOf(PaperID), _paperID, Value)
         End Set
     End Property
-    
+
 
     <Association("Order-OrderDetails")>
     Public ReadOnly Property OrderDetails() As XPCollection(Of OrderDetail)

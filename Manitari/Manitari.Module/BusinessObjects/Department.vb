@@ -4,18 +4,19 @@ Imports DevExpress.ExpressApp.DC
 Imports DevExpress.Persistent.Base
 Imports DevExpress.Persistent.BaseImpl
 
+<DefaultClassOptions()>
 <DefaultProperty("Title")>
 <Persistent("Department")>
-<DefaultClassOptions()>
 <XafDisplayName("Τμήματα")>
-Public Class Department ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+<NavigationItem("Λειτουργία")>
+Public Class Department
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+
     End Sub
 
     Private _title As String

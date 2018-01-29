@@ -13,17 +13,20 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
+<DefaultClassOptions>
+<DC.XafDisplayName("Λεπτομέρειες Παραγγελίας")>
+<NavigationItem("Πωλήσεις")>
+<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("OrderDetail")>
-<DefaultClassOptions()>
-Public Class OrderDetail
-    Inherits BaseObject
+Public Class OrderDetail ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
+    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
 
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-
+        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
     Private _order As Order
@@ -44,7 +47,7 @@ Public Class OrderDetail
             Return _mushroom
         End Get
         Set(ByVal Value As Mushroom)
-            SetPropertyValue(NameOf(Mushroom), _mushroom, Value)
+            SetPropertyValue(Nameof(Mushroom), _mushroom, Value)
         End Set
     End Property
 
@@ -59,7 +62,7 @@ Public Class OrderDetail
         End Set
     End Property
 
-    Private _priceperkilo As Single 'Price Per Unit
+    Private _priceperkilo As Single
     Property Priceperkilo As Single
         Get
             Return _priceperkilo
@@ -75,9 +78,10 @@ Public Class OrderDetail
             Return _discount
         End Get
         Set(ByVal Value As Single)
-            SetPropertyValue(NameOf(Discount), _discount, Value)
+            SetPropertyValue(Nameof(Discount), _discount, Value)
         End Set
     End Property
+
 
     <PersistentAlias("(Priceperkilo * Quantity)-Discount")>
     Public ReadOnly Property Linetotal() As Single

@@ -12,17 +12,16 @@ Imports System.Collections.Generic
 Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
-
 Imports System.Xml
 Imports DevExpress.Xpo.Metadata
 Imports DevExpress.Persistent.Base.General
 
+<DefaultClassOptions>
+<XafDisplayName("Εκκρέμότητα")>
 <ImageName("BO_Task")>
-<Persistent("TaskV3")>
-<XafDisplayName("Εργασίες v3")>
+<Persistent("Task")>
 <NavigationItem("Λειτουργία")>
-<DefaultClassOptions()>
-Public Class TaskV3
+Public Class Task
     Inherits BaseObject
     Implements IComparable, IEvent
 
@@ -174,7 +173,7 @@ Public Class TaskV3
 #End Region
 
     Private _category As Category
-    <DevExpress.Xpo.AssociationAttribute("TaskV3s-Category")>
+    <DevExpress.Xpo.AssociationAttribute("Tasks-Category")>
     Public Property Category As Category
         Get
             Return _category

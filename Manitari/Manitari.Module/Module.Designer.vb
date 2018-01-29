@@ -25,16 +25,17 @@ Partial Public Class ManitariModule
     ''' the contents of this method with the code editor.
     ''' </summary>
     Private Sub InitializeComponent()
-			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.ModelDifference))
-			Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.ModelDifferenceAspect))
+        '
+        'ManitariModule
+        '
+        Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.ModelDifference))
+        Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.ModelDifferenceAspect))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.BaseObject))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.AuditedObjectWeakReference))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.FileData))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.FileAttachmentBase))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Analysis))
-        Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Event))
-        Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Resource))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.HCategory))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.SystemModule.SystemModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.AuditTrail.AuditTrailModule))
@@ -55,6 +56,7 @@ Partial Public Class ManitariModule
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Validation.ValidationModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Workflow.WorkflowModule))
+
     End Sub
 
 #End Region

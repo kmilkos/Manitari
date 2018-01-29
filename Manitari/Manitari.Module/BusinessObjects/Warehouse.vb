@@ -13,47 +13,40 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
-<DefaultClassOptions>
-<XafDisplayName("Πληρωμές Πελατών")>
-<ImageName("BO_Contact")>
-<DefaultProperty("TheDate")>
+<DefaultClassOptions()>
+<XafDisplayName("Αποθήκη")>
+<NavigationItem("Αποθήκες")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
-<Persistent("Payment")>
-<NavigationItem("Πωλήσεις")>
-Public Class Payment ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
+<Persistent("Warehouse")>
+Public Class Warehouse ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        _theDate = Now
+        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
-    Private _theDate As DateTime
-    Property TheDate As DateTime
+    Private _item As inventoryitem
+    Property Item As inventoryitem
         Get
-            Return _theDate
+            Return _item
         End Get
-        Set(ByVal Value As DateTime)
-            SetPropertyValue(Nameof(TheDate), _theDate, Value)
+        Set(ByVal Value As inventoryitem)
+            SetPropertyValue(Nameof(Item), _item, Value)
         End Set
     End Property
 
-    Private _ammount As Single
-    Property Ammount As Single
+    Private _amount As Single
+    Property Amount As Single
         Get
-            Return _ammount
+            Return _amount
         End Get
         Set(ByVal Value As Single)
-            SetPropertyValue(Nameof(Ammount), _ammount, Value)
+            SetPropertyValue(Nameof(Amount), _amount, Value)
         End Set
     End Property
 
-    <Association("Payment-Orders")>
-    Public ReadOnly Property Orders() As XPCollection(Of Order)
-        Get
-            Return GetCollection(Of Order)("Orders")
-        End Get
-    End Property
+
 End Class

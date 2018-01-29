@@ -14,12 +14,11 @@ Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 Imports System.Globalization
 
-'<ImageName("BO_Contact")> _
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
+<DefaultClassOptions>
+<XafDisplayName("Κομπόστα")>
 <DefaultProperty("CompostCode")>
 <Persistent("Compost")>
 <NavigationItem("Παραγωγή")>
-<DefaultClassOptions()>
 Public Class Compost ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
     Public Sub New(ByVal session As Session)
