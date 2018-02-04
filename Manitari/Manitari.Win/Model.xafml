@@ -1,16 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="Manitari.Module.Compost" ImageName="compost" />
+    <Class Name="Manitari.Module.Customer" ImageName="user" />
+    <Class Name="Manitari.Module.Production" ImageName="production" />
+  </BOModel>
   <NavigationItems RootGroupsStyle="OutlookAnimated" StartupNavigationItem="Production_ListView">
     <Items>
-      <Item Id="Παραγωγή" Index="0" />
-      <Item Id="Λειτουργία" Index="1" />
-      <Item Id="Αποθήκες" Index="2" />
-      <Item Id="Προσωπικό" Index="3">
+      <Item Id="Παραγωγή" Index="0">
         <Items>
-          <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Compost_ListView" Index="0" />
+          <Item Id="Production_ListView" Index="2" />
+          <Item Id="Watering_ListView" Index="3" />
+          <Item Id="DailyLog_ListView" Index="4" />
+          <Item Id="FarmAction_ListView" Index="5" />
+          <Item Id="CompostYard" ViewId="CompostYard_ListView" Caption="Κομποστάδικo" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Πωλήσεις" Index="4" />
+      <Item Id="Λειτουργία" Index="1">
+        <Items>
+          <Item Id="CompostYard_ListView" ViewId="CompostYard_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Αποθήκες" Index="2">
+        <Items>
+          <Item Id="Warehouse_ListView" Index="0" />
+          <Item Id="inventory_ListView" Index="1" />
+          <Item Id="inventoryitem_ListView" Index="2" />
+        </Items>
+      </Item>
+      <Item Id="Προσωπικό" Index="3">
+        <Items>
+          <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Πωλήσεις" Index="4">
+        <Items>
+          <Item Id="OrderDetail_ListView" Removed="True" />
+        </Items>
+      </Item>
       <Item Id="Reports" Caption="Αναφορές" Index="5">
         <Items>
           <Item Id="KpiDefinition_ListView" ViewId="KpiDefinition_ListView" Caption="KPI  Definition" ObjectKey="" IsNewNode="True" />
@@ -21,7 +49,9 @@
       </Item>
       <Item Id="Default" Index="6">
         <Items>
+          <Item Id="CompostYard_ListView" Removed="True" />
           <Item Id="Employee_ListView" Removed="True" />
+          <Item Id="inventorylistitem_ListView" Removed="True" />
         </Items>
       </Item>
       <Item Id="KPI" Removed="True">
@@ -476,7 +506,6 @@
                 <LayoutItem Id="Quantity" ViewItem="Quantity" Index="0" RelativeSize="5.6939501779359434" IsNewNode="True" />
                 <LayoutItem Id="WaterAmmount" Index="1" RelativeSize="4.2704626334519569" />
                 <LayoutItem Id="Notes" Index="2" RelativeSize="4.2704626334519569" />
-                <LayoutItem Id="StartTime" Index="2" RelativeSize="4.2704626334519569" Removed="True" />
                 <LayoutGroup Id="Auto04c169d2-fbb0-4dc6-acc5-5bbd82c9d9ed" ShowCaption="False" Caption="" Direction="Horizontal" Index="3" RelativeSize="85.765124555160142" IsNewNode="True">
                   <LayoutItem Id="Item1" Index="0" RelativeSize="59.859154929577464" IsNewNode="True" />
                   <LayoutItem Id="LiterTotal" ViewItem="LiterTotal" Index="1" RelativeSize="40.140845070422536" IsNewNode="True" />

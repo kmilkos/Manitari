@@ -27,11 +27,6 @@ Public Class Production ' Specify more UI options using a declarative approach (
         MyBase.AfterConstruction()
         ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         TheDate = Today
-
-        CompostAction = 0
-        CompostSource = 0
-        CompostTarget = 0
-
     End Sub
 
     Private _theDate As DateTime
@@ -106,45 +101,6 @@ Public Class Production ' Specify more UI options using a declarative approach (
             SetPropertyValue("Quality", _quality, value)
         End Set
     End Property
-
-
-#Region "κομποστάδικο"
-    Private _compostAction As CompostActionEnum
-    <Appearance("CompostActionVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Κομποστάδικο'", Context:="DetailView")>
-    Public Property CompostAction As CompostActionEnum
-        Get
-            Return _compostAction
-
-        End Get
-        Set(value As CompostActionEnum)
-            SetPropertyValue("CompostAction", _compostAction, value)
-        End Set
-    End Property
-
-    Private _compostsource As CompostPlacesEnum
-    <Appearance("CompostSourceVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Κομποστάδικο'", Context:="DetailView")>
-    Public Property CompostSource As CompostPlacesEnum
-        Get
-            Return _compostsource
-
-        End Get
-        Set(value As CompostPlacesEnum)
-            SetPropertyValue("CompostSource", _compostsource, value)
-        End Set
-    End Property
-
-    Private _composttarget As CompostPlacesEnum
-    <Appearance("CompostTargetVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Κομποστάδικο'", Context:="DetailView")>
-    Public Property CompostTarget As CompostPlacesEnum
-        Get
-            Return _composttarget
-
-        End Get
-        Set(value As CompostPlacesEnum)
-            SetPropertyValue("CompostTarget", _composttarget, value)
-        End Set
-    End Property
-#End Region
 
 #Region "Υπόστρωμα"
     Private _compostcode As String

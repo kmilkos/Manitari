@@ -1,3 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <BOModel>
+    <Class Name="Manitari.Module.Employee">
+      <OwnMembers>
+        <Member Name="Manager" DataSourceCriteria="" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems NavigationStyle="TreeList">
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="AboutInfo" Removed="True" />
+          <Item Id="Attend_ListView" ViewId="Attend_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Compost_ListView" ViewId="Compost_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="CompostYard_ListView" Caption="Κομποστάδικο" />
+          <Item Id="inventory_ListView" ViewId="inventory_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="inventorylistitem_ListView" Removed="True" />
+          <Item Id="MyDetails" Removed="True" />
+          <Item Id="PermissionPolicyRole_ListView" Removed="True" />
+          <Item Id="PermissionPolicyUser_ListView" Removed="True" />
+          <Item Id="Production_ListView" ViewId="Production_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Task_ListView" ViewId="Task_ListView" ObjectKey="" Caption="Εκκρέμότητες" IsNewNode="True" />
+          <Item Id="Warehouse_ListView" ViewId="Warehouse_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Watering_ListView" ViewId="Watering_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI">
+        <Items>
+          <Item Id="AboutInfo" ViewId="AboutInfo_DetailView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Αποθήκες">
+        <Items>
+          <Item Id="inventory_ListView" Removed="True" />
+          <Item Id="MyDetails" ViewId="PermissionPolicyUser_DetailView" ObjectKey="@CurrentUserID" Caption="My Details" ImageName="BO_MyDetails" IsNewNode="True" />
+          <Item Id="PermissionPolicyRole_ListView" ViewId="PermissionPolicyRole_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="PermissionPolicyUser_ListView" ViewId="PermissionPolicyUser_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Warehouse_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Λειτουργία">
+        <Items>
+          <Item Id="Task_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Παραγωγή">
+        <Items>
+          <Item Id="Compost_ListView" Removed="True" />
+          <Item Id="DailyLog_ListView" Removed="True" />
+          <Item Id="Production_ListView" Removed="True" />
+          <Item Id="Watering_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Προσωπικό">
+        <Items>
+          <Item Id="Attend_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Category_ListView" DataAccessMode="Client" ImageName="Action_CloneMerge_Clone_Object" />
+  </Views>
 </Application>

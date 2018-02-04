@@ -354,6 +354,18 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Images\Manitari.Module.Images.compost.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.compost_32x32.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.compost_48x48.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.production.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.production_32x32.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.production_48x48.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.structure.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.structure_32x32.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.structure_48x48.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.user.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.user_32x32.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.user_48x48.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />

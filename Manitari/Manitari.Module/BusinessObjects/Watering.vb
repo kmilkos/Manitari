@@ -78,17 +78,8 @@ Public Class Watering
             SetPropertyValue("WaterAmmount", _waterammount, value)
         End Set
     End Property
-    Private _starttime As DateTime
-    Public Property StartTime As DateTime
-        Get
-            Return _starttime
-        End Get
-        Set(value As DateTime)
-            SetPropertyValue("StartTime", _starttime, value)
-        End Set
-    End Property
 
-    <Size(4096)>
+    <Size(SizeAttribute.Unlimited)>
     Private _notes As String
     Public Property Notes As String
         Get

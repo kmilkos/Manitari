@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Watering_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Watering">
+              <LayoutGroup Id="Watering_col1">
+                <LayoutGroup Id="Autob4b576b8-8c49-456d-9adf-1e29c474fa6a">
+                  <LayoutItem Id="StartTime" ViewItem="StartTime" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Watering_col2">
+                <LayoutItem Id="StartTime" Index="2" RelativeSize="4.2704626334519569" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
