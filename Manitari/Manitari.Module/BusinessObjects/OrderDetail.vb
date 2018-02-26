@@ -42,6 +42,7 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
     End Property
 
     Private _mushroom As Mushroom
+    <XafDisplayName("Μανιτάρι")>
     Property Mushroom As Mushroom
         Get
             Return _mushroom
@@ -51,8 +52,8 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
         End Set
     End Property
 
-
     Private _quantity As Single
+    <XafDisplayName("Ποσότητα")>
     Property Quantity As Single
         Get
             Return _quantity
@@ -63,6 +64,7 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
     End Property
 
     Private _priceperkilo As Single
+    <XafDisplayName("Τιμή Κιλού")>
     Property Priceperkilo As Single
         Get
             Return _priceperkilo
@@ -73,6 +75,7 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
     End Property
 
     Private _discount As Single
+    <XafDisplayName("Εκπτωση")>
     Property Discount As Single
         Get
             Return _discount
@@ -84,6 +87,7 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
 
 
     <PersistentAlias("(Priceperkilo * Quantity)-Discount")>
+    <XafDisplayName("Σύνολο Τιμή")>
     Public ReadOnly Property Linetotal() As Single
         Get
             Dim tempObject As Object

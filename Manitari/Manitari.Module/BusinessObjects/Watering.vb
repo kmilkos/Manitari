@@ -29,6 +29,7 @@ Public Class Watering
     End Sub
 
     Private _thedate As DateTime
+    <XafDisplayName("Ημερομηνία")>
     Public Property TheDate As DateTime
         Get
             Return _thedate
@@ -40,6 +41,7 @@ Public Class Watering
     End Property
 
     Private _compost As Compost
+    <XafDisplayName("Κομπόστα")>
     <AssociationAttribute("Compost-Waterings")>
     Public Property Compost() As Compost
         Get
@@ -51,6 +53,7 @@ Public Class Watering
     End Property
 
     Private _room As String
+    <XafDisplayName("Θάλαμος")>
     Public Property Room As String
         Get
             Return _room
@@ -60,6 +63,7 @@ Public Class Watering
         End Set
     End Property
     Private _quantity As Single
+    <XafDisplayName("Ποσότητα")>
     Public Property Quantity As Single
         Get
             Return _quantity
@@ -69,6 +73,7 @@ Public Class Watering
         End Set
     End Property
     Private _waterammount As Single
+    <XafDisplayName("Λίτρα")>
     Public Property WaterAmmount As Single
         Get
             Return _waterammount
@@ -81,6 +86,7 @@ Public Class Watering
 
     <Size(SizeAttribute.Unlimited)>
     Private _notes As String
+    <XafDisplayName("Σημειώσεις")>
     Public Property Notes As String
         Get
             Return _notes
@@ -91,6 +97,7 @@ Public Class Watering
     End Property
 
     <PersistentAlias("(WaterAmmount * Quantity)")>
+    <XafDisplayName("Συνολικά Λίτρα")>
     Public ReadOnly Property LiterTotal() As Single
         Get
             Dim tempObject As Object

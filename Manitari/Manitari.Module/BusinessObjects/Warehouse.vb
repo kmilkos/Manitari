@@ -29,6 +29,7 @@ Public Class Warehouse ' Specify more UI options using a declarative approach (h
     End Sub
 
     Private _item As inventoryitem
+    <XafDisplayName("Αντικείμενο")>
     Property Item As inventoryitem
         Get
             Return _item
@@ -39,14 +40,13 @@ Public Class Warehouse ' Specify more UI options using a declarative approach (h
     End Property
 
     Private _amount As Single
+    <XafDisplayName("Ποσότητα")>
     Property Amount As Single
         Get
             Return _amount
         End Get
         Set(ByVal Value As Single)
-            SetPropertyValue(Nameof(Amount), _amount, Value)
+            SetPropertyValue(NameOf(Amount), _amount, Value)
         End Set
     End Property
-
-
 End Class

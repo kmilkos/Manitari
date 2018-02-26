@@ -29,6 +29,7 @@ Public Class inventory ' Specify more UI options using a declarative approach (h
     End Sub
 
     Private _theDate As DateTime
+    <XafDisplayName("Ημερομηνία")>
     Property TheDate As DateTime
         Get
             Return _theDate
@@ -39,12 +40,14 @@ Public Class inventory ' Specify more UI options using a declarative approach (h
     End Property
 
     <AssociationAttribute("inventory-inventorylistitems")>
+    <XafDisplayName("Περιεχόμενα")>
     Public ReadOnly Property inventorylistitems() As XPCollection(Of inventorylistitem)
         Get
             Return GetCollection(Of inventorylistitem)("inventorylistitems")
         End Get
     End Property
 
+    <XafDisplayName("Περιγραφή")>
     Public ReadOnly Property Display As String
         Get
             Return String.Format("{0} ({1})", TheDate.ToShortDateString, inventorylistitems.Count.ToString)

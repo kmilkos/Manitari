@@ -8,6 +8,7 @@ Imports DevExpress.Persistent.Base
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 Imports DevExpress.Persistent.Base.General
+Imports DevExpress.ExpressApp.DC
 
 <DefaultClassOptions>
 <Persistent("FarmAction")>
@@ -26,6 +27,7 @@ Public Class FarmAction
 
     Private _name As String
     <Size(SizeAttribute.DefaultStringMappingFieldSize)>
+    <XafDisplayName("Τίτλος")>
     Property Name As String
         Get
             Return _name
@@ -37,6 +39,7 @@ Public Class FarmAction
 
     Private _category As Category
     <DataSourceCriteria("Department.Title = 'Παραγωγή'")>
+    <XafDisplayName("Κατηγορία")>
     Property Category As Category
         Get
             Return _category

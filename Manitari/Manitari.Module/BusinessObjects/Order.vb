@@ -39,6 +39,7 @@ Public Class Order
     End Sub
 
     Private _theDate As DateTime
+    <XafDisplayName("Ημερομηνία")>
     Property TheDate As DateTime
         Get
             Return _theDate
@@ -50,6 +51,7 @@ Public Class Order
 
     Private _customer As Customer
     <Association("Customer-Orders")>
+    <XafDisplayName("Πελάτης")>
     Property Customer() As Customer
         Get
             Return _customer
@@ -61,6 +63,7 @@ Public Class Order
 
     Private _paperID As String
     <Size(5)>
+    <XafDisplayName("Αρ. Τιμολογίου")>
     Property PaperID As String
         Get
             Return _paperID
@@ -70,8 +73,8 @@ Public Class Order
         End Set
     End Property
 
-
     <Association("Order-OrderDetails")>
+    <XafDisplayName("Λεπτομέρειες")>
     Public ReadOnly Property OrderDetails() As XPCollection(Of OrderDetail)
         Get
             Return GetCollection(Of OrderDetail)("OrderDetails")
@@ -81,6 +84,7 @@ Public Class Order
     'Πληρώθηκε απο πληρωμή ##link to another table##
     Private _payment As Payment
     <Association("Payment-Orders")>
+    <XafDisplayName("Πληρωμές")>
     Property Payment() As Payment
         Get
             Return _payment
@@ -91,6 +95,7 @@ Public Class Order
     End Property
 
     Private fOrdersTotal As Nullable(Of Decimal) = Nothing
+    <XafDisplayName("Αρ. Παραγγελιών")>
     Public ReadOnly Property OrdersTotal() As Nullable(Of Decimal)
         Get
             If (Not IsLoading) AndAlso (Not IsSaving) AndAlso Not fOrdersTotal.HasValue Then

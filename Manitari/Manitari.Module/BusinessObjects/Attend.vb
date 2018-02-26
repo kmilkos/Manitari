@@ -14,18 +14,18 @@ Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
+<ImageName("Calender")>
 <XafDisplayName("Ωρολόγιο")>
 <NavigationItem("Προσωπικό")>
 <Persistent("Attend")>
-Public Class Attend ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+Public Class Attend
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
         _theDate = Now
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
     Private _employee As Employee
@@ -34,7 +34,7 @@ Public Class Attend ' Specify more UI options using a declarative approach (http
             Return _employee
         End Get
         Set(ByVal Value As Employee)
-            SetPropertyValue(Nameof(Employee), _employee, Value)
+            SetPropertyValue(NameOf(Employee), _employee, Value)
         End Set
     End Property
 
@@ -44,7 +44,7 @@ Public Class Attend ' Specify more UI options using a declarative approach (http
             Return _theDate
         End Get
         Set(ByVal Value As DateTime)
-            SetPropertyValue(Nameof(TheDate), _theDate, Value)
+            SetPropertyValue(NameOf(TheDate), _theDate, Value)
         End Set
     End Property
 

@@ -30,6 +30,7 @@ Public Class inventorylistitem ' Specify more UI options using a declarative app
     Private _inventory As inventory
     <VisibleInDetailView(False), VisibleInListView(False)>
     <AssociationAttribute("inventory-inventorylistitems")>
+    <XafDisplayName("Απογραφή")>
     Public Property inventory() As inventory
         Get
             Return _inventory
@@ -40,6 +41,7 @@ Public Class inventorylistitem ' Specify more UI options using a declarative app
     End Property
 
     Private _item As inventoryitem
+    <XafDisplayName("Αντικείμενο")>
     Property Item As inventoryitem
         Get
             Return _item
@@ -50,6 +52,7 @@ Public Class inventorylistitem ' Specify more UI options using a declarative app
     End Property
 
     Private _count As Single
+    <XafDisplayName("Ποσότητα")>
     Property Count As Single
         Get
             Return _count
@@ -61,8 +64,6 @@ Public Class inventorylistitem ' Specify more UI options using a declarative app
 
     Public ReadOnly Property Display As String
         Get
-            'Return Item.ItemName + "(" + Count * Item.ItemConverter + ")"
-            'Return String.Format("{0} {1}", Item.ItemName, Count * Item.ItemConverter)
             Return ObjectFormatter.Format("{Item} ({Count})", This, EmptyEntriesMode.RemoveDelimiterWhenEntryIsEmpty)
         End Get
     End Property

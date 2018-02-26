@@ -14,7 +14,6 @@ Imports DevExpress.ExpressApp.DC
 Public Class Production ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
 
-
     Private _productionRoomNumber As Int32
     Private _notes As String
     Private _height As Single
@@ -30,6 +29,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
     End Sub
 
     Private _theDate As DateTime
+    <XafDisplayName("Ημερομηνία")>
     Public Property TheDate As DateTime
         Get
             Return _theDate
@@ -39,17 +39,9 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    Private _productionaction As ProductionActionEnum
-    Public Property ProductionAction As ProductionActionEnum
-        Get
-            Return _productionaction
-        End Get
-        Set(value As ProductionActionEnum)
-            SetPropertyValue("ProductionAction", _productionaction, value)
-        End Set
-    End Property
-
     Private _farmAction As FarmAction
+    <XafDisplayName("Εργασία")>
+    <DataSourceCriteria("Category.Caption = 'Θάλαμος'")>
     Property FarmAction As FarmAction
         Get
             Return _farmAction
@@ -60,6 +52,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
     End Property
 
     <RuleRange("", DefaultContexts.Save, 0, 18)>
+    <XafDisplayName("Θάλαμος")>
     Public Property ProductionRoomNumber As Int32
         Get
             Return _productionRoomNumber
@@ -71,6 +64,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
     End Property
 
     <Size(SizeAttribute.Unlimited)>
+    <XafDisplayName("Σημειώσεις")>
     Public Property Notes As String
         Get
             Return _notes
@@ -80,7 +74,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <AppearanceAttribute("HeightVisibility", Context:="DetailView", Criteria:="ProductionAction == 'Άδειασμα'", Visibility:=ViewItemVisibility.Hide)>
+    <AppearanceAttribute("HeightVisibility", Context:="DetailView", Criteria:="FarmAction.Name == 'Άδειασμα'", Visibility:=ViewItemVisibility.Hide)>
+    <XafDisplayName("Ύψος")>
     Public Property Height As Single
         Get
             Return _height
@@ -91,7 +86,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <AppearanceAttribute("QualityVisibility", Context:="DetailView", Criteria:="ProductionAction = 'Άδειασμα'", Visibility:=ViewItemVisibility.Hide)>
+    <AppearanceAttribute("QualityVisibility", Context:="DetailView", Criteria:="FarmAction.Name = 'Άδειασμα'", Visibility:=ViewItemVisibility.Hide)>
+    <XafDisplayName("Ποιότητα")>
     Public Property Quality As String
         Get
             Return _quality
@@ -111,6 +107,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
 
     Private _compost As Compost
     <AssociationAttribute("Compost-Productions")>
+    <XafDisplayName("Κομπόστα")>
     Public Property Compost() As Compost
         Get
             Return _compost
@@ -120,7 +117,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SeedWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SeedWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <XafDisplayName("Λευκός Σπόρος")>
     Public Property SeedWhite As String
         Get
             Return _seedWhite
@@ -130,7 +128,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SquareMeterWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SquareMeterWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <XafDisplayName("Λευκό m2")>
     Public Property SquareMeterWhite As Single
         Get
             Return _squaremeterWhite
@@ -140,7 +139,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SeedPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SeedPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <XafDisplayName("Καφέ Σπόρος")>
     Public Property SeedPortobello As String
         Get
             Return _seedPortobello
@@ -150,7 +150,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SquareMeterPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SquareMeterPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <XafDisplayName("Καφέ m2")>
     Public Property SquareMeterPortobello As Single
         Get
             Return _squaremeterPortobello
@@ -163,7 +164,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
 
 #Region "Τύρφη"
     Private _cubicmeters As Single
-    <Appearance("CubicMeters", Visibility:=ViewItemVisibility.Hide, Criteria:="ProductionAction <> 'Τύρφη'", Context:="DetailView")>
+    <Appearance("CubicMeters", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Τύρφη'", Context:="DetailView")>
+    <XafDisplayName("Κυβ. Μέτρα")>
     Public Property CubicMeters As Single
         Get
             Return _cubicmeters
@@ -176,7 +178,8 @@ Public Class Production ' Specify more UI options using a declarative approach (
 
 #Region "Άδειασμα"
     Private _truckster As String
-    <AppearanceAttribute("TrucksterVisibility", Context:="DetailView", Criteria:="ProductionAction <> 'Άδειασμα'", Visibility:=ViewItemVisibility.Hide)>
+    <AppearanceAttribute("TrucksterVisibility", Context:="DetailView", Criteria:="FarmAction.Name <> 'Άδειασμα'", Visibility:=ViewItemVisibility.Hide)>
+    <XafDisplayName("Φορτηγό")>
     Public Property Truckster As String
         Get
             Return _truckster

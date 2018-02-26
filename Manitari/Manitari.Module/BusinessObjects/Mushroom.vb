@@ -29,6 +29,7 @@ Public Class Mushroom ' Specify more UI options using a declarative approach (ht
     End Sub
 
     Private _mushroomType As MushroomTypeEnum
+    <XafDisplayName("Είδος Μανιταριού")>
     Property MushroomType As MushroomTypeEnum
         Get
             Return _mushroomType
@@ -39,6 +40,7 @@ Public Class Mushroom ' Specify more UI options using a declarative approach (ht
     End Property
 
     Private _mushroomSize As MushroomSizeEnum
+    <XafDisplayName("Μέγεθος")>
     Property MushroomSize As MushroomSizeEnum
         Get
             Return _mushroomSize
@@ -49,6 +51,7 @@ Public Class Mushroom ' Specify more UI options using a declarative approach (ht
     End Property
 
     Private _wrapping As MushroomWrapping
+    <XafDisplayName("Συσκευασία")>
     Property Wrapping As MushroomWrapping
         Get
             Return _wrapping
@@ -57,9 +60,9 @@ Public Class Mushroom ' Specify more UI options using a declarative approach (ht
             SetPropertyValue(Nameof(Wrapping), _wrapping, Value)
         End Set
     End Property
-    
 
     Private _priceBuying As Decimal
+    <XafDisplayName("Τιμή Αγοράς")>
     Property PriceBuying As Decimal
         Get
             Return _priceBuying
@@ -70,6 +73,7 @@ Public Class Mushroom ' Specify more UI options using a declarative approach (ht
     End Property
 
     Private _priceSelling As Decimal
+    <XafDisplayName("Τιμή Πώλησης")>
     Property PriceSelling As Decimal
         Get
             Return _priceSelling
@@ -79,6 +83,7 @@ Public Class Mushroom ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Όνομα")>
     Public ReadOnly Property FullName As String
         Get
             Return ObjectFormatter.Format("{MushroomType} {MushroomSize} {Wrapping} ({PriceSelling})", This, EmptyEntriesMode.RemoveDelimiterWhenEntryIsEmpty)

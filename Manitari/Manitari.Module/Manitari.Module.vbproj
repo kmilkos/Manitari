@@ -366,6 +366,9 @@
     <EmbeddedResource Include="Images\Manitari.Module.Images.user.png" />
     <EmbeddedResource Include="Images\Manitari.Module.Images.user_32x32.png" />
     <EmbeddedResource Include="Images\Manitari.Module.Images.user_48x48.png" />
+    <Content Include="Images\Manitari.Module.Images.Calender.png" />
+    <Content Include="Images\Manitari.Module.Images.Calender_32x32.png" />
+    <Content Include="Images\Manitari.Module.Images.Calender_48x48.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />

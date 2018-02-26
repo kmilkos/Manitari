@@ -31,6 +31,7 @@ Public Class Payment ' Specify more UI options using a declarative approach (htt
     End Sub
 
     Private _theDate As DateTime
+    <XafDisplayName("Ημερομηνία")>
     Property TheDate As DateTime
         Get
             Return _theDate
@@ -41,6 +42,7 @@ Public Class Payment ' Specify more UI options using a declarative approach (htt
     End Property
 
     Private _ammount As Single
+    <XafDisplayName("Ποσότητα")>
     Property Ammount As Single
         Get
             Return _ammount
@@ -51,6 +53,7 @@ Public Class Payment ' Specify more UI options using a declarative approach (htt
     End Property
 
     <Association("Payment-Orders")>
+    <XafDisplayName("Παραγγελίες")>
     Public ReadOnly Property Orders() As XPCollection(Of Order)
         Get
             Return GetCollection(Of Order)("Orders")

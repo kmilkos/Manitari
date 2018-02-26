@@ -22,6 +22,7 @@ Public Class Department
     Private _title As String
     Private _office As String
 
+    <XafDisplayName("Τίτλος")>
     Public Property Title() As String
         Get
             Return _title
@@ -30,6 +31,7 @@ Public Class Department
             SetPropertyValue("Title", _title, value)
         End Set
     End Property
+    <XafDisplayName("Γραφείο")>
     Public Property Office() As String
         Get
             Return _office
@@ -40,6 +42,7 @@ Public Class Department
     End Property
 
     <DevExpress.Xpo.AssociationAttribute("Positions-Department")>
+    <XafDisplayName("Θέσεις Εργασίας")>
     Public ReadOnly Property Positions As XPCollection(Of Position)
         Get
             Return GetCollection(Of Position)("Positions")
@@ -47,6 +50,7 @@ Public Class Department
     End Property
 
     <DevExpress.Xpo.AssociationAttribute("Employees-Department")>
+    <XafDisplayName("Προσωπικό")>
     Public ReadOnly Property Employees As XPCollection(Of Employee)
         Get
             Return GetCollection(Of Employee)("Employees")

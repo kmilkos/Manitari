@@ -39,7 +39,7 @@ Public Class Position ' Specify more UI options using a declarative approach (ht
     'End Sub
 
     Private _title As String
-
+    <XafDisplayName("Τίτλος")>
     Public Property Title() As String
         Get
             Return _title
@@ -50,6 +50,7 @@ Public Class Position ' Specify more UI options using a declarative approach (ht
     End Property
 
     <DevExpress.Xpo.AssociationAttribute("Employees-Positions")>
+    <XafDisplayName("Προσωπικό")>
     Public ReadOnly Property Employees As XPCollection(Of Employee)
         Get
             Return GetCollection(Of Employee)("Employees")
@@ -57,6 +58,7 @@ Public Class Position ' Specify more UI options using a declarative approach (ht
     End Property
 
     <DevExpress.Xpo.AssociationAttribute("Skills-Position")>
+    <XafDisplayName("Ικανότητες")>
     Public ReadOnly Property Skills As XPCollection(Of Skill)
         Get
             Return GetCollection(Of Skill)("Skills")
@@ -65,6 +67,7 @@ Public Class Position ' Specify more UI options using a declarative approach (ht
 
     Private _department As Department
     <DevExpress.Xpo.AssociationAttribute("Positions-Department")>
+    <XafDisplayName("Τμήμα")>
     Public Property Department As Department
         Get
             Return _department

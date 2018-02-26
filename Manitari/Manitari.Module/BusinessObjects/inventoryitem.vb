@@ -28,6 +28,7 @@ Public Class inventoryitem
     End Sub
 
     Private _itemName As String
+    <XafDisplayName("Ονομα Αντικειμένου")>
     Property ItemName As String
         Get
             Return _itemName
@@ -38,6 +39,7 @@ Public Class inventoryitem
     End Property
 
     Private _counterType As InventoryItemCounterEnum
+    <XafDisplayName("΄Μονάδα Μέτρησης")>
     Property CounterType As InventoryItemCounterEnum
         Get
             Return _counterType
@@ -48,6 +50,7 @@ Public Class inventoryitem
     End Property
 
     Private _itemConverter As Single
+    <XafDisplayName("Μετατροπή 1")>
     Property ItemConverter As Single
         Get
             Return _itemConverter

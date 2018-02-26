@@ -39,6 +39,7 @@ Public Class Task
     End Sub
 
 #Region "IEvent"
+    <XafDisplayName("Θέμα")>
     Public Property Subject As String Implements IEvent.Subject
         Get
             Return GetPropertyValue("Subject")
@@ -49,6 +50,7 @@ Public Class Task
     End Property
 
     <Size(SizeAttribute.Unlimited)>
+    <XafDisplayName("Περιγραφή")>
     Public Property Description As String Implements IEvent.Description
         Get
             Return GetPropertyValue("Description")
@@ -58,6 +60,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Ξεκίνησε")>
     Public Property StartOn As Date Implements IEvent.StartOn
         Get
             Return GetPropertyValue("StartOn")
@@ -67,6 +70,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Ολοκληρώθηκε")>
     Public Property EndOn As Date Implements IEvent.EndOn
         Get
             Return GetPropertyValue("EndOn")
@@ -76,6 +80,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Ολοήμερο?")>
     Public Property AllDay As Boolean Implements IEvent.AllDay
         Get
             Return GetPropertyValue("AllDay")
@@ -85,6 +90,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Τοποθεσία")>
     Public Property Location As String Implements IEvent.Location
         Get
             Return GetPropertyValue("Location")
@@ -94,6 +100,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Ετικέτα")>
     Public Property Label As Integer Implements IEvent.Label
         Get
             Return GetPropertyValue("Label")
@@ -103,6 +110,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Κατάσταση")>
     Public Property Status As Integer Implements IEvent.Status
         Get
             Return GetPropertyValue("Status")
@@ -112,6 +120,7 @@ Public Class Task
         End Set
     End Property
 
+    <XafDisplayName("Τύπος")>
     Public Property Type As Integer Implements IEvent.Type
         Get
             Return GetPropertyValue("Type")
@@ -138,6 +147,7 @@ Public Class Task
 #End Region
 
 #Region "ITask"
+    <XafDisplayName("Ημερομηνία Ολοκλήρωσης")>
     Public ReadOnly Property DateCompleted As Date
         Get
             Return GetPropertyValue("DateCompleted")
@@ -145,6 +155,7 @@ Public Class Task
     End Property
 
     Private _taskStatus As TaskStatusEnum
+    <XafDisplayName("Κατάσταση")>
     Property TaskStatus As TaskStatusEnum
         Get
             Return _taskStatus
@@ -153,7 +164,6 @@ Public Class Task
             SetPropertyValue(NameOf(TaskStatus), _taskStatus, Value)
         End Set
     End Property
-
 #End Region
 
 #Region "Actions"
@@ -169,11 +179,13 @@ Public Class Task
     <Action(Caption:="Mark Completed", ImageName:="State_Task_Completed")>
     Public Sub MarkCompleted()
         SetPropertyValue("TaskStatus", TaskStatusEnum.Completed)
+        SetPropertyValue("DateCompleted", Now)
     End Sub
 #End Region
 
     Private _category As Category
     <DevExpress.Xpo.AssociationAttribute("Tasks-Category")>
+    <XafDisplayName("Κατηγορία")>
     Public Property Category As Category
         Get
             Return _category

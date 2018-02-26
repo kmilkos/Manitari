@@ -31,6 +31,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         MyBase.New(session)
     End Sub
 
+    <XafDisplayName("Επωνυμία Εταιρείας")>
     Public Property CompanyTitle As String
         Get
             Return GetPropertyValue(Of String)("CompanyTitle")
@@ -40,6 +41,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Διεύθυνση")>
     Public Property CompanyAddress As String
         Get
             Return GetPropertyValue(Of String)("CompanyAddress")
@@ -50,6 +52,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
     End Property
 
     <ModelDefault("EditMask", "000-000-000")>
+    <XafDisplayName("Α.Φ.Μ.")>
     Public Property CompanyAFM As String
         Get
             Return GetPropertyValue(Of String)("CompanyAFM")
@@ -59,6 +62,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Δ.Ο.Υ.")>
     Public Property CompanyDOY As String
         Get
             Return GetPropertyValue(Of String)("CompanyDOY")
@@ -68,6 +72,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Είδος Εργασίας")>
     Public Property CompanyJobType As String
         Get
             Return GetPropertyValue(Of String)("CompanyJobType")
@@ -78,6 +83,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
     End Property
 
     <Association("Customer-Orders")>
+    <XafDisplayName("Παραγγελίες")>
     Public ReadOnly Property Orders() As XPCollection(Of Order)
         Get
             Return GetCollection(Of Order)("Orders")
@@ -90,8 +96,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
     Private Const defaultFullNameFormat As String = "{FirstName} {MiddleName} {LastName}"
     Private Const defaultFullNamePersistentAlias As String = "concat(FirstName, MiddleName, LastName)"
 
-
-
+    <XafDisplayName("Όνομα")>
     Public Property FirstName As String Implements IPerson.FirstName
         Get
             Return GetPropertyValue(Of String)("FirstName")
@@ -101,6 +106,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Επώνυμο")>
     Public Property LastName As String Implements IPerson.LastName
         Get
             Return GetPropertyValue(Of String)("LastName")
@@ -110,6 +116,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Μεσαίο Όνομα")>
     Public Property MiddleName As String Implements IPerson.MiddleName
         Get
             Return GetPropertyValue(Of String)("MiddleName")
@@ -119,6 +126,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Γενέθλια")>
     Public Property Birthday As Date Implements IPerson.Birthday
         Get
             Return GetPropertyValue(Of Date)("Birthday")
@@ -128,12 +136,14 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <XafDisplayName("Ονοματεπώνυμο")>
     Public ReadOnly Property FullName As String Implements IPerson.FullName
         Get
             Return ObjectFormatter.Format("{LastName} {MiddleName} {FirstName}", This, EmptyEntriesMode.RemoveDelimiterWhenEntryIsEmpty)
         End Get
     End Property
 
+    <XafDisplayName("E-Mail")>
     Private _email, _oldemail As String
     <Size(255)>
     Public Property Email As String Implements IPerson.Email
@@ -151,6 +161,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
 #End Region
 
     Private fOrdersCount As Nullable(Of Integer) = Nothing
+    <XafDisplayName("Παραγγελίες")>
     Public ReadOnly Property OrdersCount() As Nullable(Of Integer)
         Get
             If (Not IsLoading) AndAlso (Not IsSaving) AndAlso Not fOrdersCount.HasValue Then

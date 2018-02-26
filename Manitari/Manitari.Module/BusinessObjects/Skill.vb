@@ -29,6 +29,7 @@ Public Class Skill ' Specify more UI options using a declarative approach (https
     End Sub
 
     Private _title As String
+    <XafDisplayName("Τίτλος")>
     Public Property Title() As String
         Get
             Return _title
@@ -39,6 +40,7 @@ Public Class Skill ' Specify more UI options using a declarative approach (https
     End Property
 
     <DevExpress.Xpo.AssociationAttribute("Skills-Position")>
+    <XafDisplayName("Θέσεις Εργασίας")>
     Public ReadOnly Property Positions As XPCollection(Of Position)
         Get
             Return GetCollection(Of Position)("Positions")
@@ -46,6 +48,7 @@ Public Class Skill ' Specify more UI options using a declarative approach (https
     End Property
 
     <DevExpress.Xpo.AssociationAttribute("Skills-Employee")>
+    <XafDisplayName("Προσωπικό")>
     Public ReadOnly Property Employees As XPCollection(Of Employee)
         Get
             Return GetCollection(Of Employee)("Employees")

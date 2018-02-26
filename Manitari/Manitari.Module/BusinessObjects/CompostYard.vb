@@ -53,45 +53,13 @@ Public Class CompostYard ' Specify more UI options using a declarative approach 
     End Property
 
     Private _farmAction As FarmAction
+    <DataSourceCriteria("Category.Caption = 'Κομποστάδικο'")>
     Property FarmAction As FarmAction
         Get
             Return _farmAction
         End Get
         Set(ByVal Value As FarmAction)
             SetPropertyValue(NameOf(FarmAction), _farmAction, Value)
-        End Set
-    End Property
-
-    Private _compostAction As CompostActionEnum
-    Public Property CompostAction As CompostActionEnum
-        Get
-            Return _compostAction
-
-        End Get
-        Set(value As CompostActionEnum)
-            SetPropertyValue("CompostAction", _compostAction, value)
-        End Set
-    End Property
-
-    Private _compostsource As CompostPlacesEnum
-    Public Property CompostSource As CompostPlacesEnum
-        Get
-            Return _compostsource
-
-        End Get
-        Set(value As CompostPlacesEnum)
-            SetPropertyValue("CompostSource", _compostsource, value)
-        End Set
-    End Property
-
-    Private _composttarget As CompostPlacesEnum
-    Public Property CompostTarget As CompostPlacesEnum
-        Get
-            Return _composttarget
-
-        End Get
-        Set(value As CompostPlacesEnum)
-            SetPropertyValue("CompostTarget", _composttarget, value)
         End Set
     End Property
 
@@ -106,22 +74,6 @@ Public Class CompostYard ' Specify more UI options using a declarative approach 
             SetPropertyValue("CompostComments", _CompostComments, value)
         End Set
     End Property
-
-    Public Enum CompostActionEnum
-        Prewet
-        Mix
-        Μεταφορά
-        Σπορα
-    End Enum
-
-    Public Enum CompostPlacesEnum
-        ΠλατείαΚομποστάδικου
-        Bunker1
-        Bunker2
-        ΠλατείαΤούνελ
-        Τούνελ
-        Σπορά
-    End Enum
 
     Public Shared Function GetISOWeekOfYear(dt As DateTime) As Integer
         Dim cal As Calendar = CultureInfo.InvariantCulture.Calendar
