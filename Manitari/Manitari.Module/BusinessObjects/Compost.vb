@@ -51,14 +51,26 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Set
     End Property
 
-    Private _isCompostEmptied As Boolean
-    <XafDisplayName("Άδειασε?")>
-    Property IsCompostEmptied As Boolean
+    Private _room As String
+    <Size(SizeAttribute.DefaultStringMappingFieldSize)>
+    <XafDisplayName("Θάλαμος")>
+    Property Room As String
         Get
-            Return _isCompostEmptied
+            Return _room
+        End Get
+        Set(ByVal Value As String)
+            SetPropertyValue(Nameof(Room), _room, Value)
+        End Set
+    End Property
+
+    Private _isEmpty As Boolean
+    <XafDisplayName("Πέταμα")>
+    Property IsEmpty As Boolean
+        Get
+            Return _isEmpty
         End Get
         Set(ByVal Value As Boolean)
-            SetPropertyValue(NameOf(IsCompostEmptied), _isCompostEmptied, Value)
+            SetPropertyValue(NameOf(IsEmpty), _isEmpty, Value)
         End Set
     End Property
 

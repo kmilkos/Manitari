@@ -7,36 +7,42 @@
   </BOModel>
   <NavigationItems RootGroupsStyle="OutlookAnimated" StartupNavigationItem="Production_ListView">
     <Items>
-      <Item Id="Παραγωγή" Index="0">
+      <Item Id="Παραγωγή" Index="0" ImageName="production" Caption="Παραγωγή" ViewId="Production">
         <Items>
           <Item Id="Compost_ListView" Index="0" />
+          <Item Id="CompostYard" ViewId="CompostYard_ListView" Caption="Κομποστάδικo" Index="1" IsNewNode="True" />
           <Item Id="Production_ListView" Index="2" />
           <Item Id="Watering_ListView" Index="3" />
-          <Item Id="DailyLog_ListView" Index="4" />
-          <Item Id="FarmAction_ListView" Index="5" />
-          <Item Id="CompostYard" ViewId="CompostYard_ListView" Caption="Κομποστάδικo" IsNewNode="True" />
+          <Item Id="DailyLog_ListView" Index="4" Removed="True" />
+          <Item Id="FarmAction_ListView" Index="5" Removed="True" />
         </Items>
       </Item>
-      <Item Id="Λειτουργία" Index="1">
+      <Item Id="Λειτουργία" Index="1" ImageName="BO_Scheduler">
         <Items>
-          <Item Id="CompostYard_ListView" ViewId="CompostYard_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="DailyLog_ListView" Index="4" ObjectKey="" ViewId="DailyLog_ListView" IsNewNode="True" />
+          <Item Id="Attend_ListView" ViewId="Attend_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Category_ListView" Removed="True" />
+          <Item Id="Department_ListView" Removed="True" />
         </Items>
       </Item>
-      <Item Id="Αποθήκες" Index="2">
+      <Item Id="Αποθήκες" Index="2" ImageName="BO_Product_Group">
         <Items>
-          <Item Id="Warehouse_ListView" Index="0" />
-          <Item Id="inventory_ListView" Index="1" />
-          <Item Id="inventoryitem_ListView" Index="2" />
+          <Item Id="Warehouse_ListView" Index="0" ImageName="BO_Product_Group" />
+          <Item Id="inventory_ListView" Index="1" ImageName="BO_Report" />
+          <Item Id="inventoryitem_ListView" Index="2" ImageName="BO_Sale_Item_v92" />
         </Items>
       </Item>
       <Item Id="Προσωπικό" Index="3">
         <Items>
           <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="Attend_ListView" Removed="True" />
         </Items>
       </Item>
-      <Item Id="Πωλήσεις" Index="4">
-        <Items>
-          <Item Id="OrderDetail_ListView" Removed="True" />
+      <Item Id="Ρυθμίσεις" Index="4" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Category_ListView" ViewId="Category_ListView" ObjectKey="" Caption="Κατηγορίες" IsNewNode="True" />
+          <Item Id="Department_ListView" ViewId="Department_ListView" ObjectKey="" ImageName="BO_WorkflowDefinition" IsNewNode="True" />
+          <Item Id="FarmAction_ListView" Caption="Εργασίες Παραγωγής" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="Reports" Caption="Αναφορές" Index="5">
@@ -47,7 +53,12 @@
           <Item Id="XpoStateMachine_ListView" ViewId="XpoStateMachine_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Default" Index="6">
+      <Item Id="Πωλήσεις" Index="5">
+        <Items>
+          <Item Id="OrderDetail_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Index="6" Caption="Χρήστης" ImageName="BO_Employee">
         <Items>
           <Item Id="CompostYard_ListView" Removed="True" />
           <Item Id="Employee_ListView" Removed="True" />
@@ -152,22 +163,19 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="CompostYard_ChartView" ClassName="Manitari.Module.CompostYard" EditorTypeName="DevExpress.ExpressApp.Chart.Win.ChartListEditor" Caption="Κομποστάδικο Γράφημα" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="CompostComments" PropertyName="CompostComments" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Compost" PropertyName="Compost" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="FarmAction" PropertyName="FarmAction" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="CompostYard_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="20.695364238410598">
-            <LayoutGroup Id="CompostYard" RelativeSize="100">
-              <LayoutGroup Id="CompostYard_col1" RelativeSize="50">
-                <LayoutItem Id="CompostDate" RelativeSize="36.363636363636367" />
-                <LayoutItem Id="Compost" RelativeSize="27.272727272727273" />
-                <LayoutItem Id="FarmAction" RelativeSize="36.363636363636367" />
-              </LayoutGroup>
-              <LayoutGroup Id="CompostYard_col2" RelativeSize="50">
-                <LayoutItem Id="CompostAction" RelativeSize="36.363636363636367" />
-                <LayoutItem Id="CompostSource" RelativeSize="27.272727272727273" />
-                <LayoutItem Id="CompostTarget" RelativeSize="36.363636363636367" />
-              </LayoutGroup>
-            </LayoutGroup>
+            <LayoutGroup Id="CompostYard" RelativeSize="100" />
           </LayoutGroup>
           <LayoutGroup Id="SizeableEditors" RelativeSize="79.30463576158941">
             <LayoutItem Id="CompostComments" CaptionLocation="Top" RelativeSize="100" />
@@ -175,6 +183,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="CompostYard_ListView" Caption="Κομποστάδικο" />
     <DetailView Id="DailyLog_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -369,6 +378,40 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DashboardView Id="Production" IsNewNode="True">
+      <Items IsNewNode="True">
+        <DashboardViewItem Id="CompostYardChartView" ViewId="CompostYard_ChartView" ActionsToolbarVisibility="Show" IsNewNode="True" />
+        <DashboardViewItem Id="ProductionChartView" ViewId="Production_ChartView" ActionsToolbarVisibility="Show" IsNewNode="True" />
+        <DashboardViewItem Id="WateringChartView" ViewId="Watering_ChartView" ActionsToolbarVisibility="Show" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" ShowCaption="False" TextAlignMode="AlignWithChildren" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="Auto8f282923-fb91-45a5-a5c3-5890d411b9c8" ShowCaption="False" Caption="" Index="0" RelativeSize="54.237288135593218" IsNewNode="True">
+            <LayoutItem Id="ProductionChartView" ViewItem="ProductionChartView" Index="0" RelativeSize="50.398406374501995" IsNewNode="True" />
+            <LayoutItem Id="CompostYardChartView" ViewItem="CompostYardChartView" Index="1" RelativeSize="49.601593625498005" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutItem Id="WateringChartView" ViewItem="WateringChartView" Index="1" RelativeSize="45.762711864406782" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+    <ListView Id="Production_ChartView" ClassName="Manitari.Module.Production" Caption="Παραγωγή Γράφημα" EditorTypeName="DevExpress.ExpressApp.Chart.Win.ChartListEditor" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Notes" PropertyName="Notes" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="TheDate" PropertyName="TheDate" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="FarmAction" PropertyName="FarmAction" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="ProductionRoomNumber" PropertyName="ProductionRoomNumber" Width="50" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Height" PropertyName="Height" Width="50" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Quality" PropertyName="Quality" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Compost" PropertyName="Compost" Width="70" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="SeedWhite" PropertyName="SeedWhite" Width="70" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="SquareMeterWhite" PropertyName="SquareMeterWhite" Width="50" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="SeedPortobello" PropertyName="SeedPortobello" Width="70" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="SquareMeterPortobello" PropertyName="SquareMeterPortobello" Width="50" Index="9" IsNewNode="True" />
+        <ColumnInfo Id="CubicMeters" PropertyName="CubicMeters" Width="50" Index="10" IsNewNode="True" />
+        <ColumnInfo Id="Truckster" PropertyName="Truckster" Width="70" Index="11" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="Production_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -376,7 +419,6 @@
             <LayoutGroup Id="Production" RelativeSize="100">
               <LayoutGroup Id="Production_col1" RelativeSize="44.600938967136152">
                 <LayoutItem Id="TheDate" RelativeSize="5.6939501779359434" />
-                <LayoutItem Id="ProductionAction" RelativeSize="4.2704626334519569" Index="1" />
                 <LayoutItem Id="FarmAction" RelativeSize="4.2704626334519569" Index="2" />
                 <LayoutItem Id="ProductionRoomNumber" RelativeSize="4.2704626334519569" Index="3" />
                 <LayoutItem Id="Height" RelativeSize="8.053691275167786" Index="4" Removed="True" />
@@ -387,11 +429,8 @@
                   <LayoutItem Id="CompostTarget" ViewItem="CompostTarget" Index="3" RelativeSize="81.132075471698116" IsNewNode="True" />
                 </LayoutGroup>
                 <LayoutItem Id="Quality" RelativeSize="8.75912408759124" Index="4" Removed="True" />
-                <LayoutItem Id="CompostAction" RelativeSize="11.538461538461538" Removed="True" />
-                <LayoutItem Id="CompostSource" RelativeSize="12.8" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="Production_col2" RelativeSize="55.399061032863848" Caption="Production_col2">
-                <LayoutItem Id="Compost" RelativeSize="11.678832116788321" Index="0" Removed="True" />
                 <LayoutItem Id="Quality" ViewItem="Quality" Index="0" RelativeSize="5.6939501779359434" IsNewNode="True" />
                 <LayoutItem Id="SeedWhite" RelativeSize="10.738255033557048" Index="0" Removed="True" />
                 <LayoutGroup Id="Autoc3bf76db-86c0-447f-9f53-872d136d7402" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="12.811387900355872" IsNewNode="True">
@@ -412,7 +451,6 @@
                 <LayoutItem Id="SquareMeterPortobello" RelativeSize="8.053691275167786" Index="2" Removed="True" />
                 <LayoutItem Id="Truckster" RelativeSize="4.2704626334519569" Index="2" />
                 <LayoutItem Id="Notes" ViewItem="Notes" CaptionLocation="Top" Index="3" RelativeSize="77.22419928825623" IsNewNode="True" />
-                <LayoutItem Id="CompostTarget" RelativeSize="12.8" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
@@ -486,6 +524,18 @@
         <Variant Id="ShowCalendar" ViewID="Task_CalendarView" Caption="Ημερολόγιο" IsNewNode="True" />
         <Variant Id="ShowList" ViewID="Task_ListView" Caption="Λίστα" IsNewNode="True" />
       </Variants>
+    </ListView>
+    <ListView Id="Watering_ChartView" ClassName="Manitari.Module.Watering" Caption="Ποτίσματα Γράφημα" EditorTypeName="DevExpress.ExpressApp.Chart.Win.ChartListEditor" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="TheDate" PropertyName="TheDate" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Compost" PropertyName="Compost" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Room" PropertyName="Room" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Quantity" PropertyName="Quantity" Width="50" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="WaterAmmount" PropertyName="WaterAmmount" Width="50" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Notes" PropertyName="Notes" Width="70" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="LiterTotal" PropertyName="LiterTotal" Width="50" Index="6" IsNewNode="True" />
+      </Columns>
     </ListView>
     <DetailView Id="Watering_DetailView">
       <Layout>

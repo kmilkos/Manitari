@@ -27,22 +27,24 @@ Public Class CompostYard ' Specify more UI options using a declarative approach 
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
         ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        CompostDate = Now
+        TheDate = Now
     End Sub
 
-    Private _compostdate As DateTime
-    Public Property CompostDate As DateTime
+    Private _theDate As DateTime
+    <XafDisplayName("Ημερομηνία")>
+    Public Property TheDate As DateTime
         Get
-            Return _compostdate
+            Return _theDate
 
         End Get
         Set(value As DateTime)
-            SetPropertyValue("CompostDate", _compostdate, value)
+            SetPropertyValue("CompostDate", _theDate, value)
         End Set
     End Property
 
     Private _compost As Compost
     <AssociationAttribute("Compost-CompostYards")>
+    <XafDisplayName("Κομπόστα")>
     Public Property Compost() As Compost
         Get
             Return _compost
@@ -54,6 +56,7 @@ Public Class CompostYard ' Specify more UI options using a declarative approach 
 
     Private _farmAction As FarmAction
     <DataSourceCriteria("Category.Caption = 'Κομποστάδικο'")>
+    <XafDisplayName("Εργασία")>
     Property FarmAction As FarmAction
         Get
             Return _farmAction
@@ -65,6 +68,7 @@ Public Class CompostYard ' Specify more UI options using a declarative approach 
 
     Private _CompostComments As String
     <Size(4096)>
+    <XafDisplayName("Σημειώσεις")>
     Public Property CompostComments As String
         Get
             Return _CompostComments

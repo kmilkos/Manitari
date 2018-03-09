@@ -18,14 +18,13 @@ Imports DevExpress.Persistent.Validation
 <DefaultProperty("Display")>
 <Persistent("Inventory")>
 <NavigationItem("Αποθήκες")>
-Public Class inventory ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+Public Class Inventory
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
     Private _theDate As DateTime
@@ -39,18 +38,18 @@ Public Class inventory ' Specify more UI options using a declarative approach (h
         End Set
     End Property
 
-    <AssociationAttribute("inventory-inventorylistitems")>
-    <XafDisplayName("Περιεχόμενα")>
-    Public ReadOnly Property inventorylistitems() As XPCollection(Of inventorylistitem)
+    <Association("Inventory-InventoryItems")>
+    Public ReadOnly Property InventoryItems() As XPCollection(Of InventoryItem)
         Get
-            Return GetCollection(Of inventorylistitem)("inventorylistitems")
+            Return GetCollection(Of InventoryItem)(NameOf(InventoryItems))
         End Get
     End Property
 
     <XafDisplayName("Περιγραφή")>
     Public ReadOnly Property Display As String
         Get
-            Return String.Format("{0} ({1})", TheDate.ToShortDateString, inventorylistitems.Count.ToString)
+            'Return "TODO: Rebuild the inventory system"
+            Return String.Format("{0} ({1})", TheDate.ToShortDateString, InventoryItems.Count.ToString)
         End Get
     End Property
 

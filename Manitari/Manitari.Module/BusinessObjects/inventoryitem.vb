@@ -14,65 +14,56 @@ Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
-<XafDisplayName("Αντικείμενα Απογραφής")>
-<NavigationItem("Αποθήκες")>
-<DefaultProperty("ItemName")>
-<Persistent("InventoryItems")>
-Public Class inventoryitem
-    Inherits BaseObject
+<XafDisplayName("Απογραφή - Υπολίστα")>
+<DefaultProperty("Display")>
+<Persistent("InventoryItem")>
+Public Class InventoryItem ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
+    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
+        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
-    Private _itemName As String
-    <XafDisplayName("Ονομα Αντικειμένου")>
-    Property ItemName As String
+    Private _item As WarehouseItem
+    <XafDisplayName("Αντικείμενο")>
+    Property Item As WarehouseItem
         Get
-            Return _itemName
+            Return _item
         End Get
-        Set(ByVal Value As String)
-            SetPropertyValue(NameOf(ItemName), _itemName, Value)
+        Set(ByVal Value As WarehouseItem)
+            SetPropertyValue(NameOf(Item), _item, Value)
         End Set
     End Property
 
-    Private _counterType As InventoryItemCounterEnum
-    <XafDisplayName("΄Μονάδα Μέτρησης")>
-    Property CounterType As InventoryItemCounterEnum
+    Private _count As Single
+    <XafDisplayName("Ποσότητα")>
+    Property Count As Single
         Get
-            Return _counterType
-        End Get
-        Set(ByVal Value As InventoryItemCounterEnum)
-            SetPropertyValue(NameOf(CounterType), _counterType, Value)
-        End Set
-    End Property
-
-    Private _itemConverter As Single
-    <XafDisplayName("Μετατροπή 1")>
-    Property ItemConverter As Single
-        Get
-            Return _itemConverter
+            Return _count
         End Get
         Set(ByVal Value As Single)
-            SetPropertyValue(NameOf(ItemConverter), _itemConverter, Value)
+            SetPropertyValue(NameOf(Count), _count, Value)
+        End Set
+    End Property
+
+    Private _inventory As Inventory
+    <Association("Inventory-InventoryItems")>
+    Property Inventory() As Inventory
+        Get
+            Return _inventory
+        End Get
+        Set(ByVal Value As Inventory)
+            SetPropertyValue(NameOf(Inventory), _inventory, Value)
         End Set
     End Property
 
 
-    Enum InventoryItemCounterEnum
-
-        Κιλά
-        Κουτί
-        Μπετόνι
-        Μπάλα
-        Παλλέτα
-        Σακούλα
-        μ3
-        μ2
-        Τεμάχια
-        Βαρέλι
-        Μέτρα
-    End Enum
+    Public ReadOnly Property Display As String
+        Get
+            Return ObjectFormatter.Format("{Item} ({Count})", This, EmptyEntriesMode.RemoveDelimiterWhenEntryIsEmpty)
+        End Get
+    End Property
 End Class

@@ -12,7 +12,7 @@ Imports DevExpress.ExpressApp.DC
 
 <DefaultClassOptions>
 <Persistent("FarmAction")>
-<DC.XafDisplayName("Λίστα Ενεργειών")>
+<DC.XafDisplayName("Εργασίες Παραγωγής")>
 <NavigationItem("Παραγωγή")>
 Public Class FarmAction
     Inherits BaseObject

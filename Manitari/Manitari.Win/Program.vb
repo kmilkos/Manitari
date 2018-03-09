@@ -29,6 +29,10 @@ Public Class Program
         '_application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png")
         _application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen()
 
+        'XafApplication.LinkNewObjectToParentImmediately
+
+        _application.LinkNewObjectToParentImmediately = True
+
         SecurityAdapterHelper.Enable()
         If (Not ConfigurationManager.ConnectionStrings.Item("ConnectionString") Is Nothing) Then
             _application.ConnectionString = ConfigurationManager.ConnectionStrings.Item("ConnectionString").ConnectionString

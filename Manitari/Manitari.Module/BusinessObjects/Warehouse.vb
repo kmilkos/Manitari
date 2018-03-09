@@ -17,6 +17,7 @@ Imports DevExpress.Persistent.Validation
 <XafDisplayName("Αποθήκη")>
 <NavigationItem("Αποθήκες")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
+<DefaultProperty("Location")>
 <Persistent("Warehouse")>
 Public Class Warehouse ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
@@ -28,25 +29,23 @@ Public Class Warehouse ' Specify more UI options using a declarative approach (h
         ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
-    Private _item As inventoryitem
-    <XafDisplayName("Αντικείμενο")>
-    Property Item As inventoryitem
+    Private _location As String
+    <Size(SizeAttribute.DefaultStringMappingFieldSize)>
+    Property Location As String
         Get
-            Return _item
+            Return _location
         End Get
-        Set(ByVal Value As inventoryitem)
-            SetPropertyValue(Nameof(Item), _item, Value)
+        Set(ByVal Value As String)
+            SetPropertyValue(Nameof(Location), _location, Value)
         End Set
+    End Property
+    
+
+    <Association("Warehouse-WarehouseItems")>
+    Public ReadOnly Property WarehouseItems() As XPCollection(Of WarehouseItem)
+        Get
+            Return GetCollection(Of WarehouseItem)(NameOf(WarehouseItems))
+        End Get
     End Property
 
-    Private _amount As Single
-    <XafDisplayName("Ποσότητα")>
-    Property Amount As Single
-        Get
-            Return _amount
-        End Get
-        Set(ByVal Value As Single)
-            SetPropertyValue(NameOf(Amount), _amount, Value)
-        End Set
-    End Property
 End Class
