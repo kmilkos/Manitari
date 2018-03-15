@@ -59,9 +59,44 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
             Return _room
         End Get
         Set(ByVal Value As String)
-            SetPropertyValue(Nameof(Room), _room, Value)
+            SetPropertyValue(NameOf(Room), _room, Value)
         End Set
     End Property
+
+    Private _straw As String
+    <Size(SizeAttribute.DefaultStringMappingFieldSize)>
+    Property Straw As String
+        Get
+            Return _straw
+        End Get
+        Set(ByVal Value As String)
+            SetPropertyValue(Nameof(Straw), _straw, Value)
+        End Set
+    End Property
+
+    Private _gypsum As String
+    <Size(SizeAttribute.DefaultStringMappingFieldSize)>
+    Property Gypsum As String
+        Get
+            Return _gypsum
+        End Get
+        Set(ByVal Value As String)
+            SetPropertyValue(Nameof(Gypsum), _gypsum, Value)
+        End Set
+    End Property
+
+    Private _manure As String
+    <Size(SizeAttribute.DefaultStringMappingFieldSize)>
+    Property Manure As String
+        Get
+            Return _manure
+        End Get
+        Set(ByVal Value As String)
+            SetPropertyValue(NameOf(Manure), _manure, Value)
+        End Set
+    End Property
+
+
 
     Private _isEmpty As Boolean
     <XafDisplayName("Πέταμα")>

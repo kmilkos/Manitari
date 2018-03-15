@@ -31,7 +31,8 @@ Public Class Task
         MyBase.AfterConstruction()
 
         Priority = PriorityEnum.Normal
-        StartOn = Now
+        SubmittedOn = Today
+        AllDay = True
     End Sub
 
     Public Sub New(ByVal session As Session)
@@ -57,6 +58,17 @@ Public Class Task
         End Get
         Set(value As String)
             SetPropertyValue("Description", value)
+        End Set
+    End Property
+
+    Private _submittedOn As DateTime
+    <XafDisplayName("Καταχώρηση")>
+    Property SubmittedOn As DateTime
+        Get
+            Return _submittedOn
+        End Get
+        Set(ByVal Value As DateTime)
+            SetPropertyValue(Nameof(SubmittedOn), _submittedOn, Value)
         End Set
     End Property
 
@@ -147,13 +159,6 @@ Public Class Task
 #End Region
 
 #Region "ITask"
-    <XafDisplayName("Ημερομηνία Ολοκλήρωσης")>
-    Public ReadOnly Property DateCompleted As Date
-        Get
-            Return GetPropertyValue("DateCompleted")
-        End Get
-    End Property
-
     Private _taskStatus As TaskStatusEnum
     <XafDisplayName("Κατάσταση")>
     Property TaskStatus As TaskStatusEnum
@@ -178,12 +183,14 @@ Public Class Task
 
     <Action(Caption:="Mark Completed", ImageName:="State_Task_Completed")>
     Public Sub MarkCompleted()
+        'SetPropertyValue("Status", TaskStatusEnum.Completed)
         SetPropertyValue("TaskStatus", TaskStatusEnum.Completed)
-        SetPropertyValue("DateCompleted", Now)
+        SetPropertyValue("EndOn", Today)
     End Sub
 #End Region
 
     Private _category As Category
+    '<DataSourceCriteria("Department.Title = 'Παραγωγή'")>
     <DevExpress.Xpo.AssociationAttribute("Tasks-Category")>
     <XafDisplayName("Κατηγορία")>
     Public Property Category As Category
@@ -217,7 +224,7 @@ Public Class Task
         High = 2
     End Enum
 
-    Public Enum TaskStatusEnum
+    Public Enum TaskStatusEnum As Integer
         NotStarted = 0
         InProgress = 1
         Deffered = 2
