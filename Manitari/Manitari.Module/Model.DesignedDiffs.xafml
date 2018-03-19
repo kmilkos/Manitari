@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Manitari">
+  <BOModel>
+    <Class Name="Manitari.Module.Compost">
+      <OwnMembers>
+        <Member Name="Manure1" LookupEditorMode="Auto" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
   <Options>
     <Dashboards EnableCreation="True" />
   </Options>

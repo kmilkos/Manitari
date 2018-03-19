@@ -117,7 +117,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SeedWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SeedWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Σπορά'", Context:="DetailView")>
     <XafDisplayName("Λευκός Σπόρος")>
     Public Property SeedWhite As String
         Get
@@ -128,7 +128,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SquareMeterWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SquareMeterWhiteVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Σπορά'", Context:="DetailView")>
     <XafDisplayName("Λευκό m2")>
     Public Property SquareMeterWhite As Single
         Get
@@ -139,7 +139,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SeedPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SeedPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Σπορά'", Context:="DetailView")>
     <XafDisplayName("Καφέ Σπόρος")>
     Public Property SeedPortobello As String
         Get
@@ -150,7 +150,7 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End Set
     End Property
 
-    <Appearance("SquareMeterPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Υπόστρωμα'", Context:="DetailView")>
+    <Appearance("SquareMeterPortobelloVisibility", Visibility:=ViewItemVisibility.Hide, Criteria:="FarmAction.Name <> 'Σπορά'", Context:="DetailView")>
     <XafDisplayName("Καφέ m2")>
     Public Property SquareMeterPortobello As Single
         Get
@@ -190,30 +190,6 @@ Public Class Production ' Specify more UI options using a declarative approach (
     End Property
 #End Region
 
-    Public Enum ProductionActionEnum
-        Υπόστρωμα
-        Τύρφη
-        Ruffling
-        Άδειασμα
-        Κομποστάδικο
-    End Enum
-
-    Public Enum CompostActionEnum
-        Prewet
-        Mix
-        Μεταφορά
-        Σπορα
-    End Enum
-
-    Public Enum CompostPlacesEnum
-        ΠλατείαΚομποστάδικου
-        Bunker1
-        Bunker2
-        ΠλατείαΤούνελ
-        Τούνελ
-        Σπορά
-    End Enum
-
     Public Shared Function GetISOWeekOfYear(dt As DateTime) As Integer
         Dim cal As Calendar = CultureInfo.InvariantCulture.Calendar
         Dim d As DayOfWeek = cal.GetDayOfWeek(dt)
@@ -223,5 +199,9 @@ Public Class Production ' Specify more UI options using a declarative approach (
         End If
 
         Return cal.GetWeekOfYear(dt, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+    End Function
+
+    Function IsOdd(ByVal iNum As Integer) As Boolean
+        IsOdd = ((iNum \ 2) * 2 <> iNum)
     End Function
 End Class
