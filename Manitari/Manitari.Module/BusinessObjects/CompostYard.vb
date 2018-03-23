@@ -15,9 +15,10 @@ Imports DevExpress.Persistent.Validation
 Imports System.Globalization
 
 <DefaultClassOptions>
-<XafDisplayName("Ενέργειες Κομποστάδικου")>
+<XafDisplayName("Κομποστάδικο")>
 <Persistent("CompostYard")>
 <DefaultProperty("CompostCode")>
+<NavigationItem("Παραγωγή")>
 Public Class CompostYard ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
 

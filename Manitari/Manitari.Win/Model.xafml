@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="SaveAndNew" Shortcut="Ctrl+Shift+N" />
+    </Actions>
+  </ActionDesign>
+  <CreatableItems>
+    <CreatableItem ClassName="Manitari.Module.Attend" ImageName="Calendar" />
+    <CreatableItem ClassName="Manitari.Module.Category" ImageName="BO_Category" />
+    <CreatableItem ClassName="Manitari.Module.collecting" ImageName="Action_StateMachine" />
+    <CreatableItem ClassName="Manitari.Module.Compost" ImageName="Compost" />
+    <CreatableItem ClassName="Manitari.Module.CompostYard" ImageName="Compost" />
+    <CreatableItem ClassName="Manitari.Module.Customer" ImageName="BO_Customer" />
+    <CreatableItem ClassName="Manitari.Module.DailyLog" ImageName="BO_Scheduler" />
+    <CreatableItem ClassName="Manitari.Module.Department" ImageName="BO_Organization" />
+    <CreatableItem ClassName="Manitari.Module.Employee" ImageName="BO_Department" />
+    <CreatableItem ClassName="Manitari.Module.FarmAction" ImageName="Production" />
+    <CreatableItem ClassName="Manitari.Module.Inventory" ImageName="Action_Edit" />
+    <CreatableItem ClassName="Manitari.Module.InventoryItem" ImageName="Action_Inline_Edit" />
+    <CreatableItem ClassName="Manitari.Module.Order" ImageName="BO_Order" />
+    <CreatableItem ClassName="Manitari.Module.OrderDetail" ImageName="BO_Order_Item" />
+    <CreatableItem ClassName="Manitari.Module.Payment" ImageName="BO_Sale" />
+    <CreatableItem ClassName="Manitari.Module.Position" ImageName="BO_Position" />
+    <CreatableItem ClassName="Manitari.Module.Production" ImageName="Production" />
+    <CreatableItem ClassName="Manitari.Module.Skill" ImageName="BO_MyDetails" />
+    <CreatableItem ClassName="Manitari.Module.Task" ImageName="BO_Lead" />
+    <CreatableItem ClassName="Manitari.Module.Warehouse" ImageName="BO_Product_Group" />
+    <CreatableItem ClassName="Manitari.Module.WarehouseItem" ImageName="BO_Product" />
+    <CreatableItem ClassName="Manitari.Module.Watering" ImageName="Action_Change_State" />
+  </CreatableItems>
+  <NavigationItems>
+    <Items>
+      <Item Id="Παραγωγή" Index="0">
+        <Items>
+          <Item Id="Compost_ListView" Index="0" />
+          <Item Id="CompostYard_ListView" Index="1" />
+          <Item Id="Production_ListView" ObjectKey="" Index="2" ViewId="Production_ListView" IsNewNode="True" />
+          <Item Id="Watering_ListView" ObjectKey="" Index="3" ViewId="Watering_ListView" IsNewNode="True" />
+          <Item Id="collecting_ListView" Index="4" />
+          <Item Id="DailyLog_ListView" Caption="Ημερήσιο Αρχείο" Index="5" />
+          <Item Id="FarmAction_ListView" Caption="Εργασίες Μονάδας" Index="6" />
+        </Items>
+      </Item>
+      <Item Id="Λειτουργία" Index="1">
+        <Items>
+          <Item Id="Attend_ListView" ViewId="Attend_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Category_ListView" ObjectKey="" ViewId="Category_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Αποθήκες" Index="2" />
+      <Item Id="Προσωπικό" Index="3">
+        <Items>
+          <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" Index="0" IsNewNode="True" />
+          <Item Id="Attend_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Πωλήσεις" Index="4">
+        <Items>
+          <Item Id="Payment_ListView" Caption="Πληρωμές" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Index="5" Caption="Αναφορές">
+        <Items>
+          <Item Id="KPI" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="KpiDefinition_ListView" ViewId="KpiDefinition_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="KpiScorecard_ListView" ViewId="KpiScorecard_ListView" ObjectKey="" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Report" ViewId="ReportDataV2_ListView" Caption="Αναφορές" IsNewNode="True" />
+          <Item Id="ReportsV2" Removed="True" />
+          <Item Id="Workflow Definition" ViewId="XpoWorkflowDefinition_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="XpoStateMachine_ListView" ViewId="XpoStateMachine_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Employee_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Removed="True" />
+      <Item Id="State Machine" Removed="True" />
+      <Item Id="Workflow" Removed="True" />
+    </Items>
+  </NavigationItems>
+  <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI" />
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

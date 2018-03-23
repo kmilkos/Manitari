@@ -98,15 +98,18 @@ Public Class Employee ' Specify more UI options using a declarative approach (ht
     End Property
 
     Private _position As Position
-    <DevExpress.Xpo.AssociationAttribute("Employees-Positions")>
-    <XafDisplayName("Θέσεις Εργασίας")>
-    Public ReadOnly Property Positions As XPCollection(Of Position)
+    <Association("Position-Employees")>
+    <XafDisplayName("Θέση Εργασίας")>
+    Property Position() As Position
         Get
-            Return GetCollection(Of Position)("Positions")
+            Return _position
         End Get
+        Set(ByVal Value As Position)
+            SetPropertyValue(Nameof(Position), _position, Value)
+        End Set
     End Property
+    
 
-    Private _skill As Skill
     <DevExpress.Xpo.AssociationAttribute("Skills-Employee")>
     <XafDisplayName("Ικανότητες")>
     Public ReadOnly Property Skills As XPCollection(Of Skill)
