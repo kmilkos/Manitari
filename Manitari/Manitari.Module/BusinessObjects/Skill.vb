@@ -40,7 +40,7 @@ Public Class Skill ' Specify more UI options using a declarative approach (https
     End Property
 
 
-    <DevExpress.Xpo.AssociationAttribute("Skills-Employee")>
+    <DevExpress.Xpo.AssociationAttribute("Skills-Employees")>
     <XafDisplayName("Προσωπικό")>
     Public ReadOnly Property Employees As XPCollection(Of Employee)
         Get

@@ -105,12 +105,19 @@ Public Class Employee ' Specify more UI options using a declarative approach (ht
             Return _position
         End Get
         Set(ByVal Value As Position)
-            SetPropertyValue(Nameof(Position), _position, Value)
+            SetPropertyValue(NameOf(Position), _position, Value)
         End Set
     End Property
-    
 
-    <DevExpress.Xpo.AssociationAttribute("Skills-Employee")>
+    <Association("Employee-Attends")>
+    <XafDisplayName("Ωρολόγιο")>
+    Public ReadOnly Property Attends() As XPCollection(Of Attend)
+        Get
+            Return GetCollection(Of Attend)(NameOf(Attends))
+        End Get
+    End Property
+
+    <DevExpress.Xpo.AssociationAttribute("Skills-Employees")>
     <XafDisplayName("Ικανότητες")>
     Public ReadOnly Property Skills As XPCollection(Of Skill)
         Get
@@ -123,6 +130,13 @@ Public Class Employee ' Specify more UI options using a declarative approach (ht
     Public ReadOnly Property DailyLogs() As XPCollection(Of DailyLog)
         Get
             Return GetCollection(Of DailyLog)(NameOf(DailyLogs))
+        End Get
+    End Property
+
+    <Association("Employee-Tasks")>
+    Public ReadOnly Property Tasks() As XPCollection(Of Task)
+        Get
+            Return GetCollection(Of Task)(NameOf(Tasks))
         End Get
     End Property
 #End Region

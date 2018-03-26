@@ -169,6 +169,18 @@ Public Class Task
             SetPropertyValue(NameOf(TaskStatus), _taskStatus, Value)
         End Set
     End Property
+
+    Private _assignedOn As Employee
+    <Association("Employee-Tasks")> _
+    Property AssignedOn() As Employee
+        Get
+            Return _assignedOn
+        End Get
+        Set(ByVal Value As Employee)
+            SetPropertyValue(Nameof(AssignedOn), _assignedOn, Value)
+        End Set
+    End Property
+    
 #End Region
 
 #Region "Actions"

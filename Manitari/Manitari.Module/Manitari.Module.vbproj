@@ -286,6 +286,12 @@
     <Compile Include="BusinessObjects\Warehouse.vb" />
     <Compile Include="BusinessObjects\WarehouseItem.vb" />
     <Compile Include="BusinessObjects\Watering.vb" />
+    <Compile Include="Controllers\CreateAttendance.Designer.vb">
+      <DependentUpon>CreateAttendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CreateAttendance.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\Navigation.Designer.vb">
       <DependentUpon>Navigation.vb</DependentUpon>
     </Compile>
@@ -316,6 +322,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\CreateAttendance.resx">
+      <DependentUpon>CreateAttendance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module.resx">
       <DependentUpon>Module.vb</DependentUpon>
     </EmbeddedResource>

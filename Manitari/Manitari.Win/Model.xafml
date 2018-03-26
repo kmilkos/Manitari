@@ -5,6 +5,14 @@
       <Action Id="SaveAndNew" Shortcut="Ctrl+Shift+N" />
     </Actions>
   </ActionDesign>
+  <BOModel>
+    <Class Name="Manitari.Module.Attend">
+      <OwnMembers>
+        <Member Name="EndTime" EditMask="t" DisplayFormat="{0:g}" />
+        <Member Name="StartTime" DisplayFormat="{0:g}" EditMaskType="DateTime" EditMask="t" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
   <CreatableItems>
     <CreatableItem ClassName="Manitari.Module.Attend" ImageName="Calendar" />
     <CreatableItem ClassName="Manitari.Module.Category" ImageName="BO_Category" />
@@ -92,4 +100,128 @@
     <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
     <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <DetailView Id="Attend_DetailView">
+      <Items>
+        <PropertyEditor Id="EndTime" DisplayFormat="t" />
+        <PropertyEditor Id="StartTime" DisplayFormat="t" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Attend" RelativeSize="100">
+              <LayoutGroup Id="Attend_col1" RelativeSize="49.942462600690448">
+                <LayoutItem Id="TheDate" RelativeSize="5.786618444846293" Index="0" />
+                <LayoutItem Id="Employee" RelativeSize="4.3399638336347195" Index="1" />
+                <LayoutGroup Id="Auto40610d7c-f8d0-4081-b046-44e78ce89408" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="89.87341772151899" IsNewNode="True">
+                  <LayoutItem Id="StartTime" ViewItem="StartTime" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="EndTime" ViewItem="EndTime" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="StartTime" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Attend_col2" Caption="Attend_col2" RelativeSize="50.057537399309552">
+                <LayoutItem Id="TotalHours" Index="0" RelativeSize="100" />
+                <LayoutItem Id="EndTime" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Attend_ListView">
+      <Columns>
+        <ColumnInfo Id="StartTime" DisplayFormat="t" />
+        <ColumnInfo Id="EndTime" DisplayFormat="t" />
+        <ColumnInfo Id="TotalHours" DisplayFormat="t" />
+      </Columns>
+    </ListView>
+    <ListView Id="Employee_DailyLogs_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor" />
+    <DetailView Id="Employee_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100" Direction="Vertical" Caption="Main">
+          <LayoutGroup Id="SimpleEditors" ShowCaption="False" TextAlignMode="AlignWithChildren" Direction="Horizontal" Index="0" RelativeSize="21.008403361344538" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Person" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="41.928934010152282" IsNewNode="True">
+              <LayoutGroup Id="Person_col1" ShowCaption="False" Index="0" RelativeSize="51.269035532994927" IsNewNode="True">
+                <LayoutItem Id="FirstName" ViewItem="FirstName" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="LastName" ViewItem="LastName" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+                <LayoutItem Id="MiddleName" ViewItem="MiddleName" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_col2" ShowCaption="False" Index="1" RelativeSize="48.730964467005073" IsNewNode="True">
+                <LayoutItem Id="Birthday" ViewItem="Birthday" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="FullName" ViewItem="FullName" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+                <LayoutItem Id="Email" ViewItem="Email" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Employee" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="54.314720812182742" IsNewNode="True">
+              <LayoutGroup Id="Employee_col1" ShowCaption="False" Index="0" RelativeSize="59.692898272552782" IsNewNode="True">
+                <LayoutItem Id="Manager" ViewItem="Manager" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="Department" ViewItem="Department" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+                <LayoutItem Id="Position" ViewItem="Position" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Employee_col2" ShowCaption="False" Index="1" RelativeSize="40.307101727447218" IsNewNode="True">
+                <LayoutItem Id="Nickname" ViewItem="Nickname" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="DateHired" ViewItem="DateHired" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+                <LayoutItem Id="DateFired" ViewItem="DateFired" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutItem Id="Photo" ShowCaption="False" TextAlignMode="CustomSize" ViewItem="Photo" Index="2" RelativeSize="3.7563451776649748" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" ShowCaption="False" Caption="Σημειώσεις" Direction="Horizontal" Index="1" RelativeSize="78.991596638655466" IsNewNode="True" Removed="True">
+            <LayoutItem Id="Notes" ViewItem="Notes" CaptionLocation="Top" Index="0" RelativeSize="16.243654822335024" IsNewNode="True" />
+            <TabbedGroup Id="Tabs" Index="1" RelativeSize="83.756345177664969" IsNewNode="True">
+              <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Skills" TextAlignMode="AutoSize" ViewItem="Skills" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" ViewItem="DailyLogs" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Tasks" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Tasks" TextAlignMode="AutoSize" ViewItem="Tasks" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" ViewItem="PhoneNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="2" RelativeSize="40" Removed="True">
+            <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Skills" TextAlignMode="AutoSize" ViewItem="Skills" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" ViewItem="DailyLogs" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Tasks" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Tasks" TextAlignMode="AutoSize" ViewItem="Tasks" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" ViewItem="PhoneNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Employee_ListView">
+      <Columns>
+        <ColumnInfo Id="Position" Width="150" />
+      </Columns>
+    </ListView>
+    <ListView Id="Employee_Tasks_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="AllDay" Width="74" Index="-1" />
+        <ColumnInfo Id="AppointmentId" Index="-1" />
+        <ColumnInfo Id="Label" Index="-1" />
+        <ColumnInfo Id="Location" Index="-1" />
+        <ColumnInfo Id="ResourceId" Index="-1" />
+        <ColumnInfo Id="Status" Index="-1" />
+        <ColumnInfo Id="Type" Index="-1" />
+        <ColumnInfo Id="Subject" Width="283" />
+        <ColumnInfo Id="SubmittedOn" Width="81" />
+        <ColumnInfo Id="StartOn" Width="62" />
+        <ColumnInfo Id="EndOn" Width="95" />
+        <ColumnInfo Id="TaskStatus" Index="4" Width="72" />
+        <ColumnInfo Id="Category" Index="5" Width="69" />
+        <ColumnInfo Id="Priority" Index="6" Width="54" />
+      </Columns>
+    </ListView>
+  </Views>
 </Application>

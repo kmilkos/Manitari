@@ -12,6 +12,8 @@ Imports System.Collections.Generic
 Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
+Imports DevExpress.ExpressApp.Actions
+Imports DevExpress.ExpressApp.Xpo
 
 <DefaultClassOptions>
 <ImageName("Calender")>
@@ -29,7 +31,9 @@ Public Class Attend
     End Sub
 
     Private _employee As Employee
-    Property Employee As Employee
+    <Association("Employee-Attends")>
+    <XafDisplayName("Εργαζόμενος")>
+    Property Employee() As Employee
         Get
             Return _employee
         End Get
@@ -39,6 +43,7 @@ Public Class Attend
     End Property
 
     Private _theDate As DateTime
+    <XafDisplayName("Ημερομηνία")>
     Property TheDate As DateTime
         Get
             Return _theDate
@@ -48,35 +53,32 @@ Public Class Attend
         End Set
     End Property
 
-    Private _startTime As TimeSpan
-    Property StartTime As TimeSpan
+    Private _startTime As DateTime
+    <XafDisplayName("Ωρα Εκκίνησης")>
+    Property StartTime As DateTime
         Get
             Return _startTime
         End Get
-        Set(ByVal Value As TimeSpan)
+        Set(ByVal Value As DateTime)
             SetPropertyValue(NameOf(StartTime), _startTime, Value)
         End Set
     End Property
 
-    Private _endtime As TimeSpan
-    Property EndTime As TimeSpan
+    Private _endtime As DateTime
+    <XafDisplayName("Ωρα Αποχώρησης")>
+    Property EndTime As DateTime
         Get
             Return _endtime
         End Get
-        Set(ByVal Value As TimeSpan)
+        Set(ByVal Value As DateTime)
             SetPropertyValue(NameOf(EndTime), _endtime, Value)
         End Set
     End Property
 
+    <XafDisplayName("Σύνολο Ωρών")>
     Public ReadOnly Property TotalHours() As TimeSpan
         Get
             TotalHours = _endtime - _startTime
         End Get
     End Property
-
-    '<Action(Caption:="My UI Action", ConfirmationMessage:="Are you sure?", ImageName:="Attention", AutoCommit:=True)> _
-    'Public Sub ActionMethod()
-    '    ' Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-    '    Me.PersistentProperty = "Paid"
-    'End Sub
 End Class
