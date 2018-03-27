@@ -5,6 +5,8 @@ Imports DevExpress.Persistent.Base.General
 Imports DevExpress.Persistent.BaseImpl
 Imports System.Drawing
 Imports DevExpress.ExpressApp.DC
+Imports DevExpress.Data.Filtering
+Imports DevExpress.PivotGrid.ServerMode
 
 <DefaultClassOptions>
 <ImageName("BO_Contact")>
@@ -109,7 +111,7 @@ Public Class Employee ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
-    <Association("Employee-Attends")>
+    <Association("Employee-Attends"), DevExpress.Xpo.Aggregated>
     <XafDisplayName("Ωρολόγιο")>
     Public ReadOnly Property Attends() As XPCollection(Of Attend)
         Get

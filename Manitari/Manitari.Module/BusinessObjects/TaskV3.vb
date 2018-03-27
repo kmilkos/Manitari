@@ -92,6 +92,16 @@ Public Class Task
         End Set
     End Property
 
+    Private _approval As Boolean
+    Property Approval As Boolean
+        Get
+            Return _approval
+        End Get
+        Set(ByVal Value As Boolean)
+            SetPropertyValue(Nameof(Approval), _approval, Value)
+        End Set
+    End Property
+    
     <XafDisplayName("Ολοήμερο?")>
     Public Property AllDay As Boolean Implements IEvent.AllDay
         Get
@@ -103,6 +113,7 @@ Public Class Task
     End Property
 
     <XafDisplayName("Τοποθεσία")>
+    <Browsable(False)>
     Public Property Location As String Implements IEvent.Location
         Get
             Return GetPropertyValue("Location")
@@ -113,6 +124,7 @@ Public Class Task
     End Property
 
     <XafDisplayName("Ετικέτα")>
+    <Browsable(False)>
     Public Property Label As Integer Implements IEvent.Label
         Get
             Return GetPropertyValue("Label")
@@ -123,6 +135,7 @@ Public Class Task
     End Property
 
     <XafDisplayName("Κατάσταση")>
+    <Browsable(False)>
     Public Property Status As Integer Implements IEvent.Status
         Get
             Return GetPropertyValue("Status")
@@ -133,6 +146,7 @@ Public Class Task
     End Property
 
     <XafDisplayName("Τύπος")>
+    <Browsable(False)>
     Public Property Type As Integer Implements IEvent.Type
         Get
             Return GetPropertyValue("Type")
@@ -142,6 +156,7 @@ Public Class Task
         End Set
     End Property
 
+    <Browsable(False)>
     Public Property ResourceId As String Implements IEvent.ResourceId
         Get
             Return GetPropertyValue("ResourceId")
@@ -151,6 +166,7 @@ Public Class Task
         End Set
     End Property
 
+    <Browsable(False)>
     Public ReadOnly Property AppointmentId As Object Implements IEvent.AppointmentId
         Get
             Return GetPropertyValue("AppointmentId")

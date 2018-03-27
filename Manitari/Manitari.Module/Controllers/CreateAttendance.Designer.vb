@@ -36,9 +36,11 @@
         Me.AddEmployees.Category = "RecordEdit"
         Me.AddEmployees.ConfirmationMessage = "Are you sure?"
         Me.AddEmployees.Id = "AddEmployees"
+        Me.AddEmployees.ImageName = "BO_Department"
+        Me.AddEmployees.PaintStyle = DevExpress.ExpressApp.Templates.ActionItemPaintStyle.CaptionAndImage
         Me.AddEmployees.TargetObjectType = GetType(Manitari.[Module].Attend)
         Me.AddEmployees.TargetViewType = DevExpress.ExpressApp.ViewType.ListView
-        Me.AddEmployees.ToolTip = Nothing
+        Me.AddEmployees.ToolTip = "Add The Active Employees to Current Day Payroll"
         Me.AddEmployees.TypeOfView = GetType(DevExpress.ExpressApp.ListView)
         '
         'CreateAttendance

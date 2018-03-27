@@ -73,7 +73,7 @@ Public Class Order
         End Set
     End Property
 
-    <Association("Order-OrderDetails")>
+    <Association("Order-OrderDetails"), DevExpress.Xpo.Aggregated>
     <XafDisplayName("Λεπτομέρειες")>
     Public ReadOnly Property OrderDetails() As XPCollection(Of OrderDetail)
         Get
@@ -83,7 +83,7 @@ Public Class Order
 
     'Πληρώθηκε απο πληρωμή ##link to another table##
     Private _payment As Payment
-    <Association("Payment-Orders")>
+    <Association("Payment-Orders"), DevExpress.Xpo.Aggregated>
     <XafDisplayName("Πληρωμές")>
     Property Payment() As Payment
         Get

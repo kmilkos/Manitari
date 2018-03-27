@@ -28,24 +28,6 @@ Public Class collecting ' Specify more UI options using a declarative approach (
         ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
-    Private Sub collecting_Changed(sender As Object, e As ObjectChangeEventArgs) Handles Me.Changed
-        If IsOdd(Val(room)) Then
-            With Compost
-                .room1 = room
-                .flush11 = flush1
-                .flush12 = flush2
-                .flush13 = flush3
-            End With
-        Else
-            With Compost
-                .room2 = room
-                .flush21 = flush1
-                .flush22 = flush2
-                .flush23 = flush3
-            End With
-        End If
-    End Sub
-
     Private _compost As Compost
     <AssociationAttribute("Compost-Collectings")>
     <XafDisplayName("Κομπόστα")>

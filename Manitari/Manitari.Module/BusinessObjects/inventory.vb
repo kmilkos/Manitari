@@ -38,7 +38,7 @@ Public Class Inventory
         End Set
     End Property
 
-    <Association("Inventory-InventoryItems")>
+    <Association("Inventory-InventoryItems"), DevExpress.Xpo.Aggregated>
     Public ReadOnly Property InventoryItems() As XPCollection(Of InventoryItem)
         Get
             Return GetCollection(Of InventoryItem)(NameOf(InventoryItems))

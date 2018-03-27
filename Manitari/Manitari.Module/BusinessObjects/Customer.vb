@@ -82,7 +82,7 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
-    <Association("Customer-Orders")>
+    <Association("Customer-Orders"), DevExpress.Xpo.Aggregated>
     <XafDisplayName("Παραγγελίες")>
     Public ReadOnly Property Orders() As XPCollection(Of Order)
         Get
