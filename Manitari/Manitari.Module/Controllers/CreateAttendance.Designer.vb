@@ -33,7 +33,7 @@
         '
         Me.AddEmployees.ActionMeaning = DevExpress.ExpressApp.Actions.ActionMeaning.Accept
         Me.AddEmployees.Caption = "Add Employees"
-        Me.AddEmployees.Category = "RecordEdit"
+        Me.AddEmployees.Category = "ObjectsCreation"
         Me.AddEmployees.ConfirmationMessage = "Are you sure?"
         Me.AddEmployees.Id = "AddEmployees"
         Me.AddEmployees.ImageName = "BO_Department"

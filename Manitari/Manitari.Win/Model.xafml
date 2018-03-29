@@ -2,14 +2,15 @@
 <Application>
   <ActionDesign>
     <Actions>
+      <Action Id="AddEmployees" TargetObjectsCriteria="[Employee.DateFired] Is Null" />
       <Action Id="SaveAndNew" Shortcut="Ctrl+Shift+N" />
     </Actions>
   </ActionDesign>
   <BOModel>
     <Class Name="Manitari.Module.Attend">
       <OwnMembers>
-        <Member Name="EndTime" EditMask="t" DisplayFormat="{0:g}" />
-        <Member Name="StartTime" DisplayFormat="{0:g}" EditMaskType="DateTime" EditMask="t" />
+        <Member Name="EndTime" EditMask="t" DisplayFormat="t" />
+        <Member Name="StartTime" DisplayFormat="t" EditMaskType="DateTime" EditMask="t" />
       </OwnMembers>
     </Class>
     <Class Name="Manitari.Module.Compost" ImageName="Compost" />
@@ -125,7 +126,16 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="Attend" RelativeSize="100" />
+            <LayoutGroup Id="Attend" RelativeSize="100">
+              <LayoutItem Id="TheDate" RelativeSize="5.3781512605042021" />
+              <LayoutGroup Id="Autobe0dfc75-a7df-4ed3-831a-745eceb7004c" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="4.0336134453781511" IsNewNode="True">
+                <LayoutItem Id="StartTime" ViewItem="StartTime" Index="0" RelativeSize="49.917627677100491" IsNewNode="True" />
+                <LayoutItem Id="EndTime" ViewItem="EndTime" Index="1" RelativeSize="50.082372322899509" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="TotalHours" Index="2" RelativeSize="90.588235294117652" />
+              <LayoutItem Id="EndTime" Removed="True" />
+              <LayoutItem Id="StartTime" Removed="True" />
+            </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
@@ -137,6 +147,221 @@
         <ColumnInfo Id="TotalHours" DisplayFormat="t" />
       </Columns>
     </ListView>
+    <DetailView Id="collecting_DetailView">
+      <Items>
+        <PropertyEditor Id="Compost" PropertyName="Compost" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="collecting" Direction="Horizontal" RelativeSize="100">
+              <LayoutGroup Id="Auto45b5cd7e-51c1-40ef-b9a1-0d3de27d50ac" ShowCaption="False" Caption="" Index="0" RelativeSize="34.102141680395384" IsNewNode="True">
+                <LayoutItem Id="Compost" ViewItem="Compost" Index="0" RelativeSize="5.3781512605042021" IsNewNode="True" />
+                <LayoutItem Id="room" ViewItem="room" Index="1" RelativeSize="4.0336134453781511" IsNewNode="True" />
+                <LayoutItem Id="flush1" ViewItem="flush1" Index="2" RelativeSize="4.0336134453781511" IsNewNode="True" />
+                <LayoutItem Id="flush2" ViewItem="flush2" Index="3" RelativeSize="4.0336134453781511" IsNewNode="True" />
+                <LayoutItem Id="flush3" ViewItem="flush3" Index="4" RelativeSize="82.52100840336135" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Item1" Index="1" RelativeSize="65.897858319604609" IsNewNode="True" />
+              <LayoutItem Id="flush1" Removed="True" />
+              <LayoutItem Id="flush2" Removed="True" />
+              <LayoutItem Id="flush3" Removed="True" />
+              <LayoutItem Id="room" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Compost_Collecting" ClassName="Manitari.Module.Compost" Caption="Αποτελέσματα" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="BrownSeedm21" PropertyName="BrownSeedm21" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="BrownSeedm22" PropertyName="BrownSeedm22" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Gypsum" PropertyName="Gypsum" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Manure" PropertyName="Manure" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room" PropertyName="Room" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room1Flush1Kgm2" PropertyName="Room1Flush1Kgm2" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room1Flush2Kgm2" PropertyName="Room1Flush2Kgm2" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room1Flush3Kgm2" PropertyName="Room1Flush3Kgm2" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room2Flush1Kgm2" PropertyName="Room2Flush1Kgm2" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room2Flush2Kgm2" PropertyName="Room2Flush2Kgm2" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Room2Flush3Kgm2" PropertyName="Room2Flush3Kgm2" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Straw" PropertyName="Straw" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="WhiteSeedm21" PropertyName="WhiteSeedm21" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="WhiteSeedm22" PropertyName="WhiteSeedm22" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="CompostCode" PropertyName="CompostCode" Width="131" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="TheDate" PropertyName="TheDate" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="room1" PropertyName="room1" Width="50" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="flush11" PropertyName="flush11" Width="50" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="flush12" PropertyName="flush12" Width="50" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="flush13" PropertyName="flush13" Width="50" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="IsRoom1Empty" PropertyName="IsRoom1Empty" Width="50" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="room2" PropertyName="room2" Width="50" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="flush21" PropertyName="flush21" Width="50" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="flush22" PropertyName="flush22" Width="50" Index="9" IsNewNode="True" />
+        <ColumnInfo Id="flush23" PropertyName="flush23" Width="50" Index="10" IsNewNode="True" />
+        <ColumnInfo Id="IsRoom2Empty" PropertyName="IsRoom2Empty" Width="50" Index="11" IsNewNode="True" />
+      </Columns>
+      <Variants IsNewNode="True">
+        <Variant Id="Compost_Collecting" ViewID="Compost_Collecting" IsNewNode="True" />
+        <Variant Id="Sintagh" Caption="Συνταγη" ViewID="Compost_ListView" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <DetailView Id="Compost_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="33.613445378151262" Direction="Horizontal">
+            <LayoutGroup Id="Compost" RelativeSize="23.783783783783782" Direction="Vertical">
+              <LayoutGroup Id="Compost_col1" RelativeSize="100">
+                <LayoutItem Id="CompostCode" RelativeSize="20" />
+                <LayoutItem Id="TheDate" RelativeSize="15" />
+                <LayoutItem Id="Room" RelativeSize="15" />
+                <LayoutItem Id="Straw" RelativeSize="15" />
+                <LayoutItem Id="Gypsum" RelativeSize="15" />
+                <LayoutItem Id="Manure" RelativeSize="20" />
+                <LayoutItem Id="Room1Flush1Kgm2" RelativeSize="6.0913705583756341" Index="7" Removed="True" />
+                <LayoutItem Id="Room1Flush2Kgm2" RelativeSize="6.4864864864864868" Index="7" Removed="True" />
+                <LayoutItem Id="Room1Flush3Kgm2" RelativeSize="9.2485549132947984" Index="7" Removed="True" />
+                <LayoutItem Id="flush12" RelativeSize="6.0913705583756341" Index="8" Removed="True" />
+                <LayoutItem Id="flush13" RelativeSize="6.0913705583756341" Index="9" Removed="True" />
+                <LayoutItem Id="flush11" RelativeSize="6.0913705583756341" Removed="True" />
+                <LayoutItem Id="room1" RelativeSize="7.3170731707317076" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Compost_col2" RelativeSize="29.056603773584907" Caption="Compost_col2" TextAlignMode="UseParentOptions" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="BrownSeedm21" RelativeSize="8.1218274111675122" Index="0" Removed="True" />
+                <LayoutItem Id="IsRoom1Empty" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="IsRoom2Empty" RelativeSize="27.134146341463413" Index="4" Removed="True" />
+                <LayoutItem Id="Room2Flush1Kgm2" RelativeSize="7.0588235294117645" Index="4" Removed="True" />
+                <LayoutItem Id="Room2Flush2Kgm2" RelativeSize="7.3170731707317076" Index="4" Removed="True" />
+                <LayoutItem Id="Room2Flush3Kgm2" RelativeSize="7.3170731707317076" Index="4" Removed="True" />
+                <LayoutItem Id="flush22" RelativeSize="7.0588235294117645" Index="5" Removed="True" />
+                <LayoutItem Id="flush23" RelativeSize="7.0588235294117645" Index="6" Removed="True" />
+                <LayoutItem Id="BrownSeedm22" RelativeSize="6.5934065934065931" Index="10" Removed="True" />
+                <LayoutItem Id="flush21" RelativeSize="7.0588235294117645" Removed="True" />
+                <LayoutItem Id="room2" Removed="True" />
+                <LayoutItem Id="WhiteSeedm21" RelativeSize="8.64864864864865" Removed="True" />
+                <LayoutItem Id="WhiteSeedm22" RelativeSize="6.5934065934065931" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="37.837837837837839" Caption="Item2" IsNewNode="True">
+              <LayoutGroup Id="Auto94474970-9e93-4694-a5f9-491cc84a62ef" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="20" IsNewNode="True">
+                <LayoutItem Id="room1" ViewItem="room1" Index="0" RelativeSize="50.892857142857146" IsNewNode="True" />
+                <LayoutItem Id="IsRoom1Empty" TextAlignMode="CustomSize" ViewItem="IsRoom1Empty" Index="1" RelativeSize="49.107142857142854" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto201d54db-22d8-429f-b9c1-7d87d785670f" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="80" IsNewNode="True">
+                <LayoutGroup Id="Auto3d590ede-8359-40a6-91fe-029d6b96ce5c" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="WhiteSeedm21" ViewItem="WhiteSeedm21" Index="0" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="flush11" ViewItem="flush11" Index="1" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="flush12" ViewItem="flush12" Index="2" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="flush13" ViewItem="flush13" Index="3" RelativeSize="43.75" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto554b2237-6ecf-4b5f-bd69-7a20b33e7a91" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="BrownSeedm21" ViewItem="BrownSeedm21" Index="0" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="Room1Flush1Kgm2" ViewItem="Room1Flush1Kgm2" Index="1" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="Room1Flush2Kgm2" ViewItem="Room1Flush2Kgm2" Index="2" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="Room1Flush3Kgm2" ViewItem="Room1Flush3Kgm2" Index="3" RelativeSize="43.75" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="2" RelativeSize="38.378378378378379" Caption="Item1" IsNewNode="True">
+              <LayoutGroup Id="Auto7b4ff1f6-ca5b-4e1b-932c-a23518a99daf" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="20" IsNewNode="True">
+                <LayoutItem Id="room2" ViewItem="room2" Index="0" RelativeSize="56.25" IsNewNode="True" />
+                <LayoutItem Id="IsRoom2Empty" TextAlignMode="CustomSize" ViewItem="IsRoom2Empty" Index="1" RelativeSize="43.75" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Autoc9cea2eb-e499-453c-8e7d-2752f57e1454" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="80" IsNewNode="True">
+                <LayoutGroup Id="Autof5655957-8b7e-4168-8218-6733c032bbe1" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="WhiteSeedm22" ViewItem="WhiteSeedm22" Index="0" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="flush21" ViewItem="flush21" Index="1" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="flush22" ViewItem="flush22" Index="2" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="flush23" ViewItem="flush23" Index="3" RelativeSize="43.75" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto7d76da67-658a-4b4c-b675-63fb819a5768" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="BrownSeedm22" ViewItem="BrownSeedm22" Index="0" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="Room2Flush1Kgm2" ViewItem="Room2Flush1Kgm2" Index="1" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="Room2Flush2Kgm2" ViewItem="Room2Flush2Kgm2" Index="2" RelativeSize="18.75" IsNewNode="True" />
+                  <LayoutItem Id="Room2Flush3Kgm2" ViewItem="Room2Flush3Kgm2" Index="3" RelativeSize="43.75" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="66.386554621848745">
+            <LayoutGroup Id="CompostYards" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="CompostYards" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Productions" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Productions" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Waterings" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Waterings" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Collectings" TextAlignMode="AlignWithChildren" RelativeSize="100">
+              <LayoutItem Id="Collectings" TextAlignMode="AutoSize" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Compost_ListView">
+      <Columns>
+        <ColumnInfo Id="flush11" Index="-1" />
+        <ColumnInfo Id="flush12" Index="-1" />
+        <ColumnInfo Id="flush13" Index="-1" />
+        <ColumnInfo Id="flush21" Index="-1" />
+        <ColumnInfo Id="flush22" Index="-1" />
+        <ColumnInfo Id="flush23" Index="-1" />
+        <ColumnInfo Id="Room1Flush1Kgm2" Index="-1" />
+        <ColumnInfo Id="Room1Flush2Kgm2" Index="-1" />
+        <ColumnInfo Id="Room1Flush3Kgm2" Index="-1" />
+        <ColumnInfo Id="Room2Flush1Kgm2" Index="-1" />
+        <ColumnInfo Id="Room2Flush2Kgm2" Index="-1" />
+        <ColumnInfo Id="Room2Flush3Kgm2" Index="-1" />
+        <ColumnInfo Id="CompostCode" SortOrder="Descending" Index="0" Width="125" />
+        <ColumnInfo Id="TheDate" Index="1" Width="76" />
+        <ColumnInfo Id="Room" Index="2" Width="63" />
+        <ColumnInfo Id="Straw" Index="3" Width="51" />
+        <ColumnInfo Id="Gypsum" Index="4" Width="54" />
+        <ColumnInfo Id="Manure" Index="5" Width="52" />
+        <ColumnInfo Id="room1" Index="6" Width="83" />
+        <ColumnInfo Id="WhiteSeedm21" Index="7" Width="80" />
+        <ColumnInfo Id="BrownSeedm21" Index="8" Width="70" />
+        <ColumnInfo Id="IsRoom1Empty" Index="9" Width="71" />
+        <ColumnInfo Id="room2" Index="10" Width="83" />
+        <ColumnInfo Id="WhiteSeedm22" Index="11" Width="80" />
+        <ColumnInfo Id="BrownSeedm22" Index="12" Width="70" />
+        <ColumnInfo Id="IsRoom2Empty" Index="13" Width="71" />
+      </Columns>
+      <Variants>
+        <Variant Id="Compost_Collecting" ViewID="Compost_Collecting" IsNewNode="True" />
+        <Variant Id="Sintagh" Caption="Συνταγη" ViewID="Compost_ListView" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="Compost_LookupListView">
+      <Columns>
+        <ColumnInfo Id="@fdd5e544-82eb-4589-b9d9-0552923299f0" PropertyName="room1" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="@f0bcab0b-b09a-431f-b94a-d4e16fe559bd" PropertyName="room2" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CompostYard_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="38.8235294117647">
+            <LayoutGroup Id="CompostYard" RelativeSize="100" Direction="Horizontal">
+              <LayoutGroup Id="Autoc32b20f7-ec53-4022-ae24-6ef701ce1f9c" ShowCaption="False" Caption="" Index="0" RelativeSize="42.5945945945946" IsNewNode="True">
+                <LayoutItem Id="TheDate" ViewItem="TheDate" Index="0" RelativeSize="13.852813852813853" IsNewNode="True" />
+                <LayoutItem Id="FarmAction" ViewItem="FarmAction" Index="1" RelativeSize="10.38961038961039" IsNewNode="True" />
+                <LayoutItem Id="CompostComments" ViewItem="CompostComments" CaptionLocation="Top" Index="2" RelativeSize="75.757575757575751" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Item1" Index="1" RelativeSize="57.4054054054054" IsNewNode="True" />
+              <LayoutItem Id="FarmAction" RelativeSize="48.387096774193552" Removed="True" />
+              <LayoutItem Id="TheDate" RelativeSize="51.612903225806448" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="61.1764705882353" Caption="Σημειώσεις" Direction="Horizontal">
+            <LayoutItem Id="CompostComments" CaptionLocation="Top" RelativeSize="100" Index="0" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="Employee_DailyLogs_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor" />
     <DetailView Id="Employee_DetailView">
       <Layout>
@@ -204,10 +429,14 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Employee_ListView">
+    <ListView Id="Employee_ListView" IsFooterVisible="True">
       <Columns>
         <ColumnInfo Id="Position" Width="150" />
       </Columns>
+      <Filters>
+        <Filter Id="Show All" IsNewNode="True" />
+        <Filter Id="ShowActive" Caption="Ενεργοί" Criteria="[DateFired] Is Null" IsNewNode="True" />
+      </Filters>
     </ListView>
     <ListView Id="Employee_Tasks_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor" AllowEdit="True">
       <Columns>
@@ -263,5 +492,31 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Task_ListView" EditorTypeName="DevExpress.ExpressApp.Win.Editors.GridListEditor">
+      <Variants>
+        <Variant Id="TaskViewList" ViewID="Task_ListView" Caption="Λίστα" IsNewNode="True" />
+        <Variant Id="TaskViewSchedule" ViewID="Task_ScheduleView" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="Task_ScheduleView" ClassName="Manitari.Module.Task" Caption="Ημερολόγιο" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Description" PropertyName="Description" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Subject" PropertyName="Subject" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="SubmittedOn" PropertyName="SubmittedOn" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="StartOn" PropertyName="StartOn" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="EndOn" PropertyName="EndOn" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Approval" PropertyName="Approval" Width="50" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="AllDay" PropertyName="AllDay" Width="50" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="TaskStatus" PropertyName="TaskStatus" Width="70" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="AssignedOn" PropertyName="AssignedOn" Width="70" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="Category" PropertyName="Category" Width="70" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="Priority" PropertyName="Priority" Width="70" Index="9" IsNewNode="True" />
+      </Columns>
+      <Variants IsNewNode="True">
+        <Variant Id="Task_Schedule" ViewID="Task_ListView" Caption="Ημερολόγιο" IsNewNode="True" />
+        <Variant Id="TaskViewList" ViewID="Task_ListView" Caption="Λίστα" IsNewNode="True" />
+      </Variants>
+    </ListView>
   </Views>
 </Application>

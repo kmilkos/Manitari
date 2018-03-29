@@ -25,13 +25,11 @@ Partial Public Class ManitariWindowsFormsApplication
 	''' the contents of this method with the code editor.
 	''' </summary>
 	Private Sub InitializeComponent()
-		Me.module1 = New DevExpress.ExpressApp.SystemModule.SystemModule()
+        Me.module1 = New DevExpress.ExpressApp.SystemModule.SystemModule()
         Me.module2 = New DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule()
-		Me.module3 = New Global.Manitari.Module.ManitariModule()
-		Me.module4 = New Global.Manitari.Module.Win.ManitariWindowsFormsModule()
         Me.securityModule1 = New DevExpress.ExpressApp.Security.SecurityModule()
         Me.securityStrategyComplex1 = New DevExpress.ExpressApp.Security.SecurityStrategyComplex()
-        Me.securityStrategyComplex1.SupportNavigationPermissionsForTypes = False
+        Me.authenticationStandard1 = New DevExpress.ExpressApp.Security.AuthenticationStandard()
         Me.auditTrailModule = New DevExpress.ExpressApp.AuditTrail.AuditTrailModule()
         Me.objectsModule = New DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule()
         Me.chartModule = New DevExpress.ExpressApp.Chart.ChartModule()
@@ -63,44 +61,66 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.viewVariantsModule = New DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule()
         Me.workflowModule = New DevExpress.ExpressApp.Workflow.WorkflowModule()
         Me.workflowWindowsFormsModule = New DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule()
-        Me.authenticationStandard1 = New DevExpress.ExpressApp.Security.AuthenticationStandard()
-		CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
-        ' 
-        ' securityStrategyComplex1
-        ' 
+        Me.WizardUIWindowsFormsModule1 = New Xpand.ExpressApp.WizardUI.Win.WizardUIWindowsFormsModule()
+        Me.module3 = New Manitari.[Module].ManitariModule()
+        Me.module4 = New Manitari.[Module].Win.ManitariWindowsFormsModule()
+        Me.ImportWizardWindowsFormsModule1 = New Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule()
+        Me.ImportWizardModule1 = New Xpand.ExpressApp.ImportWizard.ImportWizardModule()
+        CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
+        'securityStrategyComplex1
+        '
         Me.securityStrategyComplex1.Authentication = Me.authenticationStandard1
         Me.securityStrategyComplex1.RoleType = GetType(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole)
+        Me.securityStrategyComplex1.SupportNavigationPermissionsForTypes = False
         Me.securityStrategyComplex1.UserType = GetType(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser)
-        ' 
-        ' securityModule1
-        ' 
-        Me.securityModule1.UserType = GetType(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser)
-        ' 
-        ' authenticationStandard1
-        ' 
+        '
+        'authenticationStandard1
+        '
         Me.authenticationStandard1.LogonParametersType = GetType(DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters)
         '
-        ' auditTrailModule
+        'auditTrailModule
         '
         Me.auditTrailModule.AuditDataItemPersistentType = GetType(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent)
         '
-        ' dashboardsModule
+        'dashboardsModule
         '
         Me.dashboardsModule.DashboardDataType = GetType(DevExpress.Persistent.BaseImpl.DashboardData)
+        '
+        'dashboardsWindowsFormsModule
+        '
         Me.dashboardsWindowsFormsModule.DesignerFormStyle = DevExpress.XtraBars.Ribbon.RibbonFormStyle.Ribbon
         '
-        ' reportsModuleV2
+        'notificationsModule
+        '
+        Me.notificationsModule.CanAccessPostponedItems = False
+        Me.notificationsModule.NotificationsRefreshInterval = System.TimeSpan.Parse("00:05:00")
+        Me.notificationsModule.NotificationsStartDelay = System.TimeSpan.Parse("00:00:05")
+        Me.notificationsModule.ShowDismissAllAction = False
+        Me.notificationsModule.ShowNotificationsWindow = True
+        Me.notificationsModule.ShowRefreshAction = False
+        '
+        'pivotChartModuleBase
+        '
+        Me.pivotChartModuleBase.DataAccessMode = DevExpress.ExpressApp.CollectionSourceDataAccessMode.Client
+        Me.pivotChartModuleBase.ShowAdditionalNavigation = False
+        '
+        'reportsModuleV2
         '
         Me.reportsModuleV2.EnableInplaceReports = True
         Me.reportsModuleV2.ReportDataType = GetType(DevExpress.Persistent.BaseImpl.ReportDataV2)
-        Me.reportsModuleV2.ShowAdditionalNavigation = False
         Me.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML
         '
-        ' stateMachineModule
+        'stateMachineModule
         '
         Me.stateMachineModule.StateMachineStorageType = GetType(DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine)
         '
-        ' workflowModule
+        'validationModule
+        '
+        Me.validationModule.AllowValidationDetailsAccess = True
+        Me.validationModule.IgnoreWarningAndInformationRules = False
+        '
+        'workflowModule
         '
         Me.workflowModule.RunningWorkflowInstanceInfoType = GetType(DevExpress.ExpressApp.Workflow.Xpo.XpoRunningWorkflowInstanceInfo)
         Me.workflowModule.StartWorkflowRequestType = GetType(DevExpress.ExpressApp.Workflow.Xpo.XpoStartWorkflowRequest)
@@ -109,57 +129,59 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.workflowModule.WorkflowDefinitionType = GetType(DevExpress.ExpressApp.Workflow.Xpo.XpoWorkflowDefinition)
         Me.workflowModule.WorkflowInstanceKeyType = GetType(DevExpress.Workflow.Xpo.XpoInstanceKey)
         Me.workflowModule.WorkflowInstanceType = GetType(DevExpress.Workflow.Xpo.XpoWorkflowInstance)
-        ' 
-		' ManitariWindowsFormsApplication
-		' 
+        '
+        'ManitariWindowsFormsApplication
+        '
         Me.ApplicationName = "Manitari"
         Me.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema
         Me.Modules.Add(Me.module1)
-		Me.Modules.Add(Me.module2)
-		Me.Modules.Add(Me.module3)
-		Me.Modules.Add(Me.module4)
-        Me.Modules.Add(Me.securityModule1)
-        Me.Security = Me.securityStrategyComplex1
+        Me.Modules.Add(Me.module2)
         Me.Modules.Add(Me.auditTrailModule)
         Me.Modules.Add(Me.objectsModule)
         Me.Modules.Add(Me.chartModule)
-        Me.Modules.Add(Me.chartWindowsFormsModule)
         Me.Modules.Add(Me.cloneObjectModule)
         Me.Modules.Add(Me.conditionalAppearanceModule)
         Me.Modules.Add(Me.dashboardsModule)
+        Me.Modules.Add(Me.validationModule)
+        Me.Modules.Add(Me.kpiModule)
+        Me.Modules.Add(Me.notificationsModule)
+        Me.Modules.Add(Me.pivotChartModuleBase)
+        Me.Modules.Add(Me.pivotGridModule)
+        Me.Modules.Add(Me.reportsModuleV2)
+        Me.Modules.Add(Me.schedulerModuleBase)
+        Me.Modules.Add(Me.scriptRecorderModuleBase)
+        Me.Modules.Add(Me.stateMachineModule)
+        Me.Modules.Add(Me.treeListEditorsModuleBase)
+        Me.Modules.Add(Me.viewVariantsModule)
+        Me.Modules.Add(Me.workflowModule)
+        Me.Modules.Add(Me.module3)
+        Me.Modules.Add(Me.chartWindowsFormsModule)
         Me.Modules.Add(Me.dashboardsWindowsFormsModule)
         Me.Modules.Add(Me.fileAttachmentsWindowsFormsModule)
         Me.Modules.Add(Me.htmlPropertyEditorWindowsFormsModule)
-        Me.Modules.Add(Me.kpiModule)
-        Me.Modules.Add(Me.notificationsModule)
         Me.Modules.Add(Me.notificationsWindowsFormsModule)
-        Me.Modules.Add(Me.pivotChartModuleBase)
         Me.Modules.Add(Me.pivotChartWindowsFormsModule)
-        Me.Modules.Add(Me.pivotGridModule)
         Me.Modules.Add(Me.pivotGridWindowsFormsModule)
-        Me.Modules.Add(Me.reportsModuleV2)
         Me.Modules.Add(Me.reportsWindowsFormsModuleV2)
-        Me.Modules.Add(Me.schedulerModuleBase)
         Me.Modules.Add(Me.schedulerWindowsFormsModule)
-        Me.Modules.Add(Me.scriptRecorderModuleBase)
         Me.Modules.Add(Me.scriptRecorderWindowsFormsModule)
-        Me.Modules.Add(Me.stateMachineModule)
-        Me.Modules.Add(Me.treeListEditorsModuleBase)
         Me.Modules.Add(Me.treeListEditorsWindowsFormsModule)
-        Me.Modules.Add(Me.validationModule)
         Me.Modules.Add(Me.validationWindowsFormsModule)
-        Me.Modules.Add(Me.viewVariantsModule)
-        Me.Modules.Add(Me.workflowModule)
         Me.Modules.Add(Me.workflowWindowsFormsModule)
+        Me.Modules.Add(Me.module4)
+        Me.Modules.Add(Me.securityModule1)
+        Me.Modules.Add(Me.WizardUIWindowsFormsModule1)
+        Me.Modules.Add(Me.ImportWizardModule1)
+        Me.Modules.Add(Me.ImportWizardWindowsFormsModule1)
+        Me.Security = Me.securityStrategyComplex1
         Me.UseOldTemplates = False
+        CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
-		CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
-
-	End Sub
+    End Sub
 
 #End Region
 
-	Private module1 As DevExpress.ExpressApp.SystemModule.SystemModule
+    Private module1 As DevExpress.ExpressApp.SystemModule.SystemModule
     Private module2 As DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule
 	Private module3 As Global.Manitari.Module.ManitariModule
     Private module4 As Global.Manitari.Module.Win.ManitariWindowsFormsModule
@@ -197,4 +219,7 @@ Partial Public Class ManitariWindowsFormsApplication
     Private viewVariantsModule As DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule
     Private workflowModule As DevExpress.ExpressApp.Workflow.WorkflowModule
     Private workflowWindowsFormsModule As DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule
+    Friend WithEvents WizardUIWindowsFormsModule1 As Xpand.ExpressApp.WizardUI.Win.WizardUIWindowsFormsModule
+    Friend WithEvents ImportWizardWindowsFormsModule1 As Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule
+    Friend WithEvents ImportWizardModule1 As Xpand.ExpressApp.ImportWizard.ImportWizardModule
 End Class
