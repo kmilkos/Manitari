@@ -187,13 +187,24 @@ Public Class Task
     End Property
 
     Private _assignedOn As Employee
-    <Association("Employee-Tasks")> _
+    <Association("Employee-Tasks")>
     Property AssignedOn() As Employee
         Get
             Return _assignedOn
         End Get
         Set(ByVal Value As Employee)
-            SetPropertyValue(Nameof(AssignedOn), _assignedOn, Value)
+            SetPropertyValue(NameOf(AssignedOn), _assignedOn, Value)
+        End Set
+    End Property
+
+    Private _priorityNumber As Int32
+    <XafDisplayName("Αριθμός Προτεραιότητας")>
+    Property priorityNumber As Int32
+        Get
+            Return _priorityNumber
+        End Get
+        Set(ByVal Value As Int32)
+            SetPropertyValue(Nameof(priorityNumber), _priorityNumber, Value)
         End Set
     End Property
     

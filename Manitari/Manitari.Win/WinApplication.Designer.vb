@@ -66,6 +66,10 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.module4 = New Manitari.[Module].Win.ManitariWindowsFormsModule()
         Me.ImportWizardWindowsFormsModule1 = New Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule()
         Me.ImportWizardModule1 = New Xpand.ExpressApp.ImportWizard.ImportWizardModule()
+        Me.XpandValidationModule1 = New Xpand.ExpressApp.Validation.XpandValidationModule()
+        Me.XpandSecurityModule1 = New Xpand.ExpressApp.Security.XpandSecurityModule()
+        Me.LogicModule1 = New Xpand.ExpressApp.Logic.LogicModule()
+        Me.XpandSecurityWinModule1 = New Xpand.ExpressApp.Security.Win.XpandSecurityWinModule()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'securityStrategyComplex1
@@ -154,6 +158,9 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.Modules.Add(Me.treeListEditorsModuleBase)
         Me.Modules.Add(Me.viewVariantsModule)
         Me.Modules.Add(Me.workflowModule)
+        Me.Modules.Add(Me.ImportWizardModule1)
+        Me.Modules.Add(Me.securityModule1)
+        Me.Modules.Add(Me.XpandSecurityModule1)
         Me.Modules.Add(Me.module3)
         Me.Modules.Add(Me.chartWindowsFormsModule)
         Me.Modules.Add(Me.dashboardsWindowsFormsModule)
@@ -168,11 +175,12 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.Modules.Add(Me.treeListEditorsWindowsFormsModule)
         Me.Modules.Add(Me.validationWindowsFormsModule)
         Me.Modules.Add(Me.workflowWindowsFormsModule)
-        Me.Modules.Add(Me.module4)
-        Me.Modules.Add(Me.securityModule1)
-        Me.Modules.Add(Me.WizardUIWindowsFormsModule1)
-        Me.Modules.Add(Me.ImportWizardModule1)
         Me.Modules.Add(Me.ImportWizardWindowsFormsModule1)
+        Me.Modules.Add(Me.XpandSecurityWinModule1)
+        Me.Modules.Add(Me.module4)
+        Me.Modules.Add(Me.WizardUIWindowsFormsModule1)
+        Me.Modules.Add(Me.XpandValidationModule1)
+        Me.Modules.Add(Me.LogicModule1)
         Me.Security = Me.securityStrategyComplex1
         Me.UseOldTemplates = False
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
@@ -222,4 +230,8 @@ Partial Public Class ManitariWindowsFormsApplication
     Friend WithEvents WizardUIWindowsFormsModule1 As Xpand.ExpressApp.WizardUI.Win.WizardUIWindowsFormsModule
     Friend WithEvents ImportWizardWindowsFormsModule1 As Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule
     Friend WithEvents ImportWizardModule1 As Xpand.ExpressApp.ImportWizard.ImportWizardModule
+    Friend WithEvents XpandValidationModule1 As Xpand.ExpressApp.Validation.XpandValidationModule
+    Friend WithEvents XpandSecurityModule1 As Xpand.ExpressApp.Security.XpandSecurityModule
+    Friend WithEvents LogicModule1 As Xpand.ExpressApp.Logic.LogicModule
+    Friend WithEvents XpandSecurityWinModule1 As Xpand.ExpressApp.Security.Win.XpandSecurityWinModule
 End Class

@@ -55,4 +55,28 @@ Partial Public Class CreateAttendance
             os.Refresh()
         End Using
     End Sub
+
+    Private Sub AddEmployeesAnotherDate_CustomizePopupWindowParams(sender As Object, e As CustomizePopupWindowParamsEventArgs) Handles AddEmployeesAnotherDate.CustomizePopupWindowParams
+
+    End Sub
+
+    Private Sub AddEmployeesAnotherDate_Execute(sender As Object, e As PopupWindowShowActionExecuteEventArgs) Handles AddEmployeesAnotherDate.Execute
+        Using os As XPObjectSpace = Application.CreateObjectSpace()
+            Dim EmployeeBaseList As IList(Of Employee) = os.GetObjects(Of Employee)()
+            'some code which performs actions using the objectSpace Object Space  
+
+
+            For Each employee In EmployeeBaseList
+                Dim newAttend As Attend = os.CreateObject(Of Attend)()
+
+                newAttend.Employee = employee
+                newAttend.TheDate = Today
+                newAttend.StartTime = Today + " 07:30"
+                newAttend.EndTime = Today + " 15:30"
+            Next
+
+            os.CommitChanges()
+            os.Refresh()
+        End Using
+    End Sub
 End Class

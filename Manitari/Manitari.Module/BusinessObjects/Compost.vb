@@ -51,16 +51,11 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Set
     End Property
 
-    Private _room As String
-    <Size(SizeAttribute.DefaultStringMappingFieldSize)>
-    <XafDisplayName("Θάλαμος")>
-    Property Room As String
+    <XafDisplayName("Θάλαμοι")>
+    Public ReadOnly Property Rooms() As String
         Get
-            Return _room
+            Return ObjectFormatter.Format("{room1}-{room2}", This, EmptyEntriesMode.RemoveDelimiterWhenEntryIsEmpty)
         End Get
-        Set(ByVal Value As String)
-            SetPropertyValue(NameOf(Room), _room, Value)
-        End Set
     End Property
 
     Private _straw As String
@@ -291,7 +286,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     End Property
 #End Region
 
-    <AssociationAttribute("Compost-CompostYards"), DevExpress.Xpo.Aggregated>
+    <AssociationAttribute("Compost-CompostYards")>
     <XafDisplayName("Εργασίες Κομποστάδικου")>
     Public ReadOnly Property CompostYards() As XPCollection(Of CompostYard)
         Get
@@ -299,7 +294,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Get
     End Property
 
-    <AssociationAttribute("Compost-Productions"), DevExpress.Xpo.Aggregated>
+    <AssociationAttribute("Compost-Productions")>
     <XafDisplayName("Εργασίες Παραγωγής")>
     Public ReadOnly Property Productions() As XPCollection(Of Production)
         Get
@@ -307,7 +302,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Get
     End Property
 
-    <AssociationAttribute("Compost-Waterings"), DevExpress.Xpo.Aggregated>
+    <AssociationAttribute("Compost-Waterings")>
     <XafDisplayName("Ποτίσματα")>
     Public ReadOnly Property Waterings() As XPCollection(Of Watering)
         Get
@@ -315,7 +310,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Get
     End Property
 
-    <AssociationAttribute("Compost-Collectings"), DevExpress.Xpo.Aggregated>
+    <AssociationAttribute("Compost-Collectings")>
     <XafDisplayName("Συγκομοιδή")>
     Public ReadOnly Property Collectings() As XPCollection(Of collecting)
         Get

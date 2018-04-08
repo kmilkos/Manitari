@@ -1,4 +1,4 @@
-﻿Imports Microsoft.VisualBasic
+Imports Microsoft.VisualBasic
 Imports System
 
 Partial Public Class ManitariWindowsFormsModule
@@ -30,6 +30,8 @@ Partial Public Class ManitariWindowsFormsModule
 		'
 		Me.RequiredModuleTypes.Add(GetType(Manitari.Module.ManitariModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule))
+			Me.RequiredModuleTypes.Add(GetType(Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule))
+			Me.RequiredModuleTypes.Add(GetType(Xpand.ExpressApp.Security.Win.XpandSecurityWinModule))
 		Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule))
 		Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Dashboards.Win.DashboardsWindowsFormsModule))
 		Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule))

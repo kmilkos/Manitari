@@ -7,31 +7,40 @@
     </Actions>
   </ActionDesign>
   <BOModel>
-    <Class Name="Manitari.Module.Attend">
+    <Class Name="Manitari.Module.Attend" ImageName="BO_Scheduler">
       <OwnMembers>
         <Member Name="EndTime" EditMask="t" DisplayFormat="t" />
         <Member Name="StartTime" DisplayFormat="t" EditMaskType="DateTime" EditMask="t" />
       </OwnMembers>
     </Class>
+    <Class Name="Manitari.Module.Category" ImageName="BO_Category" />
+    <Class Name="Manitari.Module.collecting" ImageName="BO_Skull" />
     <Class Name="Manitari.Module.Compost" ImageName="Compost" />
+    <Class Name="Manitari.Module.CompostYard" ImageName="compost" />
+    <Class Name="Manitari.Module.DailyLog" ImageName="BO_Scheduler" />
     <Class Name="Manitari.Module.Department" ImageName="BO_Department" />
+    <Class Name="Manitari.Module.FarmAction" ImageName="production" />
+    <Class Name="Manitari.Module.Inventory" ImageName="Warehouse" />
+    <Class Name="Manitari.Module.InventoryItem" ImageName="Packs" />
+    <Class Name="Manitari.Module.Order" ImageName="BO_Order" />
+    <Class Name="Manitari.Module.OrderDetail" ImageName="BO_Order_Item" />
+    <Class Name="Manitari.Module.Payment" ImageName="BO_Sale_v92" />
+    <Class Name="Manitari.Module.Position" ImageName="BO_Lead" />
+    <Class Name="Manitari.Module.Production" ImageName="production" />
     <Class Name="Manitari.Module.Skill" ImageName="Action_StateMachine" />
-    <Class Name="Manitari.Module.Task">
+    <Class Name="Manitari.Module.Task" IsCloneable="True" DefaultListViewAllowEdit="True" DefaultListViewShowFindPanel="False" DefaultListViewShowAutoFilterRow="True">
       <AppearanceRules>
         <AppearanceRule Id="TaskCompleted" Context="ListView" Criteria="[TaskStatus] = ##Enum#Manitari.Module.Task+TaskStatusEnum,Completed#" BackColor="PaleGreen" TargetItems="*" IsNewNode="True" />
         <AppearanceRule Id="TaskElectronics" Context="ListView" Criteria="[Category] = 'Ηλεκτρονικά'" BackColor="DarkSeaGreen" TargetItems="*" IsNewNode="True" />
         <AppearanceRule Id="TaskInProgress" Context="ListView" Criteria="[TaskStatus] = ##Enum#Manitari.Module.Task+TaskStatusEnum,InProgress#" BackColor="LightBlue" TargetItems="*" IsNewNode="True" />
         <AppearanceRule Id="TaskNotStarted" Context="ListView" Criteria="[TaskStatus] = ##Enum#Manitari.Module.Task+TaskStatusEnum,NotStarted#" BackColor="Gainsboro" TargetItems="*" IsNewNode="True" />
       </AppearanceRules>
-      <OwnMembers>
-        <Member Name="Description" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.StringPropertyEditor" />
-      </OwnMembers>
     </Class>
     <Class Name="Manitari.Module.Warehouse" IsCloneable="True" ImageName="Warehouse" />
     <Class Name="Manitari.Module.WarehouseItem" ImageName="Packs" />
   </BOModel>
   <CreatableItems>
-    <CreatableItem ClassName="Manitari.Module.Attend" ImageName="Calendar" />
+    <CreatableItem ClassName="Manitari.Module.Attend" ImageName="BO_Calendar" />
     <CreatableItem ClassName="Manitari.Module.Category" ImageName="BO_Category" />
     <CreatableItem ClassName="Manitari.Module.collecting" ImageName="Action_StateMachine" />
     <CreatableItem ClassName="Manitari.Module.Compost" ImageName="Compost" />
@@ -112,12 +121,32 @@
   <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI" />
   <SchemaModules>
     <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="ImportWizardModule" Version="17.2.4.6" IsNewNode="True" />
+    <SchemaModule Name="ImportWizardWindowsFormsModule" Version="17.2.4.6" IsNewNode="True" />
+    <SchemaModule Name="LogicModule" Version="17.2.4.6" IsNewNode="True" />
     <SchemaModule Name="SchedulerModuleBase" Version="17.2.4.0" IsNewNode="True" />
     <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
     <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="WizardUIWindowsFormsModule" Version="17.2.4.6" IsNewNode="True" />
+    <SchemaModule Name="XpandSecurityModule" Version="17.2.4.6" IsNewNode="True" />
+    <SchemaModule Name="XpandSecurityWinModule" Version="17.2.4.6" IsNewNode="True" />
+    <SchemaModule Name="XpandValidationModule" Version="17.2.4.6" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <DetailView Id="AddAttendanceAnotherDate" Caption="Εισαγωγή Προσωπικού (Ημ)" ClassName="Manitari.Module.Attend" IsNewNode="True">
+      <HiddenActions IsNewNode="True">
+        <ActionLink ActionId="AddEmployeesAnotherDate" IsNewNode="True" />
+      </HiddenActions>
+      <Items IsNewNode="True">
+        <ControlDetailItem Id="DateToAdd" ControlTypeName="theDate" Caption="Ημερομηνία" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True">
+          <LayoutItem Id="DateToAdd" ViewItem="DateToAdd" Index="0" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="Attend_DetailView">
       <Items>
         <PropertyEditor Id="EndTime" DisplayFormat="t" />
@@ -140,7 +169,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Attend_ListView">
+    <ListView Id="Attend_ListView" ImageName="Calendar">
       <Columns>
         <ColumnInfo Id="StartTime" DisplayFormat="t" />
         <ColumnInfo Id="EndTime" DisplayFormat="t" />
@@ -163,10 +192,6 @@
                 <LayoutItem Id="flush3" ViewItem="flush3" Index="4" RelativeSize="82.52100840336135" IsNewNode="True" />
               </LayoutGroup>
               <LayoutItem Id="Item1" Index="1" RelativeSize="65.897858319604609" IsNewNode="True" />
-              <LayoutItem Id="flush1" Removed="True" />
-              <LayoutItem Id="flush2" Removed="True" />
-              <LayoutItem Id="flush3" Removed="True" />
-              <LayoutItem Id="room" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
@@ -179,7 +204,6 @@
         <ColumnInfo Id="Gypsum" PropertyName="Gypsum" Width="70" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="Manure" PropertyName="Manure" Width="70" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
-        <ColumnInfo Id="Room" PropertyName="Room" Width="70" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="Room1Flush1Kgm2" PropertyName="Room1Flush1Kgm2" Width="70" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="Room1Flush2Kgm2" PropertyName="Room1Flush2Kgm2" Width="70" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="Room1Flush3Kgm2" PropertyName="Room1Flush3Kgm2" Width="70" Index="-1" IsNewNode="True" />
@@ -215,7 +239,6 @@
               <LayoutGroup Id="Compost_col1" RelativeSize="100">
                 <LayoutItem Id="CompostCode" RelativeSize="20" />
                 <LayoutItem Id="TheDate" RelativeSize="15" />
-                <LayoutItem Id="Room" RelativeSize="15" />
                 <LayoutItem Id="Straw" RelativeSize="15" />
                 <LayoutItem Id="Gypsum" RelativeSize="15" />
                 <LayoutItem Id="Manure" RelativeSize="20" />
@@ -317,7 +340,6 @@
         <ColumnInfo Id="Room2Flush3Kgm2" Index="-1" />
         <ColumnInfo Id="CompostCode" SortOrder="Descending" Index="0" Width="125" />
         <ColumnInfo Id="TheDate" Index="1" Width="76" />
-        <ColumnInfo Id="Room" Index="2" Width="63" />
         <ColumnInfo Id="Straw" Index="3" Width="51" />
         <ColumnInfo Id="Gypsum" Index="4" Width="54" />
         <ColumnInfo Id="Manure" Index="5" Width="52" />
@@ -479,7 +501,6 @@
                   </LayoutGroup>
                 </LayoutGroup>
                 <LayoutItem Id="Priority" RelativeSize="17.647058823529413" Index="2" Removed="True" />
-                <LayoutItem Id="AllDay" RelativeSize="21.804511278195488" TextAlignMode="CustomSize" Removed="True" />
                 <LayoutItem Id="Category" RelativeSize="18.045112781954888" Removed="True" />
                 <LayoutItem Id="TaskStatus" RelativeSize="21.428571428571427" Removed="True" />
               </LayoutGroup>
@@ -514,7 +535,7 @@
         <ColumnInfo Id="Priority" PropertyName="Priority" Width="70" Index="9" IsNewNode="True" />
       </Columns>
       <Variants IsNewNode="True">
-        <Variant Id="Task_Schedule" ViewID="Task_ListView" Caption="Ημερολόγιο" IsNewNode="True" />
+        <Variant Id="Task_Schedule" Caption="Ημερολόγιο" ViewID="Task_ScheduleView" IsNewNode="True" />
         <Variant Id="TaskViewList" ViewID="Task_ListView" Caption="Λίστα" IsNewNode="True" />
       </Variants>
     </ListView>
