@@ -83,7 +83,7 @@ Public Class Order
 
     'Πληρώθηκε απο πληρωμή ##link to another table##
     Private _payment As Payment
-    <Association("Payment-Orders"), DevExpress.Xpo.Aggregated>
+    <Association("Payment-Orders")>
     <XafDisplayName("Πληρωμές")>
     Property Payment() As Payment
         Get
@@ -95,7 +95,7 @@ Public Class Order
     End Property
 
     Private fOrdersTotal As Nullable(Of Decimal) = Nothing
-    <XafDisplayName("Αρ. Παραγγελιών")>
+    <XafDisplayName("Συνολο")>
     Public ReadOnly Property OrdersTotal() As Nullable(Of Decimal)
         Get
             If (Not IsLoading) AndAlso (Not IsSaving) AndAlso Not fOrdersTotal.HasValue Then
@@ -109,7 +109,7 @@ Public Class Order
         Dim oldOrdersTotal As Nullable(Of Decimal) = fOrdersTotal
         Dim tempTotal As Decimal = 0D
         For Each detail As OrderDetail In OrderDetails
-            tempTotal += detail.Linetotal
+            tempTotal += detail.TotalPrice
         Next detail
         fOrdersTotal = tempTotal
         If forceChangeEvents Then
