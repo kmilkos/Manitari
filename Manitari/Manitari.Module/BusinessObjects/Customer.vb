@@ -94,7 +94,6 @@ Public Class Customer ' Specify more UI options using a declarative approach (ht
 
 #Region "IPerson"
     Private Const defaultFullNameFormat As String = "{FirstName} {MiddleName} {LastName}"
-    Private Const defaultFullNamePersistentAlias As String = "concat(FirstName, MiddleName, LastName)"
 
     <XafDisplayName("Όνομα")>
     Public Property FirstName As String Implements IPerson.FirstName

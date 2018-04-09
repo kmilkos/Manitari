@@ -21,6 +21,7 @@ Imports System.Globalization
 <NavigationItem("Παραγωγή")>
 Public Class Compost ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
@@ -95,6 +96,20 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     End Property
 
 #Region "Flushes"
+    <PersistentAlias("WhiteSeedm21+BrownSeedm21")>
+    <XafDisplayName("1.Σύνολο m2")>
+    Public ReadOnly Property r1Totalm2 As Single
+        Get
+            Dim tempObject As Object
+            tempObject = EvaluateAlias("r1Totalm2")
+            If tempObject IsNot Nothing Then
+                Return CDbl(tempObject)
+            Else
+                Return 0
+            End If
+        End Get
+    End Property
+
     Private _room1 As Integer
     <XafDisplayName("1ος Θαλάμος")>
     Property room1 As Integer
@@ -118,7 +133,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     <XafDisplayName("1.1o Kg/m2")>
     Public ReadOnly Property Room1Flush1Kgm2() As Nullable(Of Single)
         Get
-            Room1Flush1Kgm2 = flush11 / WhiteSeedm21
+            Room1Flush1Kgm2 = flush11 / r1Totalm2
 
             Return Room1Flush1Kgm2
         End Get
@@ -136,7 +151,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     <XafDisplayName("1.2o Kg/m2")>
     Public ReadOnly Property Room1Flush2Kgm2() As Nullable(Of Single)
         Get
-            Room1Flush2Kgm2 = flush12 / WhiteSeedm21
+            Room1Flush2Kgm2 = flush12 / r1Totalm2
 
             Return Room1Flush2Kgm2
         End Get
@@ -154,7 +169,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     <XafDisplayName("1.3o Kg/m2")>
     Public ReadOnly Property Room1Flush3Kgm2() As Nullable(Of Single)
         Get
-            Room1Flush3Kgm2 = flush13 / WhiteSeedm21
+            Room1Flush3Kgm2 = flush13 / r1Totalm2
 
             Return Room1Flush3Kgm2
         End Get
@@ -190,6 +205,19 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Set
     End Property
 
+    <PersistentAlias("WhiteSeedm22+BrownSeedm22")>
+    <XafDisplayName("2.Σύνολο m2")>
+    Public ReadOnly Property r2Totalm2 As Single
+        Get
+            Dim tempObject As Object
+            tempObject = EvaluateAlias("r2Totalm2")
+            If tempObject IsNot Nothing Then
+                Return CDbl(tempObject)
+            Else
+                Return 0
+            End If
+        End Get
+    End Property
     Private _room2 As Integer
     <XafDisplayName("2ος Θαλάμος")>
     Property room2 As Integer
@@ -213,7 +241,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     <XafDisplayName("2.1o Kg/m2")>
     Public ReadOnly Property Room2Flush1Kgm2() As Nullable(Of Single)
         Get
-            Room2Flush1Kgm2 = flush21 / WhiteSeedm22
+            Room2Flush1Kgm2 = flush21 / r2Totalm2
 
             Return Room2Flush1Kgm2
         End Get
@@ -231,7 +259,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     <XafDisplayName("2.2o Kg/m2")>
     Public ReadOnly Property Room2Flush2Kgm2() As Nullable(Of Single)
         Get
-            Room2Flush2Kgm2 = flush22 / WhiteSeedm22
+            Room2Flush2Kgm2 = flush22 / r2Totalm2
 
             Return Room2Flush2Kgm2
         End Get
@@ -249,7 +277,7 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
     <XafDisplayName("2.3o Kg/m2")>
     Public ReadOnly Property Room2Flush3Kgm2() As Nullable(Of Single)
         Get
-            Room2Flush3Kgm2 = flush23 / WhiteSeedm22
+            Room2Flush3Kgm2 = flush23 / r2Totalm2
 
             Return Room2Flush3Kgm2
         End Get

@@ -176,6 +176,7 @@ Public Class DailyLog
     <Size(SizeAttribute.Unlimited)>
     Public Property ResourceId As String Implements IEvent.ResourceId
         Get
+            ResourceId = Nothing
             Return ResourceId
         End Get
         Set(value As String)

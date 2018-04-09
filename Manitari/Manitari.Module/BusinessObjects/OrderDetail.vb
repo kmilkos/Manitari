@@ -30,16 +30,19 @@ Public Class OrderDetail ' Specify more UI options using a declarative approach 
         MyBase.AfterConstruction()
         ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
+    Public Overrides Function Equals(obj As Object) As Boolean
+        Return MyBase.Equals(obj)
+    End Function
 
     Private _order As Order
     <Association("Order-OrderDetails")>
     <Browsable(False)>
-    Property order() As Order
+    Property Order() As Order
         Get
             Return _order
         End Get
         Set(ByVal Value As Order)
-            SetPropertyValue(NameOf(order), _order, Value)
+            SetPropertyValue(NameOf(Order), _order, Value)
         End Set
     End Property
 

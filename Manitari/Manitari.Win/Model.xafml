@@ -7,6 +7,11 @@
     </Actions>
   </ActionDesign>
   <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
+      <OwnMembers>
+        <RuntimeMember Name="Email" IsCustom="True" Type="System.String" CreatedAtDesignTime="True" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
     <Class Name="Manitari.Module.Attend" ImageName="BO_Scheduler" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="EndTime" EditMask="t" DisplayFormat="t" />
@@ -124,7 +129,14 @@
       <Item Id="Workflow" Removed="True" />
     </Items>
   </NavigationItems>
-  <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI" />
+  <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI">
+    <Athentication>
+      <AutoAthentication Enabled="True" />
+    </Athentication>
+    <PrintingSettings PaperKind="A4" />
+    <Registration Enabled="True" />
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
   <SchemaModules>
     <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
     <SchemaModule Name="ImportWizardModule" Version="17.2.4.6" IsNewNode="True" />
