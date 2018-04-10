@@ -9,7 +9,7 @@
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
       <OwnMembers>
-        <RuntimeMember Name="Email" IsCustom="True" Type="System.String" CreatedAtDesignTime="True" IsNewNode="True" />
+        <RuntimeMember Name="Email" Type="System.String" CreatedAtDesignTime="True" IsNewNode="True" />
       </OwnMembers>
     </Class>
     <Class Name="Manitari.Module.Attend" ImageName="BO_Scheduler" DefaultListViewAllowEdit="True">
@@ -20,7 +20,14 @@
     </Class>
     <Class Name="Manitari.Module.Category" ImageName="BO_Category" />
     <Class Name="Manitari.Module.collecting" ImageName="BO_Skull" />
-    <Class Name="Manitari.Module.Compost" ImageName="Compost" />
+    <Class Name="Manitari.Module.Compost" ImageName="Compost">
+      <AppearanceRules>
+        <AppearanceRule Id="Room1Error" BackColor="255, 128, 128" FontStyle="Italic" Criteria="[r1Totalm2] &lt; 400.0f" TargetItems="r1Totalm2" IsNewNode="True" />
+        <AppearanceRule Id="Room1Filled" BackColor="128, 255, 255" FontStyle="Italic" Criteria="[r1Totalm2] = 400.0f" TargetItems="r1Totalm2" IsNewNode="True" />
+        <AppearanceRule Id="Room2Error" BackColor="255, 128, 128" FontStyle="Italic" Criteria="[r2Totalm2] &lt; 400.0f" TargetItems="r2Totalm2" IsNewNode="True" />
+        <AppearanceRule Id="Room2Filled" BackColor="128, 255, 255" FontStyle="Italic" Criteria="[r2Totalm2] = 400.0f" TargetItems="r2Totalm2" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
     <Class Name="Manitari.Module.CompostYard" ImageName="Compost" />
     <Class Name="Manitari.Module.DailyLog" ImageName="BO_Scheduler" />
     <Class Name="Manitari.Module.Department" ImageName="BO_Department" />
