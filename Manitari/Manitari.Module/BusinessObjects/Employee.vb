@@ -111,19 +111,18 @@ Public Class Employee ' Specify more UI options using a declarative approach (ht
         End Set
     End Property
 
+    <Association("Employee-Skillsets"), DevExpress.Xpo.Aggregated>
+    Public ReadOnly Property Skillsets() As XPCollection(Of Skillset)
+        Get
+            Return GetCollection(Of Skillset)(NameOf(Skillsets))
+        End Get
+    End Property
+
     <Association("Employee-Attends"), DevExpress.Xpo.Aggregated>
     <XafDisplayName("Ωρολόγιο")>
     Public ReadOnly Property Attends() As XPCollection(Of Attend)
         Get
             Return GetCollection(Of Attend)(NameOf(Attends))
-        End Get
-    End Property
-
-    <DevExpress.Xpo.AssociationAttribute("Skills-Employees")>
-    <XafDisplayName("Ικανότητες")>
-    Public ReadOnly Property Skills As XPCollection(Of Skill)
-        Get
-            Return GetCollection(Of Skill)("Skills")
         End Get
     End Property
 

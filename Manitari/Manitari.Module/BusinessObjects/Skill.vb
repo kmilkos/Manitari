@@ -38,19 +38,4 @@ Public Class Skill ' Specify more UI options using a declarative approach (https
             SetPropertyValue("Title", _title, value)
         End Set
     End Property
-
-
-    <DevExpress.Xpo.AssociationAttribute("Skills-Employees")>
-    <XafDisplayName("Προσωπικό")>
-    Public ReadOnly Property Employees As XPCollection(Of Employee)
-        Get
-            Return GetCollection(Of Employee)("Employees")
-        End Get
-    End Property
-
-    Public Enum JobTypeEnum
-        Γενικά
-        Καθημερινά
-        Εβδομαδιαία
-    End Enum
 End Class

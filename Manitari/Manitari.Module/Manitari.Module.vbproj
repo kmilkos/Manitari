@@ -309,6 +309,7 @@
     <Compile Include="BusinessObjects\Position.vb" />
     <Compile Include="BusinessObjects\Production.vb" />
     <Compile Include="BusinessObjects\Skill.vb" />
+    <Compile Include="BusinessObjects\Skillset.vb" />
     <Compile Include="BusinessObjects\TaskV3.vb" />
     <Compile Include="BusinessObjects\Warehouse.vb" />
     <Compile Include="BusinessObjects\WarehouseItem.vb" />
@@ -415,6 +416,8 @@
     <EmbeddedResource Include="Images\Manitari.Module.Images.Packs_32x32.png" />
     <EmbeddedResource Include="Images\Manitari.Module.Images.Warehouse.png" />
     <EmbeddedResource Include="Images\Manitari.Module.Images.Warehouse_32x32.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.Time.png" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.Time_32x32.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />

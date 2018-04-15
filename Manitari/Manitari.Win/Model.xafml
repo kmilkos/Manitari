@@ -571,49 +571,52 @@
     <DetailView Id="Employee_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100" Direction="Vertical" Caption="Main">
-          <LayoutGroup Id="SimpleEditors" ShowCaption="False" TextAlignMode="AlignWithChildren" Direction="Horizontal" Index="0" RelativeSize="21.008403361344538" IsNewNode="True" Removed="True">
-            <LayoutGroup Id="Person" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="41.863207547169814" IsNewNode="True">
-              <LayoutGroup Id="Person_col1" ShowCaption="False" Index="0" RelativeSize="51.19047619047619" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" ShowCaption="False" TextAlignMode="AlignWithChildren" Direction="Horizontal" Index="0" RelativeSize="16.361256544502616" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Person" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="41.760722347629795" IsNewNode="True">
+              <LayoutGroup Id="Person_col1" ShowCaption="False" Index="0" RelativeSize="50.997150997150996" IsNewNode="True">
                 <LayoutItem Id="FirstName" ViewItem="FirstName" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="LastName" ViewItem="LastName" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
                 <LayoutItem Id="MiddleName" ViewItem="MiddleName" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Person_col2" ShowCaption="False" Index="1" RelativeSize="48.80952380952381" IsNewNode="True">
+              <LayoutGroup Id="Person_col2" ShowCaption="False" Index="1" RelativeSize="49.002849002849004" IsNewNode="True">
                 <LayoutItem Id="Birthday" ViewItem="Birthday" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="FullName" ViewItem="FullName" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
                 <LayoutItem Id="Email" ViewItem="Email" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="Employee" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="58.136792452830186" IsNewNode="True">
-              <LayoutGroup Id="Employee_col1" ShowCaption="False" Index="0" RelativeSize="59.493670886075947" IsNewNode="True">
+            <LayoutGroup Id="Employee" ShowCaption="True" Direction="Horizontal" Index="1" RelativeSize="58.239277652370205" IsNewNode="True">
+              <LayoutGroup Id="Employee_col1" ShowCaption="False" Index="0" RelativeSize="59.356136820925556" IsNewNode="True">
                 <LayoutItem Id="Manager" ViewItem="Manager" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="Department" ViewItem="Department" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
                 <LayoutItem Id="Position" ViewItem="Position" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Employee_col2" ShowCaption="False" Index="1" RelativeSize="40.506329113924053" IsNewNode="True">
+              <LayoutGroup Id="Employee_col2" ShowCaption="False" Index="1" RelativeSize="40.643863179074444" IsNewNode="True">
                 <LayoutItem Id="Nickname" ViewItem="Nickname" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="DateHired" ViewItem="DateHired" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
                 <LayoutItem Id="DateFired" ViewItem="DateFired" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" ShowCaption="False" Caption="Σημειώσεις" Direction="Horizontal" Index="1" RelativeSize="78.991596638655466" IsNewNode="True" Removed="True">
-            <LayoutGroup Id="Auto83804eea-4a27-47da-bae1-f959fe6ec566" ShowCaption="False" Caption="" Index="0" RelativeSize="16.15566037735849" IsNewNode="True">
-              <LayoutItem Id="Photo" ShowCaption="False" TextAlignMode="CustomSize" ViewItem="Photo" Index="0" RelativeSize="27.021276595744681" IsNewNode="True" />
-              <LayoutItem Id="Notes" ViewItem="Notes" CaptionLocation="Top" Index="1" RelativeSize="72.978723404255319" IsNewNode="True" />
+          <LayoutGroup Id="SizeableEditors" ShowCaption="False" Caption="Σημειώσεις" Direction="Horizontal" Index="1" RelativeSize="83.638743455497377" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Auto83804eea-4a27-47da-bae1-f959fe6ec566" ShowCaption="False" Caption="Auto83804eea-4a27-47da-bae1-f959fe6ec566(22)" Index="0" RelativeSize="15.237020316027088" IsNewNode="True">
+              <LayoutItem Id="Photo" ShowCaption="False" TextAlignMode="CustomSize" ViewItem="Photo" Index="0" RelativeSize="26.917057902973397" IsNewNode="True" />
+              <LayoutItem Id="Notes" ViewItem="Notes" CaptionLocation="Top" Index="1" RelativeSize="73.0829420970266" IsNewNode="True" />
             </LayoutGroup>
-            <TabbedGroup Id="Tabs" Index="1" RelativeSize="83.844339622641513" IsNewNode="True">
-              <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="Skills" TextAlignMode="AutoSize" ViewItem="Skills" Index="0" RelativeSize="100" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
+            <TabbedGroup Id="Tabs" Index="1" RelativeSize="84.762979683972915" IsNewNode="True">
+              <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" IsNewNode="True">
                 <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" ViewItem="DailyLogs" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Tasks" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Tasks" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
                 <LayoutItem Id="Tasks" TextAlignMode="AutoSize" ViewItem="Tasks" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
                 <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" ViewItem="PhoneNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Direction="Vertical" Index="3" RelativeSize="100" ImageName="Action_Show_PivotGrid_Designer" IsNewNode="True">
+                <LayoutItem Id="Skillsets" ViewItem="Skillsets" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Attendance" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" TextAlignMode="AlignWithChildren" RelativeSize="100" Caption="Ωρολόγιο" ImageName="Time" IsNewNode="True">
+                <LayoutItem Id="Attends" ViewItem="Attends" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
             </TabbedGroup>
           </LayoutGroup>
