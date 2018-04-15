@@ -81,7 +81,7 @@
     <CreatableItem ClassName="Manitari.Module.WarehouseItem" ImageName="BO_Product" />
     <CreatableItem ClassName="Manitari.Module.Watering" ImageName="Action_Change_State" />
   </CreatableItems>
-  <NavigationItems RootGroupsStyle="OutlookAnimated" DefaultChildItemsDisplayStyle="List" GenerateRelatedViewVariantsGroup="True" GenerateRelatedReportsGroup="True" GenerateRelatedAnalysisGroup="True">
+  <NavigationItems RootGroupsStyle="OutlookAnimated" DefaultChildItemsDisplayStyle="List" GenerateRelatedViewVariantsGroup="False" GenerateRelatedReportsGroup="True" GenerateRelatedAnalysisGroup="True" RelatedAnalysisGroupCaption="Ανάλυση" RelatedReportsGroupCaption="Αναφορές" RelatedViewVariantsGroupCaption="Εναλλακτικές Προβολές">
     <Items>
       <Item Id="Παραγωγή" Index="0">
         <Items>
@@ -158,6 +158,11 @@
     <SchemaModule Name="XpandSecurityWinModule" Version="17.2.4.6" IsNewNode="True" />
     <SchemaModule Name="XpandValidationModule" Version="17.2.4.6" IsNewNode="True" />
   </SchemaModules>
+  <Validation>
+    <ErrorMessageTemplates>
+      <RuleValueComparison MessageTemplateMustBeGreaterThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; πρέπει να είναι μεγαλύτερη ή ίση με&quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOperand="&quot;{TargetPropertyName}&quot; πρέπει να είναι μεγαλύτερη απο &quot;{RightOperand}&quot;." MessageTemplateMustBeEqualToOperand="&quot;{TargetPropertyName}&quot; πρέπει να είναι ίση με &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOperand="&quot;{TargetPropertyName}&quot; πρέπει να είναι μικρότερη από &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; πρέπει να είναι μικρότερη ή ίση με &quot;{RightOperand}&quot;." MessageTemplateMustNotBeEqualToOperand="&quot;{TargetPropertyName}&quot; δεν πρέπει να είναι ίση με &quot;{RightOperand}&quot;." />
+    </ErrorMessageTemplates>
+  </Validation>
   <Views>
     <DetailView Id="AddAttendanceAnotherDate" Caption="Εισαγωγή Προσωπικού (Ημ)" ClassName="Manitari.Module.Attend" IsNewNode="True">
       <HiddenActions IsNewNode="True">
@@ -598,25 +603,25 @@
             </LayoutGroup>
           </LayoutGroup>
           <LayoutGroup Id="SizeableEditors" ShowCaption="False" Caption="Σημειώσεις" Direction="Horizontal" Index="1" RelativeSize="83.638743455497377" IsNewNode="True" Removed="True">
-            <LayoutGroup Id="Auto83804eea-4a27-47da-bae1-f959fe6ec566" ShowCaption="False" Caption="Auto83804eea-4a27-47da-bae1-f959fe6ec566(22)" Index="0" RelativeSize="15.237020316027088" IsNewNode="True">
+            <LayoutGroup Id="TooPersonal" ShowCaption="False" Caption="Auto83804eea-4a27-47da-bae1-f959fe6ec566(22)" Index="0" RelativeSize="15.237020316027088" ImageName="Action_ModelDifferences_Export" IsNewNode="True">
               <LayoutItem Id="Photo" ShowCaption="False" TextAlignMode="CustomSize" ViewItem="Photo" Index="0" RelativeSize="26.917057902973397" IsNewNode="True" />
               <LayoutItem Id="Notes" ViewItem="Notes" CaptionLocation="Top" Index="1" RelativeSize="73.0829420970266" IsNewNode="True" />
             </LayoutGroup>
             <TabbedGroup Id="Tabs" Index="1" RelativeSize="84.762979683972915" IsNewNode="True">
-              <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" ViewItem="DailyLogs" Index="0" RelativeSize="100" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Tasks" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="Tasks" TextAlignMode="AutoSize" ViewItem="Tasks" Index="0" RelativeSize="100" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" ViewItem="PhoneNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Direction="Vertical" Index="3" RelativeSize="100" ImageName="Action_Show_PivotGrid_Designer" IsNewNode="True">
+              <LayoutGroup Id="Skills" ShowCaption="True" Caption="Ικανότητες" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100" ImageName="Action_Show_PivotGrid_Designer" IsNewNode="True">
                 <LayoutItem Id="Skillsets" ViewItem="Skillsets" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Attendance" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" TextAlignMode="AlignWithChildren" RelativeSize="100" Caption="Ωρολόγιο" ImageName="Time" IsNewNode="True">
+              <LayoutGroup Id="Attendance" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" TextAlignMode="AlignWithChildren" RelativeSize="100" Caption="Ωρολόγιο" ImageName="Time" IsNewNode="True">
                 <LayoutItem Id="Attends" ViewItem="Attends" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Tasks" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Tasks" TextAlignMode="AutoSize" ViewItem="Tasks" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DailyLogs" ShowCaption="True" Caption="Ημερήσιες Εργασίες" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="DailyLogs" TextAlignMode="AutoSize" ViewItem="DailyLogs" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="PhoneNumbers" ShowCaption="True" Caption="Phone Numbers" TextAlignMode="AlignWithChildren" Index="4" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="PhoneNumbers" TextAlignMode="AutoSize" ViewItem="PhoneNumbers" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
             </TabbedGroup>
           </LayoutGroup>
@@ -697,25 +702,34 @@
       </Layout>
     </DetailView>
     <DetailView Id="Order_DetailView">
+      <Items>
+        <PropertyEditor Id="OrdersTotal" Removed="True" />
+        <PropertyEditor Id="PaperID" Removed="True" />
+        <PropertyEditor Id="Payment" Removed="True" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2228116710875323">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.612565445026178">
             <LayoutGroup Id="Order" RelativeSize="100" Caption="Order">
-              <LayoutItem Id="TheDate" RelativeSize="51.612903225806448" />
-              <LayoutGroup Id="Auto4342afa6-8038-4310-bef3-af8d03fa25e7" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="48.387096774193552" IsNewNode="True">
-                <LayoutItem Id="PaperID" ViewItem="PaperID" Index="0" RelativeSize="49.942987457240591" IsNewNode="True" />
-                <LayoutItem Id="Payment" ViewItem="Payment" Index="1" RelativeSize="50.057012542759409" IsNewNode="True" />
+              <LayoutGroup Id="Order_col1" RelativeSize="28.957528957528957">
+                <LayoutItem Id="TheDate" RelativeSize="50" />
+                <LayoutItem Id="ExecutionDate" RelativeSize="50" />
+                <LayoutItem Id="PaperID" RelativeSize="36.363636363636367" ViewItem="" Removed="True" />
               </LayoutGroup>
-              <LayoutItem Id="OrdersTotal" Index="2" RelativeSize="34.883720930232556" Removed="True" />
-              <LayoutItem Id="PaperID" Removed="True" />
-              <LayoutItem Id="Payment" Removed="True" />
+              <LayoutGroup Id="Auto4342afa6-8038-4310-bef3-af8d03fa25e7" ShowCaption="False" Caption="Auto4342afa6-8038-4310-bef3-af8d03fa25e7(8)" Direction="Vertical" Index="1" RelativeSize="30.888030888030887" IsNewNode="True">
+                <LayoutItem Id="PaperID" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Payment" ViewItem="Payment" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Order_col2" ShowCaption="False" Direction="Vertical" Index="2" RelativeSize="40.154440154440152" IsNewNode="True" Removed="True">
+                <LayoutItem Id="Item2" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="OrderDetails_Group" TextAlignMode="UseParentOptions" Direction="Vertical" RelativeSize="91.777188328912473" Caption="Λεπτομέρειες">
-            <LayoutItem Id="OrderDetails" ViewItem="OrderDetails" Index="0" RelativeSize="95.0920245398773" TextAlignMode="CustomSize" IsNewNode="True" Removed="True" />
-            <LayoutGroup Id="Auto18bcfeaa-314f-4244-9a71-9eca9d245698" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="4.9079754601226995" IsNewNode="True">
-              <LayoutItem Id="Item1" Index="0" RelativeSize="69.636576787807741" IsNewNode="True" />
-              <LayoutItem Id="OrdersTotal" ViewItem="OrdersTotal" Index="1" RelativeSize="30.363423212192263" IsNewNode="True" />
+          <LayoutGroup Id="OrderDetails_Group" TextAlignMode="AlignWithChildren" Direction="Vertical" RelativeSize="86.387434554973822" Caption="Λεπτομέρειες">
+            <LayoutItem Id="OrderDetails" ViewItem="OrderDetails" Index="0" RelativeSize="93.870967741935488" TextAlignMode="CustomSize" IsNewNode="True" Removed="True" />
+            <LayoutGroup Id="Auto18bcfeaa-314f-4244-9a71-9eca9d245698" ShowCaption="False" Caption="Auto18bcfeaa-314f-4244-9a71-9eca9d245698(16)" Direction="Horizontal" Index="1" RelativeSize="6.129032258064516" IsNewNode="True">
+              <LayoutItem Id="Item1" Index="0" RelativeSize="69.626769626769629" IsNewNode="True" />
+              <LayoutItem Id="OrdersTotal1" ViewItem="" Index="1" RelativeSize="30.373230373230374" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>

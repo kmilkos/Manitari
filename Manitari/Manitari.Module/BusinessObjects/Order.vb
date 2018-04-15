@@ -29,7 +29,7 @@ Public Class Order
         MyBase.AfterConstruction()
         ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         _theDate = Now
-
+        _executionDate = Now
     End Sub
 
     <Action(Caption:="Send By Email", ConfirmationMessage:="Are you sure?", ImageName:="Attention", AutoCommit:=True)>
@@ -48,6 +48,19 @@ Public Class Order
             SetPropertyValue(NameOf(TheDate), _theDate, Value)
         End Set
     End Property
+
+    Private _executionDate As DateTime
+    <XafDisplayName("Ημ. Εκτέλεσης")>
+    <RuleValueComparison("", DefaultContexts.Save, ValueComparisonType.GreaterThanOrEqual, "TheDate", ParametersMode.Expression)>
+    Property ExecutionDate As DateTime
+        Get
+            Return _executionDate
+        End Get
+        Set(ByVal Value As DateTime)
+            SetPropertyValue(Nameof(ExecutionDate), _executionDate, Value)
+        End Set
+    End Property
+    
 
     Private _customer As Customer
     <Association("Customer-Orders")>
