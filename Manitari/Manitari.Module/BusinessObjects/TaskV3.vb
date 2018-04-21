@@ -15,17 +15,26 @@ Imports DevExpress.Persistent.Validation
 Imports System.Xml
 Imports DevExpress.Xpo.Metadata
 Imports DevExpress.Persistent.Base.General
+Imports DevExpress.ExpressApp.ConditionalAppearance
+Imports System.Drawing
 
 <DefaultClassOptions>
 <XafDisplayName("Εκκρέμότητα")>
 <ImageName("BO_Task")>
 <Persistent("Task")>
 <NavigationItem("Λειτουργία")>
+<Appearance("Completed1", TargetItems:="Subject", Criteria:=Task.CompletedCriteria, FontStyle:=FontStyle.Strikeout, FontColor:="ForestGreen"),
+    Appearance("Completed2", TargetItems:="*;TaskStatus;AssignedTo", Criteria:=Task.CompletedCriteria, Enabled:=False),
+    Appearance("InProgress", TargetItems:="Subject;AssignedTo", Criteria:=Task.InProgressCriteria, BackColor:="LemonChiffon"),
+    Appearance("Deferred", TargetItems:="Subject", Criteria:=Task.DeferredCriteria, BackColor:="MistyRose")>
 Public Class Task
     Inherits BaseObject
     Implements IComparable, IEvent
 
     Private _priority As PriorityEnum
+    Public Const CompletedCriteria As String = "TaskStatus = 'Completed'"
+    Public Const DeferredCriteria As String = "TaskStatus = 'Deferred'"
+    Public Const InProgressCriteria As String = "TaskStatus = 'InProgress'"
 
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
@@ -68,7 +77,7 @@ Public Class Task
             Return _submittedOn
         End Get
         Set(ByVal Value As DateTime)
-            SetPropertyValue(Nameof(SubmittedOn), _submittedOn, Value)
+            SetPropertyValue(NameOf(SubmittedOn), _submittedOn, Value)
         End Set
     End Property
 
@@ -98,10 +107,10 @@ Public Class Task
             Return _approval
         End Get
         Set(ByVal Value As Boolean)
-            SetPropertyValue(Nameof(Approval), _approval, Value)
+            SetPropertyValue(NameOf(Approval), _approval, Value)
         End Set
     End Property
-    
+
     <XafDisplayName("Ολοήμερο?")>
     Public Property AllDay As Boolean Implements IEvent.AllDay
         Get
@@ -204,28 +213,10 @@ Public Class Task
             Return _priorityNumber
         End Get
         Set(ByVal Value As Int32)
-            SetPropertyValue(Nameof(priorityNumber), _priorityNumber, Value)
+            SetPropertyValue(NameOf(priorityNumber), _priorityNumber, Value)
         End Set
     End Property
-    
-#End Region
 
-#Region "Actions"
-    <Action(Caption:="Postpone", ImageName:="State_Task_Deferred")>
-    Public Sub Postpone()
-        If (EndOn = DateTime.MinValue) Then
-            EndOn = DateTime.Now
-        End If
-
-        EndOn = EndOn + TimeSpan.FromDays(1)
-    End Sub
-
-    <Action(Caption:="Mark Completed", ImageName:="State_Task_Completed")>
-    Public Sub MarkCompleted()
-        'SetPropertyValue("Status", TaskStatusEnum.Completed)
-        SetPropertyValue("TaskStatus", TaskStatusEnum.Completed)
-        SetPropertyValue("EndOn", Today)
-    End Sub
 #End Region
 
     Private _category As Category
@@ -264,10 +255,13 @@ Public Class Task
     End Enum
 
     Public Enum TaskStatusEnum As Integer
+        <ImageName("State_Task_NotStarted")>
         NotStarted = 0
+        <ImageName("State_Task_InProgress")>
         InProgress = 1
-        Deffered = 2
-        WaitingSomeoneElse = 3
+        <ImageName("State_Validation_Valid")>
         Completed = 4
+        <ImageName("State_Task_Deferred")>
+        Deferred = 2
     End Enum
 End Class

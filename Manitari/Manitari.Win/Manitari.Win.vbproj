@@ -10,7 +10,7 @@
     <RootNamespace>Manitari.Win</RootNamespace>
     <AssemblyName>Manitari.Win</AssemblyName>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
-    <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
+    <ApplicationIcon>tan-mushroom-64.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -473,7 +473,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ExpressApp.ico" />
+    <Content Include="tan-mushroom-64.ico" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Images\readme.txt" />
+    <EmbeddedResource Include="Images\Manitari.Module.Images.Mushroom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

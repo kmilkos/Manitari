@@ -326,6 +326,12 @@
     <Compile Include="Controllers\Navigation.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\TaskController.Designer.vb">
+      <DependentUpon>TaskController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TaskController.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DatabaseUpdate\Updater.vb" />
     <Compile Include="Module.Designer.vb">
       <DependentUpon>Module.vb</DependentUpon>
