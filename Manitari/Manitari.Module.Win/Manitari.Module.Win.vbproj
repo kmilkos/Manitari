@@ -376,6 +376,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinModule.resx">
+      <DependentUpon>WinModule.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -392,6 +395,10 @@
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Desktop\llama\LlamachantFramework.Module.Win\LlamachantFramework.Module.Win.csproj">
+      <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
+      <Name>LlamachantFramework.Module.Win</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Manitari.Module\Manitari.Module.vbproj">
       <Project>{F622EA3C-2609-4BB3-B589-6B1F2CFBB035}</Project>
       <Name>Manitari.Module</Name>

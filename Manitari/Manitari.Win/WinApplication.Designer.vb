@@ -70,6 +70,7 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.XpandSecurityModule1 = New Xpand.ExpressApp.Security.XpandSecurityModule()
         Me.LogicModule1 = New Xpand.ExpressApp.Logic.LogicModule()
         Me.XpandSecurityWinModule1 = New Xpand.ExpressApp.Security.Win.XpandSecurityWinModule()
+        Me.LlamachantFrameworkModule1 = New LlamachantFramework.[Module].LlamachantFrameworkModule()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'securityStrategyComplex1
@@ -161,6 +162,7 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.Modules.Add(Me.ImportWizardModule1)
         Me.Modules.Add(Me.securityModule1)
         Me.Modules.Add(Me.XpandSecurityModule1)
+        Me.Modules.Add(Me.LlamachantFrameworkModule1)
         Me.Modules.Add(Me.module3)
         Me.Modules.Add(Me.chartWindowsFormsModule)
         Me.Modules.Add(Me.dashboardsWindowsFormsModule)
@@ -234,4 +236,5 @@ Partial Public Class ManitariWindowsFormsApplication
     Friend WithEvents XpandSecurityModule1 As Xpand.ExpressApp.Security.XpandSecurityModule
     Friend WithEvents LogicModule1 As Xpand.ExpressApp.Logic.LogicModule
     Friend WithEvents XpandSecurityWinModule1 As Xpand.ExpressApp.Security.Win.XpandSecurityWinModule
+    Friend WithEvents LlamachantFrameworkModule1 As LlamachantFramework.Module.LlamachantFrameworkModule
 End Class

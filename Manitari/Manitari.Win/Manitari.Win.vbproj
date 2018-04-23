@@ -339,6 +339,12 @@
     </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL" />
     <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7" />
+    <Reference Include="LlamachantFramework.Module">
+      <HintPath>..\..\..\..\..\Desktop\LlamachantFramework.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="LlamachantFramework.Module.Win">
+      <HintPath>..\..\..\..\..\Desktop\LlamachantFramework.Module.Win.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -474,10 +480,6 @@
   <ItemGroup>
     <Content Include="ExpressApp.ico" />
     <Content Include="tan-mushroom-64.ico" />
-    <None Include="UnusableNodes.xml">
-      <DependentUpon>Model.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Images\readme.txt" />
     <EmbeddedResource Include="Images\Manitari.Module.Images.Mushroom.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

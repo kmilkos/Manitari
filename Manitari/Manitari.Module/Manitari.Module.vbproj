@@ -427,6 +427,12 @@
     <EmbeddedResource Include="Images\Manitari.Module.Images.Time_32x32.png" />
     <Content Include="Welcome.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Desktop\llama\LlamachantFramework.Module\LlamachantFramework.Module.csproj">
+      <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
+      <Name>LlamachantFramework.Module</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

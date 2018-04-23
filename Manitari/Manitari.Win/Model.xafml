@@ -140,7 +140,7 @@
       <Item Id="Workflow" Removed="True" />
     </Items>
   </NavigationItems>
-  <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI">
+  <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI" AllowFontSizeSelection="True" AllowSummaryPanelMenuItem="True" BoldTabsWithCounts="True" CanViewAuditTrail="All" ShowCountsInTabs="True" ShowTypeNameInOpenObject="True">
     <Athentication>
       <AnonymousAuthentication LoginActionCaption="Σύνδεση" />
       <AutoAthentication Enabled="True" />
