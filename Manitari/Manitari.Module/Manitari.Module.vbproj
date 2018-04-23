@@ -302,6 +302,7 @@
     <Compile Include="BusinessObjects\FarmAction.vb" />
     <Compile Include="BusinessObjects\inventory.vb" />
     <Compile Include="BusinessObjects\InventoryItem.vb" />
+    <Compile Include="BusinessObjects\Measurement.vb" />
     <Compile Include="BusinessObjects\Mushroom.vb" />
     <Compile Include="BusinessObjects\Order.vb" />
     <Compile Include="BusinessObjects\OrderDetail.vb" />

@@ -346,6 +346,13 @@ Public Class Compost ' Specify more UI options using a declarative approach (htt
         End Get
     End Property
 
+    <Association("Compost-Measurements")>
+    Public ReadOnly Property Measurements() As XPCollection(Of Measurement)
+        Get
+            Return GetCollection(Of Measurement)(NameOf(Measurements))
+        End Get
+    End Property
+
     Public Shared Function GetISOWeekOfYear(dt As DateTime) As Integer
         Dim cal As Calendar = CultureInfo.InvariantCulture.Calendar
         Dim d As DayOfWeek = cal.GetDayOfWeek(dt)
