@@ -2,29 +2,29 @@
 Imports System
 
 Partial Public Class ManitariWindowsFormsApplication
-	''' <summary> 
-	''' Required designer variable.
-	''' </summary>
-	Private components As System.ComponentModel.IContainer = Nothing
+    ''' <summary> 
+    ''' Required designer variable.
+    ''' </summary>
+    Private components As System.ComponentModel.IContainer = Nothing
 
-	''' <summary> 
-	''' Clean up any resources being used.
-	''' </summary>
-	''' <param name="disposing">true if managed resources should be disposed otherwise, false.</param>
-	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-		If disposing AndAlso (Not components Is Nothing) Then
-			components.Dispose()
-		End If
-		MyBase.Dispose(disposing)
-	End Sub
+    ''' <summary> 
+    ''' Clean up any resources being used.
+    ''' </summary>
+    ''' <param name="disposing">true if managed resources should be disposed otherwise, false.</param>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso (Not components Is Nothing) Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
 
 #Region "Component Designer generated code"
 
-	''' <summary> 
-	''' Required method for Designer support - do not modify 
-	''' the contents of this method with the code editor.
-	''' </summary>
-	Private Sub InitializeComponent()
+    ''' <summary> 
+    ''' Required method for Designer support - do not modify 
+    ''' the contents of this method with the code editor.
+    ''' </summary>
+    Private Sub InitializeComponent()
         Me.module1 = New DevExpress.ExpressApp.SystemModule.SystemModule()
         Me.module2 = New DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule()
         Me.securityModule1 = New DevExpress.ExpressApp.Security.SecurityModule()
@@ -71,6 +71,7 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.LogicModule1 = New Xpand.ExpressApp.Logic.LogicModule()
         Me.XpandSecurityWinModule1 = New Xpand.ExpressApp.Security.Win.XpandSecurityWinModule()
         Me.LlamachantFrameworkModule1 = New LlamachantFramework.[Module].LlamachantFrameworkModule()
+        Me.LlamachantFrameworkWindowsFormsModule2 = New LlamachantFramework.[Module].Win.LlamachantFrameworkWindowsFormsModule()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'securityStrategyComplex1
@@ -193,7 +194,7 @@ Partial Public Class ManitariWindowsFormsApplication
 
     Private module1 As DevExpress.ExpressApp.SystemModule.SystemModule
     Private module2 As DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule
-	Private module3 As Global.Manitari.Module.ManitariModule
+    Private module3 As Global.Manitari.Module.ManitariModule
     Private module4 As Global.Manitari.Module.Win.ManitariWindowsFormsModule
     Private securityModule1 As DevExpress.ExpressApp.Security.SecurityModule
     Private securityStrategyComplex1 As DevExpress.ExpressApp.Security.SecurityStrategyComplex
@@ -237,4 +238,6 @@ Partial Public Class ManitariWindowsFormsApplication
     Friend WithEvents LogicModule1 As Xpand.ExpressApp.Logic.LogicModule
     Friend WithEvents XpandSecurityWinModule1 As Xpand.ExpressApp.Security.Win.XpandSecurityWinModule
     Friend WithEvents LlamachantFrameworkModule1 As LlamachantFramework.Module.LlamachantFrameworkModule
+    Friend WithEvents LlamachantFrameworkWindowsFormsModule1 As LlamachantFramework.Module.Win.LlamachantFrameworkWindowsFormsModule
+    Friend WithEvents LlamachantFrameworkWindowsFormsModule2 As LlamachantFramework.Module.Win.LlamachantFrameworkWindowsFormsModule
 End Class
