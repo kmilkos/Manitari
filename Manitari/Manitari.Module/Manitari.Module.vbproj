@@ -428,6 +428,10 @@
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LlamachantFramework.Module.Win\LlamachantFramework.Module.Win.csproj">
+      <Project>{7964f87d-bc5d-4c4e-8b2f-71e89739aa97}</Project>
+      <Name>LlamachantFramework.Module.Win</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LlamachantFramework.Module\LlamachantFramework.Module.csproj">
       <Project>{5f15837d-d1e5-44dc-92f0-4f2ebe9c3f8d}</Project>
       <Name>LlamachantFramework.Module</Name>
