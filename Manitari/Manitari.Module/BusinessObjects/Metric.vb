@@ -13,10 +13,11 @@ Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 
-'<ImageName("BO_Contact")> _
-'<DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")> _
-'<DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)> _
-'<Persistent("DatabaseTableName")> _
+<DefaultClassOptions>
+<XafDisplayName("Μονάδες Μέτρησης")>
+<DefaultProperty("MetricName")>
+<Persistent("Metric")>
+<NavigationItem("Λειτουργία")>
 <DefaultClassOptions()> _
 Public Class Metric ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
