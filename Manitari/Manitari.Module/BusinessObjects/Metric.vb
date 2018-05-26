@@ -18,15 +18,13 @@ Imports DevExpress.Persistent.Validation
 <DefaultProperty("MetricName")>
 <Persistent("Metric")>
 <NavigationItem("Λειτουργία")>
-<DefaultClassOptions()> _
-Public Class Metric ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    Inherits BaseObject ' Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+Public Class Metric
+    Inherits BaseObject
     Public Sub New(ByVal session As Session)
         MyBase.New(session)
     End Sub
     Public Overrides Sub AfterConstruction()
         MyBase.AfterConstruction()
-        ' Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
     End Sub
 
     Private _metricName As String
@@ -36,7 +34,7 @@ Public Class Metric ' Specify more UI options using a declarative approach (http
             Return _metricName
         End Get
         Set(ByVal Value As String)
-            SetPropertyValue(Nameof(MetricName), _metricName, Value)
+            SetPropertyValue(NameOf(MetricName), _metricName, Value)
         End Set
     End Property
     Private _description As String
@@ -46,8 +44,7 @@ Public Class Metric ' Specify more UI options using a declarative approach (http
             Return _description
         End Get
         Set(ByVal Value As String)
-            SetPropertyValue(Nameof(Description), _description, Value)
+            SetPropertyValue(NameOf(Description), _description, Value)
         End Set
     End Property
-    
 End Class

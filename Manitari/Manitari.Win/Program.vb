@@ -25,11 +25,10 @@ Public Class Program
         End If
         Tracing.Initialize()
         Dim _application As ManitariWindowsFormsApplication = New ManitariWindowsFormsApplication()
-        ' Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
-        '_application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png")
         _application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen()
-
-        'XafApplication.LinkNewObjectToParentImmediately
+        '_application.SplashScreen = New [Module].Win.MySplashScreen()
+        '_application.Setup()
+        '_application.Start()
 
         _application.LinkNewObjectToParentImmediately = True
 
