@@ -7,11 +7,6 @@
     </Actions>
   </ActionDesign>
   <BOModel>
-    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
-      <OwnMembers>
-        <RuntimeMember Name="Email" Type="System.String" CreatedAtDesignTime="True" IsNewNode="True" />
-      </OwnMembers>
-    </Class>
     <Class Name="Manitari.Module.Attend" ImageName="BO_Scheduler" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="EndTime" EditMask="t" DisplayFormat="t" />
@@ -39,6 +34,8 @@
     <Class Name="Manitari.Module.FarmAction" ImageName="production" />
     <Class Name="Manitari.Module.Inventory" ImageName="Warehouse" />
     <Class Name="Manitari.Module.InventoryItem" ImageName="Packs" />
+    <Class Name="Manitari.Module.Measurement" DefaultDetailViewImage="Action_Show_PivotGrid_Designer" DefaultListViewImage="Action_Show_PivotGrid_Designer" ImageName="Action_Show_PivotGrid_Designer" DefaultListViewNewItemRowPosition="Bottom" />
+    <Class Name="Manitari.Module.Metric" DefaultListViewNewItemRowPosition="Bottom" DefaultListViewAllowEdit="True" DefaultDetailViewImage="BO_Security_Permission_Model" DefaultListViewImage="BO_Security_Permission_Model" ImageName="BO_Security_Permission_Model" />
     <Class Name="Manitari.Module.Mushroom" DefaultListViewAllowEdit="True" />
     <Class Name="Manitari.Module.Order" ImageName="BO_Order" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
     <Class Name="Manitari.Module.OrderDetail" ImageName="BO_Order_Item" />
@@ -130,8 +127,8 @@
       <Item Id="Default">
         <Items>
           <Item Id="@a6cda416-ff2c-4c62-b4c8-e15cc3f3b987" ViewId="AuditDataItemPersistent_ListView" IsNewNode="True" />
-          <Item Id="@a95aca29-c8a0-45b6-b53b-40b612fe516e" ViewId="AllViews_ListView" IsNewNode="True" />
           <Item Id="Employee_ListView" Removed="True" />
+          <Item Id="Notification" ViewId="Notification_ListView" QuickAccessItem="True" ToolTipIconType="Information" IsNewNode="True" />
           <Item Id="Skillset_ListView" Removed="True" />
         </Items>
       </Item>
@@ -141,12 +138,8 @@
     </Items>
   </NavigationItems>
   <Options EnableHtmlFormatting="True" FormStyle="Ribbon" Skin="Office 2016 Colorful" UIType="TabbedMDI" AllowFontSizeSelection="True" AllowSummaryPanelMenuItem="True" BoldTabsWithCounts="True" CanViewAuditTrail="All" ShowCountsInTabs="True" ShowTypeNameInOpenObject="True">
-    <Athentication>
-      <AnonymousAuthentication LoginActionCaption="Σύνδεση" />
-      <AutoAthentication Enabled="True" />
-    </Athentication>
+    <FontSizes SelectedFontSize="Large" />
     <PrintingSettings PaperKind="A4" />
-    <Registration Enabled="False" />
     <RibbonOptions RibbonControlStyle="Office2013" />
   </Options>
   <SchemaModules>
@@ -516,9 +509,6 @@
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
-      <Wizard>
-        <WizardPage Id="Companydetails" Caption="Πληροφορίες Εταιρείας" Description="Βασικές πληροφορίες του πελάτη για την εκτύπωση τιμολογίου" ViewID="Customer_DetailView" IsNewNode="True" />
-      </Wizard>
     </DetailView>
     <DetailView Id="DailyLog_DetailView">
       <Layout>
