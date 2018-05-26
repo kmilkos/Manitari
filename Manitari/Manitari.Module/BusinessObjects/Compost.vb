@@ -16,6 +16,7 @@ Imports System.Globalization
 
 <DefaultClassOptions>
 <XafDisplayName("Κομπόστα")>
+<ImageName("Compost")>
 <DefaultProperty("CompostCode")>
 <Persistent("Compost")>
 <NavigationItem("Παραγωγή")>

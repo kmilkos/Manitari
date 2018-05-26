@@ -26,13 +26,6 @@ Public Class Program
         Tracing.Initialize()
         Dim _application As ManitariWindowsFormsApplication = New ManitariWindowsFormsApplication()
         '_application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen()
-        Try
-            _application.SplashScreen = New [Module].Win.MySplashScreen()
-            _application.Setup()
-            _application.Start()
-        Catch ex As Exception
-
-        End Try
 
         _application.LinkNewObjectToParentImmediately = True
 

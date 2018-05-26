@@ -15,6 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <XafDisplayName("Απογραφή - Υπολίστα")>
+<ImageName("Action_Inline_Edit")>
 <DefaultProperty("Display")>
 <Persistent("InventoryItem")>
 <NavigationItem("Αποθήκες")>

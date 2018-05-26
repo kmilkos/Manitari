@@ -61,17 +61,8 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.viewVariantsModule = New DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule()
         Me.workflowModule = New DevExpress.ExpressApp.Workflow.WorkflowModule()
         Me.workflowWindowsFormsModule = New DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule()
-        'Me.WizardUIWindowsFormsModule1 = New Xpand.ExpressApp.WizardUI.Win.WizardUIWindowsFormsModule()
         Me.module3 = New Manitari.[Module].ManitariModule()
         Me.module4 = New Manitari.[Module].Win.ManitariWindowsFormsModule()
-        'Me.ImportWizardWindowsFormsModule1 = New Xpand.ExpressApp.ImportWizard.Win.ImportWizardWindowsFormsModule()
-        'Me.ImportWizardModule1 = New Xpand.ExpressApp.ImportWizard.ImportWizardModule()
-        'Me.XpandValidationModule1 = New Xpand.ExpressApp.Validation.XpandValidationModule()
-        'Me.XpandSecurityModule1 = New Xpand.ExpressApp.Security.XpandSecurityModule()
-        'Me.LogicModule1 = New Xpand.ExpressApp.Logic.LogicModule()
-        'Me.XpandSecurityWinModule1 = New Xpand.ExpressApp.Security.Win.XpandSecurityWinModule()
-        Me.LlamachantFrameworkModule1 = New LlamachantFramework.[Module].LlamachantFrameworkModule()
-        Me.LlamachantFrameworkWindowsFormsModule2 = New LlamachantFramework.[Module].Win.LlamachantFrameworkWindowsFormsModule()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'securityStrategyComplex1
@@ -161,7 +152,6 @@ Partial Public Class ManitariWindowsFormsApplication
         Me.Modules.Add(Me.viewVariantsModule)
         Me.Modules.Add(Me.workflowModule)
         Me.Modules.Add(Me.securityModule1)
-        Me.Modules.Add(Me.LlamachantFrameworkModule1)
         Me.Modules.Add(Me.module3)
         Me.Modules.Add(Me.chartWindowsFormsModule)
         Me.Modules.Add(Me.dashboardsWindowsFormsModule)
@@ -223,7 +213,4 @@ Partial Public Class ManitariWindowsFormsApplication
     Private viewVariantsModule As DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule
     Private workflowModule As DevExpress.ExpressApp.Workflow.WorkflowModule
     Private workflowWindowsFormsModule As DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule
-    Friend WithEvents LlamachantFrameworkModule1 As LlamachantFramework.Module.LlamachantFrameworkModule
-    Friend WithEvents LlamachantFrameworkWindowsFormsModule1 As LlamachantFramework.Module.Win.LlamachantFrameworkWindowsFormsModule
-    Friend WithEvents LlamachantFrameworkWindowsFormsModule2 As LlamachantFramework.Module.Win.LlamachantFrameworkWindowsFormsModule
 End Class

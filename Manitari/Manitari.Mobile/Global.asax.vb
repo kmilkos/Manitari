@@ -15,4 +15,8 @@ Public Class Global_asax
         CorsSupport.HandlePreflightRequest(HttpContext.Current)
     End Sub
 
-End Class
+        Protected Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)        
+	       DevExpress.XtraReports.Web.WebDocumentViewer.DefaultWebDocumentViewerContainer.Register(Of DevExpress.XtraReports.Web.WebDocumentViewer.IWebDocumentViewerReportResolver, DevExpress.ExpressApp.ReportsV2.Mobile.XafReportsResolver(Of ManitariMobileApplication))()
+        End Sub
+
+       	End Class

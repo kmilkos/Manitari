@@ -15,6 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <DC.XafDisplayName("Λεπτομέρειες Παραγγελίας")>
+<ImageName("BO_Order_Item")>
 <NavigationItem("Πωλήσεις")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("OrderDetail")>

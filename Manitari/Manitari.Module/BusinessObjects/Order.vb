@@ -15,7 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <XafDisplayName("Παραγγελία")>
-<ImageName("BO_Contact")>
+<ImageName("BO_Order")>
 <DefaultProperty("TheDate")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("Order")>

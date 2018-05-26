@@ -6,6 +6,7 @@ Imports DevExpress.ExpressApp.DC
 
 <DefaultClassOptions>
 <XafDisplayName("Θέσεις Εργασίας")>
+<ImageName("BO_Position")>
 <NavigationItem("Προσωπικό")>
 <DefaultProperty("Title")>
 <Persistent("Position")>

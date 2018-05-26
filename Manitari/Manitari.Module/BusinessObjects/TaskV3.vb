@@ -12,7 +12,6 @@ Imports System.Collections.Generic
 Imports DevExpress.ExpressApp.Model
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
-Imports System.Xml
 Imports DevExpress.Xpo.Metadata
 Imports DevExpress.Persistent.Base.General
 Imports DevExpress.ExpressApp.ConditionalAppearance
@@ -20,7 +19,7 @@ Imports System.Drawing
 
 <DefaultClassOptions>
 <XafDisplayName("Εκκρέμότητα")>
-<ImageName("BO_Task")>
+<ImageName("BO_Lead")>
 <Persistent("Task")>
 <NavigationItem("Λειτουργία")>
 <Appearance("Completed1", TargetItems:="Subject", Criteria:=Task.CompletedCriteria, FontStyle:=FontStyle.Strikeout, FontColor:="ForestGreen"),

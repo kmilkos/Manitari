@@ -16,6 +16,7 @@ Imports DevExpress.Persistent.Validation
 <DefaultProperty("ItemName")>
 <Persistent("WarehouseItem")>
 <XafDisplayName("Αντικείμενα Αποθήκης")>
+<ImageName("BO_Product")>
 <NavigationItem("Αποθήκες")>
 <DefaultClassOptions()>
 Public Class WarehouseItem

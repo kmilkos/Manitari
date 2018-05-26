@@ -16,8 +16,8 @@ Imports DevExpress.ExpressApp.Actions
 Imports DevExpress.ExpressApp.Xpo
 
 <DefaultClassOptions>
-<ImageName("Calender")>
 <XafDisplayName("Ωρολόγιο")>
+<ImageName("BO_Calendar")>
 <NavigationItem("Προσωπικό")>
 <Persistent("Attend")>
 Public Class Attend

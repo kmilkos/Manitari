@@ -15,6 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <XafDisplayName("Ικανότητα")>
+<ImageName("MyDetails")>
 <NavigationItem("Προσωπικό")>
 <DefaultProperty("Title")>
 <Persistent("Skill")>

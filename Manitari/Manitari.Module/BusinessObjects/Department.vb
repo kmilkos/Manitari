@@ -8,6 +8,7 @@ Imports DevExpress.Persistent.BaseImpl
 <DefaultProperty("Title")>
 <Persistent("Department")>
 <XafDisplayName("Τμήματα")>
+<ImageName("BO_Organization")>
 <NavigationItem("Λειτουργία")>
 Public Class Department
     Inherits BaseObject

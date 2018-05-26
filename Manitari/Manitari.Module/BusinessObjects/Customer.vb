@@ -13,7 +13,7 @@ Imports DevExpress.ExpressApp.DC
 
 <DefaultClassOptions>
 <XafDisplayName("Πελάτες")>
-<ImageName("BO_Contact")>
+<ImageName("BO_Customer")>
 <DefaultProperty("FullName")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("Customer")>

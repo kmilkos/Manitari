@@ -9,6 +9,7 @@ Imports DevExpress.ExpressApp.DC
 
 <DefaultClassOptions>
 <XafDisplayName("Παραγωγή")>
+<ImageName("Production")>
 <NavigationItem("Παραγωγή")>
 <Persistent("Production")>
 Public Class Production ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).

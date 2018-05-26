@@ -15,6 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <DC.XafDisplayName("Ποτίσματα")>
+<ImageName("Action_Change_State")>
 <NavigationItem("Παραγωγή")>
 <Persistent("Watering")>
 Public Class Watering

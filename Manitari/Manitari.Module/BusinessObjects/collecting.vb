@@ -16,6 +16,7 @@ Imports DevExpress.Persistent.Validation
 '<DefaultProperty("CompostCode")>
 <DefaultClassOptions>
 <XafDisplayName("Συγκομιδή")>
+<ImageName("Action_StateMachine")>
 <Persistent("collecting")>
 <NavigationItem("Παραγωγή")>
 Public Class collecting ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).

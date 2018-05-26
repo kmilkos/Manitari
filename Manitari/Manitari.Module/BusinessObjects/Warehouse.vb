@@ -15,6 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions()>
 <XafDisplayName("Αποθήκη")>
+<ImageName("BO_Product_Group")>
 <NavigationItem("Αποθήκες")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <DefaultProperty("Location")>

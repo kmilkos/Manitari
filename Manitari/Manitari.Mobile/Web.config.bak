@@ -25,7 +25,7 @@
   <connectionStrings>
     <add name="EasyTestConnectionString" connectionString="Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=ManitariEasyTest" />
     <!--<add name="ConnectionString" connectionString="Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=Manitari" />-->
-    <add name="ConnectionString" connectionString="XpoProvider=MySql;Server=milkos.gr;User ID=milkosgr_manitar;Password=MORphined123;Database=milkosgr_manitaria;Persist Security Info= true;Charset=utf8" />
+    <add name ="ConnectionString" connectionString="XpoProvider=MySql;Server=milkos.gr;User ID=milkosgr_manitar;Password=MORphined123;Database=milkosgr_manitaria;Persist Security Info= true;Charset=utf8"/>
     <!--    
     Use the following connection string to connect to a Jet (Microsoft Access) database that is already created and located in the <application root>/app_data folder. 
     <add name="ConnectionString" connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Password=;User ID=Admin;Data Source=|DataDirectory|\Manitari.mdb;Mode=Share Deny None;"/>
@@ -47,11 +47,7 @@
       <assemblies>
       </assemblies>
     </compilation>
-    <httpHandlers>
-      <add verb="*" path="Static*" type="DevExpress.ExpressApp.Mobile.StaticResourcesHttpHandler, DevExpress.ExpressApp.Mobile.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-      <add verb="GET,POST" path="ReportsHandler*" type="DevExpress.ExpressApp.ReportsV2.Mobile.ReportsHandler, DevExpress.ExpressApp.ReportsV2.Mobile.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    </httpHandlers>
-  <machineKey validationKey="7DC2647449FB3C56E04973D92CE37521A760F2911ABCD3E4D5DEA0FB55F753BB18B6B245D5A0E1F4663AE59467DB6689C286B88C27FAD0E35AEEA7E01F17AE80,IsolateApps" decryptionKey="54750685AFD2D0CD42FC735199850953DFDECD47F47F7115F9AC6446DB2BD394,IsolateApps" /></system.web>
+  </system.web>
   <system.serviceModel>
     <bindings>
       <webHttpBinding>
@@ -90,13 +86,12 @@
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
   </system.serviceModel>
   <system.webServer>
-    <validation validateIntegratedModeConfiguration="false" />
-    <httpRedirect enabled="true" httpResponseStatus="Permanent">
+    <validation validateIntegratedModeConfiguration="false"/>
+    <httpRedirect enabled="true" httpResponseStatus="Permanent" >
       <add wildcard="/" destination="Static" />
     </httpRedirect>
 	<handlers>
-      <add name="MobileResources" verb="GET" path="Static*" type="ResourcesHttpHandler" />
-      <add name="Reports" verb="GET,POST" path="ReportsHandler*" type="DevExpress.ExpressApp.ReportsV2.Mobile.ReportsHandler, DevExpress.ExpressApp.ReportsV2.Mobile.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+      <add name="MobileResources" verb="GET" path="Static*" type="ResourcesHttpHandler"/>
     </handlers>
   </system.webServer>
   <runtime>

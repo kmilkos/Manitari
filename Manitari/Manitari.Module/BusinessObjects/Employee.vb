@@ -9,7 +9,7 @@ Imports DevExpress.Data.Filtering
 Imports DevExpress.PivotGrid.ServerMode
 
 <DefaultClassOptions>
-<ImageName("BO_Contact")>
+<ImageName("BO_Department")>
 <DefaultProperty("FullName")>
 <Persistent("Employee")>
 <XafDisplayName("Προσωπικό")>

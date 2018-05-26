@@ -38,8 +38,6 @@ Partial Public Class ManitariModule
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.Analysis))
         Me.AdditionalExportedTypes.Add(GetType(DevExpress.Persistent.BaseImpl.HCategory))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.SystemModule.SystemModule))
-        'Me.RequiredModuleTypes.Add(GetType(Xpand.ExpressApp.ImportWizard.ImportWizardModule))
-        'Me.RequiredModuleTypes.Add(GetType(Xpand.ExpressApp.Security.XpandSecurityModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.AuditTrail.AuditTrailModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Chart.ChartModule))
@@ -58,7 +56,6 @@ Partial Public Class ManitariModule
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Validation.ValidationModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Workflow.WorkflowModule))
-        Me.RequiredModuleTypes.Add(GetType(LlamachantFramework.[Module].LlamachantFrameworkModule))
 
     End Sub
 

@@ -54,30 +54,6 @@
     <Class Name="Manitari.Module.Warehouse" IsCloneable="True" ImageName="Warehouse" DefaultListViewAllowEdit="True" />
     <Class Name="Manitari.Module.WarehouseItem" ImageName="Packs" DefaultListViewAllowEdit="True" />
   </BOModel>
-  <CreatableItems>
-    <CreatableItem ClassName="Manitari.Module.Attend" ImageName="BO_Calendar" />
-    <CreatableItem ClassName="Manitari.Module.Category" ImageName="BO_Category" />
-    <CreatableItem ClassName="Manitari.Module.collecting" ImageName="Action_StateMachine" />
-    <CreatableItem ClassName="Manitari.Module.Compost" ImageName="Compost" />
-    <CreatableItem ClassName="Manitari.Module.CompostYard" ImageName="Compost" />
-    <CreatableItem ClassName="Manitari.Module.Customer" ImageName="BO_Customer" />
-    <CreatableItem ClassName="Manitari.Module.DailyLog" ImageName="BO_Scheduler" />
-    <CreatableItem ClassName="Manitari.Module.Department" ImageName="BO_Organization" />
-    <CreatableItem ClassName="Manitari.Module.Employee" ImageName="BO_Department" />
-    <CreatableItem ClassName="Manitari.Module.FarmAction" ImageName="Production" />
-    <CreatableItem ClassName="Manitari.Module.Inventory" ImageName="Action_Edit" />
-    <CreatableItem ClassName="Manitari.Module.InventoryItem" ImageName="Action_Inline_Edit" />
-    <CreatableItem ClassName="Manitari.Module.Order" ImageName="BO_Order" />
-    <CreatableItem ClassName="Manitari.Module.OrderDetail" ImageName="BO_Order_Item" />
-    <CreatableItem ClassName="Manitari.Module.Payment" ImageName="BO_Sale" />
-    <CreatableItem ClassName="Manitari.Module.Position" ImageName="BO_Position" />
-    <CreatableItem ClassName="Manitari.Module.Production" ImageName="Production" />
-    <CreatableItem ClassName="Manitari.Module.Skill" ImageName="BO_MyDetails" />
-    <CreatableItem ClassName="Manitari.Module.Task" ImageName="BO_Lead" />
-    <CreatableItem ClassName="Manitari.Module.Warehouse" ImageName="BO_Product_Group" />
-    <CreatableItem ClassName="Manitari.Module.WarehouseItem" ImageName="BO_Product" />
-    <CreatableItem ClassName="Manitari.Module.Watering" ImageName="Action_Change_State" />
-  </CreatableItems>
   <NavigationItems RootGroupsStyle="OutlookAnimated" DefaultChildItemsDisplayStyle="List" GenerateRelatedViewVariantsGroup="False" GenerateRelatedReportsGroup="True" GenerateRelatedAnalysisGroup="True" RelatedAnalysisGroupCaption="Ανάλυση" RelatedReportsGroupCaption="Αναφορές" RelatedViewVariantsGroupCaption="Εναλλακτικές Προβολές">
     <Items>
       <Item Id="Παραγωγή" Index="0">

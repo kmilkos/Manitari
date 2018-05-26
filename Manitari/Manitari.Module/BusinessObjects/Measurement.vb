@@ -15,7 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions()>
 <XafDisplayName("Μέτρηση")>
-<NavigationItem("Παραγωγη")>
+<NavigationItem("Παραγωγή")>
 <DefaultProperty("Type")>
 <Persistent("Measurement")>
 Public Class Measurement

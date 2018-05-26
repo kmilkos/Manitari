@@ -1,5 +1,4 @@
 ﻿Imports DevExpress.ExpressApp.Model
-Imports System.Xml
 Imports DevExpress.Xpo
 Imports DevExpress.ExpressApp
 Imports System.ComponentModel
@@ -13,6 +12,7 @@ Imports DevExpress.ExpressApp.DC
 <DefaultClassOptions>
 <Persistent("FarmAction")>
 <DC.XafDisplayName("Εργασίες Παραγωγής")>
+<ImageName("Production")>
 <NavigationItem("Παραγωγή")>
 Public Class FarmAction
     Inherits BaseObject

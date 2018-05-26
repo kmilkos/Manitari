@@ -14,10 +14,10 @@ Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Persistent.Validation
 Imports DevExpress.Persistent.Base.General
 Imports DevExpress.Xpo.Metadata
-Imports System.Xml
 
 <DefaultClassOptions>
 <DC.XafDisplayName("Ημερήσιο Αρχείο")>
+<ImageName("BO_Scheduler")>
 <Persistent("DailyLog")>
 <NavigationItem("Παραγωγή")>
 Public Class DailyLog

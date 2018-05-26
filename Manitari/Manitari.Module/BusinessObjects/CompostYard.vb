@@ -17,6 +17,7 @@ Imports System.Globalization
 <DefaultClassOptions>
 <XafDisplayName("Κομποστάδικο")>
 <Persistent("CompostYard")>
+<ImageName("Compost")>
 <DefaultProperty("CompostCode")>
 <NavigationItem("Παραγωγή")>
 Public Class CompostYard ' Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).

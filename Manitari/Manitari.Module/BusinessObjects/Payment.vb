@@ -15,7 +15,7 @@ Imports DevExpress.Persistent.Validation
 
 <DefaultClassOptions>
 <XafDisplayName("Πληρωμές Πελατών")>
-<ImageName("BO_Contact")>
+<ImageName("BO_Sale")>
 <DefaultProperty("TheDate")>
 <DefaultListViewOptions(MasterDetailMode.ListViewOnly, False, NewItemRowPosition.None)>
 <Persistent("Payment")>
