@@ -43,6 +43,8 @@ Partial Public Class ManitariWindowsFormsModule
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule))
+        Me.RequiredModuleTypes.Add(GetType(LlamachantFramework.[Module].Win.LlamachantFrameworkWindowsFormsModule))
+
     End Sub
 
 #End Region

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Options Id="Options" AllowFontSizeSelection="True" AllowSummaryPanelMenuItem="True" BoldTabsWithCounts="True" CanViewAuditTrail="All" ShowCountsInTabs="True" ShowTypeNameInOpenObject="True">
+    <Node Id="FontSizes@92b0ac1c-516b-4bb2-a163-139d737eaa88" UnusableNodeName="FontSizes" SelectedFontSize="Large" />
+  </Options>
+</Application>

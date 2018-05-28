@@ -56,6 +56,7 @@ Partial Public Class ManitariModule
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Validation.ValidationModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule))
         Me.RequiredModuleTypes.Add(GetType(DevExpress.ExpressApp.Workflow.WorkflowModule))
+        Me.RequiredModuleTypes.Add(GetType(LlamachantFramework.[Module].LlamachantFrameworkModule))
 
     End Sub
 

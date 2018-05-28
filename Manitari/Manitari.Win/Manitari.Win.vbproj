@@ -447,6 +447,10 @@
   <ItemGroup>
     <Content Include="ExpressApp.ico" />
     <Content Include="tan-mushroom-64.ico" />
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="UnusableNodes.xml">
       <DependentUpon>Model.xafml</DependentUpon>
       <SubType>Designer</SubType>

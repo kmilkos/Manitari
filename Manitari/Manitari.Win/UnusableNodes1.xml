@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Options Id="Options" AllowFontSizeSelection="True" AllowSummaryPanelMenuItem="True" BoldTabsWithCounts="True" CanViewAuditTrail="All" ShowCountsInTabs="True" ShowTypeNameInOpenObject="True" />
+</Application>

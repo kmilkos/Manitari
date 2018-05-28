@@ -8,6 +8,7 @@ Imports DevExpress.ExpressApp.Security
 Imports DevExpress.ExpressApp.Win
 Imports DevExpress.Persistent.BaseImpl
 Imports Manitari.Win
+Imports DevExpress.Persistent.AuditTrail
 
 Public Class Program
 
@@ -28,6 +29,7 @@ Public Class Program
         '_application.SplashScreen = New DevExpress.ExpressApp.Win.Utils.DXSplashScreen()
 
         _application.LinkNewObjectToParentImmediately = True
+        AuditTrailService.Instance.ObjectAuditingMode = ObjectAuditingMode.Full
 
         SecurityAdapterHelper.Enable()
         If (Not ConfigurationManager.ConnectionStrings.Item("ConnectionString") Is Nothing) Then

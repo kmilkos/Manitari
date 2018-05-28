@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Manitari.Module.Compost">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Manure1" LookupEditorMode="Auto" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>
